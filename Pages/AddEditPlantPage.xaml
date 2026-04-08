@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             x:Class="HydroGrow.Pages.AddEditPlantPage"
+             x:DataType="pageModels:AddEditPlantPageModel"
+             Title="{Binding PageTitle}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Anuluj" Command="{Binding CancelCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="12">
+
+            <!-- Thumbnail picker -->
+            <Border Style="{StaticResource CardStyle}">
+                <Grid ColumnDefinitions="80,*" ColumnSpacing="16">
+                    <!-- Photo preview -->
+                    <Border Grid.Column="0"
+                            StrokeShape="RoundRectangle 12"
+                            StrokeThickness="0"
+                            HeightRequest="80"
+                            WidthRequest="80"
+                            Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}">
+                        <Grid>
+                            <Label Text="🌿" FontSize="40"
+                                   HorizontalOptions="Center" VerticalOptions="Center"
+                                   IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNullOrEmptyConverter}}" />
+                            <Image Source="{Binding ThumbnailFullPath}"
+                                   Aspect="AspectFill"
+                                   IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+                        </Grid>
+                    </Border>
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
+                        <Label Text="Zdjęcie okładkowe" Style="{StaticResource Body1Strong}" />
+                        <Button Text="Wybierz zdjęcie"
+                                Command="{Binding PickThumbnailCommand}"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource Primary}"
+                                Padding="0" HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <!-- Name -->
+            <sf:SfTextInputLayout Hint="Nazwa rośliny *">
+                <Entry Text="{Binding Name}" ReturnType="Next" />
+            </sf:SfTextInputLayout>
+
+            <!-- Species -->
+            <sf:SfTextInputLayout Hint="Gatunek (opcjonalnie)">
+                <Entry Text="{Binding Species}" ReturnType="Next" />
+            </sf:SfTextInputLayout>
+
+            <!-- Location -->
+            <sf:SfTextInputLayout Hint="Lokalizacja (opcjonalnie)">
+                <Entry Text="{Binding Location}" ReturnType="Next" />
+            </sf:SfTextInputLayout>
+
+            <!-- Medium type -->
+            <sf:SfTextInputLayout Hint="Typ podłoża">
+                <Picker ItemsSource="{Binding MediumTypes}"
+                        SelectedItem="{Binding SelectedMediumType}" />
+            </sf:SfTextInputLayout>
+
+            <!-- Acquired date -->
+            <sf:SfTextInputLayout Hint="Data nabycia">
+                <DatePicker Date="{Binding AcquiredDate}"
+                            Format="d MMM yyyy"
+                            MaximumDate="{x:Static sys:DateTime.Today}"
+                            xmlns:sys="clr-namespace:System;assembly=netstandard" />
+            </sf:SfTextInputLayout>
+
+            <!-- Notes -->
+            <sf:SfTextInputLayout Hint="Notatki">
+                <Editor Text="{Binding Notes}"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="80" />
+            </sf:SfTextInputLayout>
+
+            <!-- Save button -->
+            <Button Text="Zapisz"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="52"
+                    HorizontalOptions="Fill"
+                    Margin="0,8,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

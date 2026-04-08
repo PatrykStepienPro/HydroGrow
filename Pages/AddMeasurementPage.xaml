@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             x:Class="HydroGrow.Pages.AddMeasurementPage"
+             x:DataType="pageModels:AddMeasurementPageModel"
+             Title="Nowy pomiar">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Anuluj" Command="{Binding CancelCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="12">
+
+            <!-- Plant picker -->
+            <sf:SfTextInputLayout Hint="Roślina">
+                <Picker ItemsSource="{Binding Plants}"
+                        SelectedItem="{Binding SelectedPlant}"
+                        ItemDisplayBinding="{Binding Name}" />
+            </sf:SfTextInputLayout>
+
+            <!-- Date/time -->
+            <sf:SfTextInputLayout Hint="Data i czas pomiaru">
+                <DatePicker Date="{Binding RecordedAt}"
+                            Format="d MMM yyyy" />
+            </sf:SfTextInputLayout>
+
+            <!-- Measurement grid — 2 columns -->
+            <Label Text="Parametry" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="12" RowSpacing="8">
+
+                <sf:SfTextInputLayout Grid.Row="0" Grid.Column="0" Hint="pH">
+                    <Entry Text="{Binding Ph}"
+                           Keyboard="Numeric"
+                           Placeholder="5.5 – 7.0"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="0" Grid.Column="1" Hint="EC (mS/cm)">
+                    <Entry Text="{Binding Ec}"
+                           Keyboard="Numeric"
+                           Placeholder="1.0 – 2.5"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="1" Grid.Column="0" Hint="TDS (ppm)">
+                    <Entry Text="{Binding Tds}"
+                           Keyboard="Numeric"
+                           Placeholder="500 – 1200"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="1" Grid.Column="1" Hint="Temp. wody (°C)">
+                    <Entry Text="{Binding WaterTempC}"
+                           Keyboard="Numeric"
+                           Placeholder="18 – 26"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="2" Grid.Column="0" Hint="Temp. otocz. (°C)">
+                    <Entry Text="{Binding AmbientTempC}"
+                           Keyboard="Numeric"
+                           Placeholder="18 – 30"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="2" Grid.Column="1" Hint="Wilgotność (%)">
+                    <Entry Text="{Binding HumidityPct}"
+                           Keyboard="Numeric"
+                           Placeholder="40 – 80"
+                           ReturnType="Next" />
+                </sf:SfTextInputLayout>
+
+                <sf:SfTextInputLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Hint="Poziom wody">
+                    <Picker ItemsSource="{Binding WaterLevels}"
+                            SelectedItem="{Binding SelectedWaterLevel}" />
+                </sf:SfTextInputLayout>
+
+            </Grid>
+
+            <!-- Notes -->
+            <sf:SfTextInputLayout Hint="Notatki (opcjonalnie)">
+                <Editor Text="{Binding Notes}"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="60" />
+            </sf:SfTextInputLayout>
+
+            <!-- Save -->
+            <Button Text="Zapisz pomiar"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource HydroCyan}"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="52"
+                    HorizontalOptions="Fill"
+                    Margin="0,8,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="HydroGrow.Pages.Controls.MeasurementChartView"
+             x:Name="Root">
+
+    <VerticalStackLayout Spacing="12">
+
+        <!-- Parameter selector chips -->
+        <HorizontalStackLayout Spacing="6" HorizontalOptions="Center">
+            <Border x:Name="PhChip"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    BackgroundColor="{StaticResource HydroCyan}"
+                    Padding="14,6">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPhTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="pH" Style="{StaticResource Caption1Strong}" TextColor="White"/>
+            </Border>
+
+            <Border x:Name="EcChip"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
+                    Padding="14,6">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEcTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="EC" Style="{StaticResource Caption1Strong}"/>
+            </Border>
+
+            <Border x:Name="TdsChip"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="0"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
+                    Padding="14,6">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTdsTapped"/>
+                </Border.GestureRecognizers>
+                <Label Text="TDS" Style="{StaticResource Caption1Strong}"/>
+            </Border>
+        </HorizontalStackLayout>
+
+        <!-- Chart -->
+        <chart:SfCartesianChart HeightRequest="200"
+                                BackgroundColor="Transparent"
+                                IsVisible="{Binding IsEmpty, Source={x:Reference Root}, Converter={StaticResource InvertedBoolConverter}}">
+            <chart:SfCartesianChart.XAxes>
+                <chart:DateTimeAxis ShowMajorGridLines="False"
+                                    ShowMinorGridLines="False">
+                    <chart:DateTimeAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle FontSize="10"/>
+                    </chart:DateTimeAxis.LabelStyle>
+                </chart:DateTimeAxis>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis ShowMajorGridLines="True"
+                                     ShowMinorGridLines="False">
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle FontSize="10"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfCartesianChart.YAxes>
+
+            <chart:LineSeries ItemsSource="{Binding ChartPoints, Source={x:Reference Root}}"
+                              XBindingPath="Date"
+                              YBindingPath="Value"
+                              StrokeWidth="2"
+                              Fill="{StaticResource HydroCyanBrush}"
+                              EnableAnimation="True"/>
+        </chart:SfCartesianChart>
+
+        <!-- Empty state -->
+        <Label Text="Brak danych do wykresu"
+               Style="{StaticResource Caption1}"
+               TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+               HorizontalOptions="Center"
+               Margin="0,16"
+               IsVisible="{Binding IsEmpty, Source={x:Reference Root}}"/>
+
+    </VerticalStackLayout>
+</ContentView>

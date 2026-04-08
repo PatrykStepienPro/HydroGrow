@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             x:Class="HydroGrow.Pages.AddTreatmentPage"
+             x:DataType="pageModels:AddTreatmentPageModel"
+             Title="Nowy zabieg">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Anuluj" Command="{Binding CancelCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="12">
+
+            <!-- Plant picker -->
+            <sf:SfTextInputLayout Hint="Roślina">
+                <Picker ItemsSource="{Binding Plants}"
+                        SelectedItem="{Binding SelectedPlant}"
+                        ItemDisplayBinding="{Binding Name}" />
+            </sf:SfTextInputLayout>
+
+            <!-- Date -->
+            <sf:SfTextInputLayout Hint="Data zabiegu">
+                <DatePicker Date="{Binding RecordedAt}"
+                            Format="d MMM yyyy" />
+            </sf:SfTextInputLayout>
+
+            <!-- Treatment type chips -->
+            <Label Text="Typ zabiegu" Style="{StaticResource SectionHeaderStyle}" />
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding TreatmentTypes}"
+                        Wrap="Wrap"
+                        JustifyContent="Start">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="pageModels:TreatmentTypeItem">
+                        <Border StrokeShape="RoundRectangle 10"
+                                StrokeThickness="1.5"
+                                Padding="12,8"
+                                Margin="4"
+                                Stroke="{StaticResource HydroGreen}"
+                                Background="Transparent">
+                            <Label Text="{Binding DisplayName}"
+                                   Style="{StaticResource Caption1Strong}"
+                                   TextColor="{StaticResource HydroGreen}" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type pageModels:AddTreatmentPageModel}}, Path=SelectTreatmentTypeCommand}"
+                                    CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+            <!-- Selected type badge -->
+            <Border Style="{StaticResource MeasurementCardStyle}"
+                    IsVisible="{Binding SelectedTreatmentType, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                <Label Style="{StaticResource Body2Strong}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Wybrany: " />
+                            <Span Text="{Binding SelectedTreatmentType.DisplayName}"
+                                  TextColor="{StaticResource HydroGreen}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Border>
+
+            <!-- Product fields (visible for fertilization/nutrient change) -->
+            <sf:SfTextInputLayout Hint="Użyty produkt (nawóz, pożywka...)"
+                                  IsVisible="{Binding ShowProductFields}">
+                <Entry Text="{Binding ProductUsed}" ReturnType="Next" />
+            </sf:SfTextInputLayout>
+
+            <sf:SfTextInputLayout Hint="Ilość (ml)"
+                                  IsVisible="{Binding ShowProductFields}">
+                <Entry Text="{Binding AmountMl}" Keyboard="Numeric" ReturnType="Next" />
+            </sf:SfTextInputLayout>
+
+            <!-- Notes -->
+            <sf:SfTextInputLayout Hint="Notatki (opcjonalnie)">
+                <Editor Text="{Binding Notes}"
+                        AutoSize="TextChanges"
+                        MinimumHeightRequest="60" />
+            </sf:SfTextInputLayout>
+
+            <!-- Save -->
+            <Button Text="Zapisz zabieg"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource HydroGreen}"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="52"
+                    HorizontalOptions="Fill"
+                    Margin="0,8,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

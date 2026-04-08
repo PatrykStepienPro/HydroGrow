@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             xmlns:models="clr-namespace:HydroGrow.Models"
+             xmlns:controls="clr-namespace:HydroGrow.Pages.Controls"
+             x:Class="HydroGrow.Pages.PlantDetailPage"
+             x:DataType="pageModels:PlantDetailPageModel"
+             Title="{Binding Plant.Name}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edytuj"
+                     Command="{Binding EditCommand}"
+                     Order="Primary" />
+        <ToolbarItem Text="Usuń"
+                     Command="{Binding DeleteCommand}"
+                     Order="Secondary" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="{StaticResource LayoutSpacing}">
+
+                <!-- Hero section -->
+                <Border Style="{StaticResource CardStyle}">
+                    <Grid RowDefinitions="120,Auto" RowSpacing="12">
+
+                        <!-- Large photo or placeholder -->
+                        <Border Grid.Row="0"
+                                StrokeShape="RoundRectangle 16"
+                                StrokeThickness="0"
+                                Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}"
+                                HeightRequest="120">
+                            <Grid>
+                                <Label Text="🌿" FontSize="64"
+                                       HorizontalOptions="Center" VerticalOptions="Center"
+                                       IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNullOrEmptyConverter}}" />
+                                <Image Source="{Binding ThumbnailFullPath}"
+                                       Aspect="AspectFill"
+                                       IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+                            </Grid>
+                        </Border>
+
+                        <!-- Plant meta -->
+                        <VerticalStackLayout Grid.Row="1" Spacing="4">
+                            <Label Text="{Binding Plant.Species}"
+                                   Style="{StaticResource Caption1}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}"
+                                   IsVisible="{Binding Plant.Species, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+                            <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
+                                <Border Grid.Column="0"
+                                        StrokeShape="RoundRectangle 8"
+                                        StrokeThickness="0"
+                                        BackgroundColor="{StaticResource HydroGreen}"
+                                        Padding="8,4">
+                                    <Label Text="{Binding Plant.MediumType}"
+                                           Style="{StaticResource Caption1Strong}"
+                                           TextColor="White" />
+                                </Border>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Plant.Location}"
+                                       Style="{StaticResource Caption1}"
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                       VerticalOptions="Center"
+                                       IsVisible="{Binding Plant.Location, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+                                <!-- Alert badge -->
+                                <Border Grid.Column="2"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        StrokeShape="RoundRectangle 8"
+                                        BackgroundColor="{StaticResource HydroRed}"
+                                        Padding="8,4"
+                                        IsVisible="{Binding HasAlerts}">
+                                    <Label Text="⚠ Alert"
+                                           Style="{StaticResource Caption1Strong}"
+                                           TextColor="White" />
+                                </Border>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+
+                <!-- Photo gallery -->
+                <Label Text="Zdjęcia" Style="{StaticResource SectionHeaderStyle}" />
+                <controls:PhotoGalleryView
+                    Photos="{Binding Photos}"
+                    AddPhotoCommand="{Binding AddPhotoCommand}"
+                    DeletePhotoCommand="{Binding DeletePhotoCommand}" />
+
+                <!-- Latest measurements -->
+                <Label Text="Ostatni pomiar" Style="{StaticResource SectionHeaderStyle}"
+                       IsVisible="{Binding LatestMeasurement, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+
+                <Border Style="{StaticResource CardStyle}"
+                        IsVisible="{Binding LatestMeasurement, Converter={StaticResource IsNotNullOrEmptyConverter}}">
+                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto" RowSpacing="8" ColumnSpacing="8">
+
+                        <!-- pH -->
+                        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="pH" Style="{StaticResource Caption2}"
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.Ph, StringFormat='{0:F1}'}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center"
+                                       TextColor="{StaticResource HydroCyan}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- EC -->
+                        <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="EC" Style="{StaticResource Caption2}"
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.Ec, StringFormat='{0:F2}'}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center"
+                                       TextColor="{StaticResource HydroCyan}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- TDS -->
+                        <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="TDS" Style="{StaticResource Caption2}"
+                                       TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.Tds, StringFormat='{0:F0} ppm'}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center"
+                                       TextColor="{StaticResource HydroCyan}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Water temp -->
+                        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="💧°C" Style="{StaticResource Caption2}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.WaterTempC, StringFormat='{0:F1}°'}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Humidity -->
+                        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="Wilg." Style="{StaticResource Caption2}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.HumidityPct, StringFormat='{0:F0}%'}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Water level -->
+                        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource MeasurementCardStyle}">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="Poziom" Style="{StaticResource Caption2}"
+                                       HorizontalOptions="Center" />
+                                <Label Text="{Binding LatestMeasurement.WaterLevel}"
+                                       Style="{StaticResource Body1Strong}"
+                                       HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                    </Grid>
+                </Border>
+
+                <!-- Measurement chart -->
+                <Label Text="Historia pomiarów" Style="{StaticResource SectionHeaderStyle}"
+                       IsVisible="{Binding RecentMeasurements.Count, Converter={StaticResource IsNotZeroConverter}}" />
+
+                <Border Style="{StaticResource CardStyle}"
+                        IsVisible="{Binding RecentMeasurements.Count, Converter={StaticResource IsNotZeroConverter}}">
+                    <controls:MeasurementChartView Measurements="{Binding RecentMeasurements}" />
+                </Border>
+
+                <!-- Recent treatments -->
+                <Label Text="Ostatnie zabiegi" Style="{StaticResource SectionHeaderStyle}"
+                       IsVisible="{Binding RecentTreatments.Count, Converter={StaticResource IsNotZeroConverter}}" />
+
+                <CollectionView ItemsSource="{Binding RecentTreatments}"
+                                IsVisible="{Binding RecentTreatments.Count, Converter={StaticResource IsNotZeroConverter}}"
+                                SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Treatment">
+                            <Border Style="{StaticResource CardStyle}" Margin="0,2">
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                    <Label Grid.Column="0"
+                                           Text="{Binding TreatmentType}"
+                                           Style="{StaticResource Body2Strong}" />
+                                    <Label Grid.Column="1"
+                                           Text="{Binding RecordedAtUtc, StringFormat='{0:dd MMM yyyy}'}"
+                                           Style="{StaticResource Caption2}"
+                                           TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                           VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Notes -->
+                <Label Text="Notatki" Style="{StaticResource SectionHeaderStyle}" />
+                <Border Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="8">
+                        <Editor Text="{Binding Plant.Notes}"
+                                AutoSize="TextChanges"
+                                MinimumHeightRequest="60"
+                                Placeholder="Tutaj możesz zapisać obserwacje, uwagi..." />
+                        <Button Text="Zapisz notatki"
+                                Command="{Binding SaveNotesCommand}"
+                                BackgroundColor="Transparent"
+                                TextColor="{StaticResource Primary}"
+                                Padding="0"
+                                HorizontalOptions="Start" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom action bar -->
+        <Border Grid.Row="1"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 0"
+                Background="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
+                Padding="16,12">
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                <Button Grid.Column="0"
+                        Text="📊 Pomiar"
+                        Command="{Binding AddMeasurementCommand}"
+                        BackgroundColor="{StaticResource HydroCyan}"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="48" />
+                <Button Grid.Column="1"
+                        Text="🔄 Zabieg"
+                        Command="{Binding AddTreatmentCommand}"
+                        BackgroundColor="{StaticResource HydroGreen}"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HeightRequest="48" />
+                <Button Grid.Column="2"
+                        Text="📷 Zdjęcie"
+                        Command="{Binding AddPhotoCommand}"
+                        BackgroundColor="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
+                        TextColor="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                        BorderColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"
+                        BorderWidth="1"
+                        CornerRadius="12"
+                        HeightRequest="48" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</ContentPage>

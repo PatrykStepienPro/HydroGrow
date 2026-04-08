@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:models="clr-namespace:HydroGrow.Models"
+        x:Class="HydroGrow.Pages.Controls.PlantCardView"
+        Style="{StaticResource CardStyle}"
+        x:DataType="models:Plant">
+
+    <Grid ColumnDefinitions="56,*,Auto" ColumnSpacing="12">
+
+        <!-- Thumbnail or placeholder -->
+        <Border Grid.Column="0"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="0"
+                HeightRequest="56"
+                WidthRequest="56"
+                Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}"
+                VerticalOptions="Center">
+            <Label Text="🌿"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </Border>
+
+        <!-- Plant info -->
+        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="3">
+            <Label Text="{Binding Name}"
+                   Style="{StaticResource Body1Strong}"
+                   LineBreakMode="TailTruncation" />
+            <Label Text="{Binding Species}"
+                   Style="{StaticResource Caption1}"
+                   TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}"
+                   IsVisible="{Binding Species, Converter={StaticResource IsNotNullOrEmptyConverter}}"
+                   LineBreakMode="TailTruncation" />
+            <Label Text="{Binding MediumType}"
+                   Style="{StaticResource Caption2}"
+                   TextColor="{StaticResource HydroGreen}" />
+        </VerticalStackLayout>
+
+        <!-- Arrow -->
+        <Label Grid.Column="2"
+               Text="›"
+               FontSize="24"
+               TextColor="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray500}}"
+               VerticalOptions="Center" />
+
+    </Grid>
+</Border>

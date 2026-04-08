@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:HydroGrow.Models"
+             x:Class="HydroGrow.Pages.Controls.PhotoGalleryView"
+             x:Name="Root">
+
+    <ScrollView Orientation="Horizontal">
+        <HorizontalStackLayout Spacing="8" Padding="0,4">
+
+            <!-- Photos list -->
+            <HorizontalStackLayout x:Name="PhotosList" Spacing="8">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:PlantPhoto">
+                        <Grid WidthRequest="80" HeightRequest="80">
+
+                            <!-- Photo -->
+                            <Border StrokeShape="RoundRectangle 12"
+                                    StrokeThickness="0"
+                                    WidthRequest="80"
+                                    HeightRequest="80"
+                                    Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}">
+                                <Image Source="{Binding FilePath, Converter={StaticResource PhotoPathConverter}}"
+                                       Aspect="AspectFill"
+                                       WidthRequest="80"
+                                       HeightRequest="80"/>
+                            </Border>
+
+                            <!-- Delete button -->
+                            <Border StrokeShape="RoundRectangle 10"
+                                    StrokeThickness="0"
+                                    BackgroundColor="{StaticResource HydroRed}"
+                                    WidthRequest="22"
+                                    HeightRequest="22"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Start"
+                                    Margin="0,4,4,0">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding DeletePhotoCommand, Source={x:Reference Root}}"
+                                        CommandParameter="{Binding .}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="✕"
+                                       FontSize="11"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Border>
+
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+
+            <!-- Add photo tile -->
+            <Border StrokeShape="RoundRectangle 12"
+                    StrokeThickness="1"
+                    Stroke="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}"
+                    Background="Transparent"
+                    WidthRequest="80"
+                    HeightRequest="80">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding AddPhotoCommand, Source={x:Reference Root}}"/>
+                </Border.GestureRecognizers>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="2">
+                    <Label Text="📷" FontSize="24" HorizontalOptions="Center"/>
+                    <Label Text="Dodaj" Style="{StaticResource Caption2}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </HorizontalStackLayout>
+    </ScrollView>
+
+</ContentView>

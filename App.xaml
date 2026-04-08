@@ -10,6 +10,27 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary Source="Resources/Styles/AppStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <utilities:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:IsNotZeroConverter x:Key="IsNotZeroConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:IsZeroConverter x:Key="IsZeroConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:IntToAlertColorConverter x:Key="IntToAlertColorConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:BoolToOverdueColorConverter x:Key="BoolToOverdueColorConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:BoolToAlertColorConverter x:Key="BoolToAlertColorConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:NullableDoubleToStringConverter x:Key="NullableDoubleToStringConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:PhotoPathConverter x:Key="PhotoPathConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
+            <utilities:InvertedBoolConverter x:Key="InvertedBoolConverter"
+                xmlns:utilities="clr-namespace:HydroGrow.Utilities" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

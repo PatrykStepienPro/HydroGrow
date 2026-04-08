@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             x:Class="HydroGrow.Pages.SettingsPage"
+             x:DataType="pageModels:SettingsPageModel"
+             Title="Ustawienia">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="{StaticResource LayoutSpacing}">
+
+            <!-- Data section -->
+            <Label Text="Dane" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Border Style="{StaticResource CardStyle}">
+                <VerticalStackLayout Spacing="12">
+                    <Button Text="📤  Eksportuj dane"
+                            Command="{Binding ExportCommand}"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HorizontalOptions="Fill" />
+                    <Button Text="📥  Importuj dane"
+                            Command="{Binding ImportCommand}"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Appearance -->
+            <Label Text="Wygląd" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Border Style="{StaticResource CardStyle}">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Label Grid.Column="0"
+                           Text="Motyw ciemny / jasny"
+                           Style="{StaticResource Body1}"
+                           VerticalOptions="Center" />
+                    <Button Grid.Column="1"
+                            Text="Zmień"
+                            Command="{Binding ToggleThemeCommand}"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource Primary}"
+                            VerticalOptions="Center" />
+                </Grid>
+            </Border>
+
+            <!-- Danger zone -->
+            <Label Text="Strefa niebezpieczna" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Border Style="{StaticResource CardStyle}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Resetuj dane aplikacji do stanu domyślnego. Spowoduje to usunięcie wszystkich Twoich roślin, pomiarów i zabiegów."
+                           Style="{StaticResource Caption1}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}" />
+                    <Button Text="🗑  Resetuj dane"
+                            Command="{Binding ResetDataCommand}"
+                            BackgroundColor="{StaticResource HydroRed}"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HorizontalOptions="Fill" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- About -->
+            <Label Text="O aplikacji" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Border Style="{StaticResource CardStyle}">
+                <VerticalStackLayout Spacing="4">
+                    <Label Style="{StaticResource Body1Strong}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="HydroGrow  " />
+                                <Span Text="{Binding AppVersion}"
+                                      TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Aplikacja do zarządzania uprawami hydroponicznymi"
+                           Style="{StaticResource Caption1}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Progress bar (visible during export/import) -->
+            <ProgressBar Progress="{Binding Progress}"
+                         ProgressColor="{StaticResource HydroGreen}"
+                         HeightRequest="4"
+                         IsVisible="{Binding IsBusy}" />
+
+            <!-- Status message -->
+            <Label Text="{Binding StatusMessage}"
+                   Style="{StaticResource Caption1}"
+                   TextColor="{StaticResource HydroGreen}"
+                   IsVisible="{Binding StatusMessage, Converter={StaticResource IsNotNullOrEmptyConverter}}"
+                   HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

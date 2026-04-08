@@ -1,5 +1,8 @@
 global using Fonts;
 global using HydroGrow.Data;
+global using HydroGrow.Models;
+global using HydroGrow.Models.Enums;
+global using HydroGrow.Models.Export;
 global using HydroGrow.PageModels;
 global using HydroGrow.Pages;
 global using HydroGrow.Services;

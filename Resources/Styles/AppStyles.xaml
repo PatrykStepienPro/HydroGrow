@@ -103,6 +103,95 @@
                 Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
                 Size="{StaticResource size240}" />
 
+    <!-- HydroGrow tab icons -->
+    <FontImageSource x:Key="IconPlants"
+                     Glyph="{x:Static f:FluentUI.earth_leaf_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconReminders"
+                     Glyph="{x:Static f:FluentUI.clock_alarm_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconSettings"
+                     Glyph="{x:Static f:FluentUI.settings_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <!-- HydroGrow action icons -->
+    <FontImageSource x:Key="IconMeasurement"
+                     Glyph="{x:Static f:FluentUI.beaker_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconTreatment"
+                     Glyph="{x:Static f:FluentUI.arrow_clockwise_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconAlert"
+                     Glyph="{x:Static f:FluentUI.alert_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{StaticResource HydroRed}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconPhoto"
+                     Glyph="{x:Static f:FluentUI.camera_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconGauge"
+                     Glyph="{x:Static f:FluentUI.gauge_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconDrop"
+                     Glyph="{x:Static f:FluentUI.drop_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{StaticResource HydroCyan}"
+                     Size="{StaticResource IconSize}" />
+
+    <FontImageSource x:Key="IconImage"
+                     Glyph="{x:Static f:FluentUI.image_24_regular}"
+                     FontFamily="{x:Static f:FluentUI.FontFamily}"
+                     Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}"
+                     Size="{StaticResource IconSize}" />
+
+    <!-- HydroGrow card styles -->
+    <Style x:Key="MeasurementCardStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightSecondaryBackground},Dark={StaticResource DarkSecondaryBackground}}"/>
+        <Setter Property="StrokeThickness" Value="0"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style x:Key="AlertCardStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light=#FFF3F0, Dark=#3D1A18}"/>
+        <Setter Property="Stroke" Value="{StaticResource HydroRed}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style x:Key="WarningCardStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light=#FFF8E7, Dark=#2D2200}"/>
+        <Setter Property="Stroke" Value="{StaticResource HydroAmber}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
     <Style TargetType="Label">
         <Setter Property="TextColor"
                 Value="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}" />
@@ -175,6 +264,12 @@
         <Setter Property="FontAttributes"
                 Value="{OnPlatform Default=None, Android=Bold}" />
     </Style>
+
+    <Style x:Key="SectionHeaderStyle" TargetType="Label" BasedOn="{StaticResource Body2Strong}">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}"/>
+        <Setter Property="Margin" Value="0,16,0,8"/>
+    </Style>
+
     <Style x:Key="Body1"
            TargetType="Label">
         <Setter Property="FontSize"

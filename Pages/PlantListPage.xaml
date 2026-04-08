@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             xmlns:models="clr-namespace:HydroGrow.Models"
+             xmlns:controls="clr-namespace:HydroGrow.Pages.Controls"
+             x:Class="HydroGrow.Pages.PlantListPage"
+             x:DataType="pageModels:PlantListPageModel"
+             Title="Rośliny">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}" />
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+
+        <!-- Search bar -->
+        <SearchBar Grid.Row="0"
+                   Placeholder="Szukaj rośliny..."
+                   Text="{Binding SearchText}"
+                   Margin="{StaticResource LayoutPadding}" />
+
+        <!-- Medium type filter chips -->
+        <ScrollView Grid.Row="1" Orientation="Horizontal" Padding="15,0,15,8">
+            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding MediumFilters}" Spacing="8">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Border StrokeShape="RoundRectangle 16"
+                                StrokeThickness="1.5"
+                                Padding="12,6"
+                                Stroke="{StaticResource HydroGreen}"
+                                Background="{AppThemeBinding Light=Transparent, Dark=Transparent}">
+                            <Label Text="{Binding .}" Style="{StaticResource Caption1Strong}"
+                                   TextColor="{StaticResource HydroGreen}" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type pageModels:PlantListPageModel}}, Path=SetMediumFilterCommand}"
+                                                      CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <!-- Plant list -->
+        <pullToRefresh:SfPullToRefresh Grid.Row="2"
+                                       IsRefreshing="{Binding IsRefreshing}"
+                                       RefreshCommand="{Binding RefreshCommand}">
+            <pullToRefresh:SfPullToRefresh.PullableContent>
+                <CollectionView ItemsSource="{Binding Plants}"
+                                SelectionMode="None"
+                                Margin="{StaticResource LayoutPadding}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Plant">
+                            <controls:PlantCardView Margin="0,4">
+                                <controls:PlantCardView.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type pageModels:PlantListPageModel}}, Path=NavigateToPlantCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </controls:PlantCardView.GestureRecognizers>
+                            </controls:PlantCardView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="0,64" HorizontalOptions="Center" Spacing="12">
+                            <Label Text="🌿" FontSize="56" HorizontalOptions="Center" />
+                            <Label Text="Brak roślin"
+                                   Style="{StaticResource Title3}"
+                                   HorizontalOptions="Center" />
+                            <Label Text="Dodaj pierwszą roślinę klikając +"
+                                   Style="{StaticResource Body2}"
+                                   TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                                   HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </pullToRefresh:SfPullToRefresh.PullableContent>
+        </pullToRefresh:SfPullToRefresh>
+
+        <!-- FAB -->
+        <controls:AddButton Grid.Row="2"
+                            Command="{Binding AddPlantCommand}"
+                            SemanticProperties.Description="Dodaj roślinę" />
+
+    </Grid>
+</ContentPage>

@@ -49,4 +49,19 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <!-- HydroGrow semantic colors -->
+    <Color x:Key="HydroGreen">#2ECC71</Color>
+    <Color x:Key="HydroGreenDark">#1A8F4A</Color>
+    <Color x:Key="HydroCyan">#17A2B8</Color>
+    <Color x:Key="HydroAmber">#F0A500</Color>
+    <Color x:Key="HydroRed">#E74C3C</Color>
+    <Color x:Key="HydroSurface">#1E2D1F</Color>
+
+    <SolidColorBrush x:Key="HydroGreenBrush" Color="{StaticResource HydroGreen}"/>
+    <SolidColorBrush x:Key="HydroGreenDarkBrush" Color="{StaticResource HydroGreenDark}"/>
+    <SolidColorBrush x:Key="HydroCyanBrush" Color="{StaticResource HydroCyan}"/>
+    <SolidColorBrush x:Key="HydroAmberBrush" Color="{StaticResource HydroAmber}"/>
+    <SolidColorBrush x:Key="HydroRedBrush" Color="{StaticResource HydroRed}"/>
+    <SolidColorBrush x:Key="HydroSurfaceBrush" Color="{StaticResource HydroSurface}"/>
 </ResourceDictionary>

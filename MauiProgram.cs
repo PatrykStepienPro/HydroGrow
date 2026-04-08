@@ -1,61 +1,91 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Plugin.LocalNotification;
 using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace HydroGrow;
 
 public static class MauiProgram
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
-			.ConfigureSyncfusionToolkit()
-			.ConfigureMauiHandlers(handlers =>
-			{
-#if WINDOWS
-				Microsoft.Maui.Controls.Handlers.Items.CollectionViewHandler.Mapper.AppendToMapping("KeyboardAccessibleCollectionView", (handler, view) =>
-				{
-					handler.PlatformView.SingleSelectionFollowsFocus = false;
-				});
+    public static MauiApp CreateMauiApp()
+    {
+        try
+        {
+        return CreateMauiAppInternal();
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[CRASH] CreateMauiApp failed: {ex}");
+            throw;
+        }
+    }
 
-				Microsoft.Maui.Handlers.ContentViewHandler.Mapper.AppendToMapping(nameof(Pages.Controls.CategoryChart), (handler, view) =>
-				{
-					if (view is Pages.Controls.CategoryChart && handler.PlatformView is Microsoft.Maui.Platform.ContentPanel contentPanel)
-					{
-						contentPanel.IsTabStop = true;
-					}
-				});
+    private static MauiApp CreateMauiAppInternal()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureSyncfusionToolkit()
+            .UseLocalNotification()
+            .ConfigureMauiHandlers(handlers =>
+            {
+#if WINDOWS
+                Microsoft.Maui.Controls.Handlers.Items.CollectionViewHandler.Mapper.AppendToMapping(
+                    "KeyboardAccessibleCollectionView", (handler, view) =>
+                    {
+                        handler.PlatformView.SingleSelectionFollowsFocus = false;
+                    });
 #endif
-			})
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("SegoeUI-Semibold.ttf", "SegoeSemibold");
-				fonts.AddFont("FluentSystemIcons-Regular.ttf", FluentUI.FontFamily);
-			});
+            })
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("SegoeUI-Semibold.ttf", "SegoeSemibold");
+                fonts.AddFont("FluentSystemIcons-Regular.ttf", FluentUI.FontFamily);
+            });
 
 #if DEBUG
-		builder.Logging.AddDebug();
-		builder.Services.AddLogging(configure => configure.AddDebug());
+        builder.Logging.AddDebug();
+        builder.Services.AddLogging(configure => configure.AddDebug());
 #endif
 
-		builder.Services.AddSingleton<ProjectRepository>();
-		builder.Services.AddSingleton<TaskRepository>();
-		builder.Services.AddSingleton<CategoryRepository>();
-		builder.Services.AddSingleton<TagRepository>();
-		builder.Services.AddSingleton<SeedDataService>();
-		builder.Services.AddSingleton<ModalErrorHandler>();
-		builder.Services.AddSingleton<MainPageModel>();
-		builder.Services.AddSingleton<ProjectListPageModel>();
-		builder.Services.AddSingleton<ManageMetaPageModel>();
+        // Repositories (Singleton — shared DB access, per-call connections)
+        builder.Services.AddSingleton<PlantRepository>();
+        builder.Services.AddSingleton<MeasurementRepository>();
+        builder.Services.AddSingleton<TreatmentRepository>();
+        builder.Services.AddSingleton<ReminderRepository>();
+        builder.Services.AddSingleton<PhotoRepository>();
+        builder.Services.AddSingleton<MeasurementRangeRepository>();
 
-		builder.Services.AddTransientWithShellRoute<ProjectDetailPage, ProjectDetailPageModel>("project");
-		builder.Services.AddTransientWithShellRoute<TaskDetailPage, TaskDetailPageModel>("task");
-		
-		return builder.Build();
-	}
+        // Services
+        builder.Services.AddSingleton<SeedDataService>();
+        builder.Services.AddSingleton<IErrorHandler, ModalErrorHandler>();
+        builder.Services.AddSingleton<PhotoService>();
+        builder.Services.AddSingleton<ExportService>();
+        builder.Services.AddSingleton<ImportService>();
+        builder.Services.AddSingleton<NotificationService>();
+
+        // Tab page models (Singleton — persists state across tab switches)
+        builder.Services.AddSingleton<DashboardPageModel>();
+        builder.Services.AddSingleton<PlantListPageModel>();
+        builder.Services.AddSingleton<RemindersPageModel>();
+        builder.Services.AddSingleton<SettingsPageModel>();
+
+        // Tab pages (Singleton)
+        builder.Services.AddSingleton<Pages.DashboardPage>();
+        builder.Services.AddSingleton<Pages.PlantListPage>();
+        builder.Services.AddSingleton<Pages.RemindersPage>();
+        builder.Services.AddSingleton<Pages.SettingsPage>();
+
+        // Detail pages (Transient — fresh state per navigation, query params)
+        builder.Services.AddTransientWithShellRoute<Pages.PlantDetailPage, PlantDetailPageModel>("plant");
+        builder.Services.AddTransientWithShellRoute<Pages.AddEditPlantPage, AddEditPlantPageModel>("plant-edit");
+        builder.Services.AddTransientWithShellRoute<Pages.AddMeasurementPage, AddMeasurementPageModel>("plant-measure");
+        builder.Services.AddTransientWithShellRoute<Pages.AddTreatmentPage, AddTreatmentPageModel>("plant-treat");
+
+        return builder.Build();
+    }
 }
+

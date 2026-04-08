@@ -1,101 +1,164 @@
 using System.Text.Json;
-using HydroGrow.Models;
 using Microsoft.Extensions.Logging;
 
 namespace HydroGrow.Data;
 
+public class SeedData
+{
+    public List<PlantSeedDto> Plants { get; set; } = [];
+}
+
+public class PlantSeedDto
+{
+    public string Name { get; set; } = string.Empty;
+    public string Species { get; set; } = string.Empty;
+    public string Location { get; set; } = string.Empty;
+    public string MediumType { get; set; } = string.Empty;
+    public string AcquiredDate { get; set; } = string.Empty;
+    public string Notes { get; set; } = string.Empty;
+    public MeasurementRangeSeedDto? Range { get; set; }
+}
+
+public class MeasurementRangeSeedDto
+{
+    public double? PhMin { get; set; }
+    public double? PhMax { get; set; }
+    public double? EcMin { get; set; }
+    public double? EcMax { get; set; }
+    public double? TdsMin { get; set; }
+    public double? TdsMax { get; set; }
+    public double? WaterTempCMin { get; set; }
+    public double? WaterTempCMax { get; set; }
+    public double? HumidityPctMin { get; set; }
+    public double? HumidityPctMax { get; set; }
+}
+
 public class SeedDataService
 {
-	private readonly ProjectRepository _projectRepository;
-	private readonly TaskRepository _taskRepository;
-	private readonly TagRepository _tagRepository;
-	private readonly CategoryRepository _categoryRepository;
-	private readonly string _seedDataFilePath = "SeedData.json";
-	private readonly ILogger<SeedDataService> _logger;
+    private readonly PlantRepository _plantRepository;
+    private readonly MeasurementRepository _measurementRepository;
+    private readonly TreatmentRepository _treatmentRepository;
+    private readonly ReminderRepository _reminderRepository;
+    private readonly PhotoRepository _photoRepository;
+    private readonly MeasurementRangeRepository _rangeRepository;
+    private readonly ILogger<SeedDataService> _logger;
 
-	public SeedDataService(ProjectRepository projectRepository, TaskRepository taskRepository, TagRepository tagRepository, CategoryRepository categoryRepository, ILogger<SeedDataService> logger)
-	{
-		_projectRepository = projectRepository;
-		_taskRepository = taskRepository;
-		_tagRepository = tagRepository;
-		_categoryRepository = categoryRepository;
-		_logger = logger;
-	}
+    public SeedDataService(
+        PlantRepository plantRepository,
+        MeasurementRepository measurementRepository,
+        TreatmentRepository treatmentRepository,
+        ReminderRepository reminderRepository,
+        PhotoRepository photoRepository,
+        MeasurementRangeRepository rangeRepository,
+        ILogger<SeedDataService> logger)
+    {
+        _plantRepository = plantRepository;
+        _measurementRepository = measurementRepository;
+        _treatmentRepository = treatmentRepository;
+        _reminderRepository = reminderRepository;
+        _photoRepository = photoRepository;
+        _rangeRepository = rangeRepository;
+        _logger = logger;
+    }
 
-	public async Task LoadSeedDataAsync()
-	{
-		ClearTables();
+    public async Task LoadSeedDataAsync()
+    {
+        await ClearTablesAsync();
 
-		await using Stream templateStream = await FileSystem.OpenAppPackageFileAsync(_seedDataFilePath);
+        await using Stream templateStream = await FileSystem.OpenAppPackageFileAsync("SeedData.json");
 
-		ProjectsJson? payload = null;
-		try
-		{
-			payload = JsonSerializer.Deserialize(templateStream, JsonContext.Default.ProjectsJson);
-		}
-		catch (Exception e)
-		{
-			_logger.LogError(e, "Error deserializing seed data");
-		}
+        SeedData? payload = null;
+        try
+        {
+            payload = await JsonSerializer.DeserializeAsync(templateStream, JsonContext.Default.SeedData);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error deserializing seed data");
+        }
 
-		try
-		{
-			if (payload is not null)
-			{
-				foreach (var project in payload.Projects)
-				{
-					if (project is null)
-					{
-						continue;
-					}
+        if (payload is null) return;
 
-					if (project.Category is not null)
-					{
-						await _categoryRepository.SaveItemAsync(project.Category);
-						project.CategoryID = project.Category.ID;
-					}
+        try
+        {
+            foreach (var dto in payload.Plants)
+            {
+                var plant = new Plant
+                {
+                    Name = dto.Name,
+                    Species = dto.Species,
+                    Location = dto.Location,
+                    MediumType = dto.MediumType,
+                    AcquiredDate = dto.AcquiredDate,
+                    Notes = dto.Notes
+                };
 
-					await _projectRepository.SaveItemAsync(project);
+                await _plantRepository.SaveItemAsync(plant);
 
-					if (project?.Tasks is not null)
-					{
-						foreach (var task in project.Tasks)
-						{
-							task.ProjectID = project.ID;
-							await _taskRepository.SaveItemAsync(task);
-						}
-					}
+                if (dto.Range is not null)
+                {
+                    var range = new MeasurementRange
+                    {
+                        PlantId = plant.Id,
+                        PhMin = dto.Range.PhMin,
+                        PhMax = dto.Range.PhMax,
+                        EcMin = dto.Range.EcMin,
+                        EcMax = dto.Range.EcMax,
+                        TdsMin = dto.Range.TdsMin,
+                        TdsMax = dto.Range.TdsMax,
+                        WaterTempCMin = dto.Range.WaterTempCMin,
+                        WaterTempCMax = dto.Range.WaterTempCMax,
+                        HumidityPctMin = dto.Range.HumidityPctMin,
+                        HumidityPctMax = dto.Range.HumidityPctMax
+                    };
+                    await _rangeRepository.SaveItemAsync(range);
+                }
 
-					if (project?.Tags is not null)
-					{
-						foreach (var tag in project.Tags)
-						{
-							await _tagRepository.SaveItemAsync(tag, project.ID);
-						}
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_logger.LogError(e, "Error saving seed data");
-			throw;
-		}
-	}
+                // Add a sample measurement for each seed plant
+                var measurement = new Measurement
+                {
+                    PlantId = plant.Id,
+                    RecordedAt = DateTime.UtcNow.AddDays(-2).ToString("O"),
+                    Ph = 5.8 + (plant.Id % 3) * 0.2,
+                    Ec = 1.2 + (plant.Id % 2) * 0.3,
+                    WaterTempC = 22.0,
+                    HumidityPct = 60
+                };
+                await _measurementRepository.SaveItemAsync(measurement);
 
-	private async void ClearTables()
-	{
-		try
-		{
-			await Task.WhenAll(
-				_projectRepository.DropTableAsync(),
-				_taskRepository.DropTableAsync(),
-				_tagRepository.DropTableAsync(),
-				_categoryRepository.DropTableAsync());
-		}
-		catch (Exception e)
-		{
-			Console.WriteLine(e);
-		}
-	}
+                // Add a sample treatment
+                var treatment = new Treatment
+                {
+                    PlantId = plant.Id,
+                    RecordedAt = DateTime.UtcNow.AddDays(-5).ToString("O"),
+                    TreatmentType = TreatmentType.NutrientChange.ToString(),
+                    Notes = "Regularna wymiana pożywki"
+                };
+                await _treatmentRepository.SaveItemAsync(treatment);
+            }
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error saving seed data");
+            throw;
+        }
+    }
+
+    private async Task ClearTablesAsync()
+    {
+        try
+        {
+            await Task.WhenAll(
+                _plantRepository.DropTableAsync(),
+                _measurementRepository.DropTableAsync(),
+                _treatmentRepository.DropTableAsync(),
+                _reminderRepository.DropTableAsync(),
+                _photoRepository.DropTableAsync(),
+                _rangeRepository.DropTableAsync());
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error clearing tables during seed");
+        }
+    }
 }
