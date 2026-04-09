@@ -142,6 +142,44 @@ public partial class SettingsPageModel : ObservableObject
     }
 
     [RelayCommand]
+    private async Task ExportLogs()
+    {
+        try
+        {
+            var logsDir = Path.Combine(FileSystem.AppDataDirectory, "logs");
+            var todayLog = Path.Combine(logsDir, $"hydrogrow-{DateTime.Now:yyyyMMdd}.log");
+
+            string? logPath = null;
+            if (File.Exists(todayLog))
+            {
+                logPath = todayLog;
+            }
+            else if (Directory.Exists(logsDir))
+            {
+                logPath = Directory.GetFiles(logsDir, "*.log")
+                    .OrderByDescending(File.GetLastWriteTime)
+                    .FirstOrDefault();
+            }
+
+            if (logPath is null)
+            {
+                await Shell.Current.DisplayAlertAsync("Brak logów", "Nie znaleziono żadnych plików z logami.", "OK");
+                return;
+            }
+
+            await Share.Default.RequestAsync(new ShareFileRequest
+            {
+                Title = "Logi HydroGrow",
+                File = new ShareFile(logPath)
+            });
+        }
+        catch (Exception ex)
+        {
+            _errorHandler.HandleError(ex);
+        }
+    }
+
+    [RelayCommand]
     private async Task ResetData()
     {
         bool confirmed = await Shell.Current.DisplayAlertAsync(

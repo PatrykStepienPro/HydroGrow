@@ -17,8 +17,7 @@ public class PhotoRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -48,8 +47,7 @@ public class PhotoRepository
     public async Task<List<PlantPhoto>> ListAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM PlantPhoto WHERE PlantId = @plantId ORDER BY SortOrder ASC, TakenAt DESC";
@@ -66,8 +64,7 @@ public class PhotoRepository
     public async Task<PlantPhoto?> GetAsync(int id)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM PlantPhoto WHERE Id = @id";
@@ -83,8 +80,7 @@ public class PhotoRepository
     public async Task<int> SaveItemAsync(PlantPhoto item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         if (item.Id == 0)
@@ -123,8 +119,7 @@ public class PhotoRepository
     public async Task<int> DeleteItemAsync(PlantPhoto item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM PlantPhoto WHERE Id = @id";
@@ -135,8 +130,7 @@ public class PhotoRepository
     public async Task DeleteByPlantAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM PlantPhoto WHERE PlantId = @plantId";
@@ -147,8 +141,7 @@ public class PhotoRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS PlantPhoto";

@@ -6,6 +6,12 @@ namespace HydroGrow.Services;
 public class ModalErrorHandler : IErrorHandler
 {
 	SemaphoreSlim _semaphore = new(1, 1);
+	readonly ILogger<ModalErrorHandler> _logger;
+
+	public ModalErrorHandler(ILogger<ModalErrorHandler> logger)
+	{
+		_logger = logger;
+	}
 
 	/// <summary>
 	/// Handle error in UI.
@@ -13,6 +19,7 @@ public class ModalErrorHandler : IErrorHandler
 	/// <param name="ex">Exception.</param>
 	public void HandleError(Exception ex)
 	{
+		_logger.LogError(ex, "Handled error: {Message}", ex.Message);
 		DisplayAlertAsync(ex).FireAndForgetSafeAsync();
 	}
 

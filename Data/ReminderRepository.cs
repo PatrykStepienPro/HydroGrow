@@ -17,8 +17,7 @@ public class ReminderRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -51,8 +50,7 @@ public class ReminderRepository
     public async Task<List<Reminder>> ListAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Reminder WHERE IsEnabled = 1 ORDER BY NextDueAt ASC";
@@ -68,8 +66,7 @@ public class ReminderRepository
     public async Task<List<Reminder>> ListAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Reminder WHERE PlantId = @plantId ORDER BY NextDueAt ASC";
@@ -86,8 +83,7 @@ public class ReminderRepository
     public async Task<List<Reminder>> GetOverdueAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var now = DateTime.UtcNow.ToString("O");
         var cmd = connection.CreateCommand();
@@ -105,8 +101,7 @@ public class ReminderRepository
     public async Task<Reminder?> GetAsync(int id)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Reminder WHERE Id = @id";
@@ -122,8 +117,7 @@ public class ReminderRepository
     public async Task<int> SaveItemAsync(Reminder item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         if (item.Id == 0)
@@ -166,8 +160,7 @@ public class ReminderRepository
     public async Task<int> DeleteItemAsync(Reminder item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Reminder WHERE Id = @id";
@@ -178,8 +171,7 @@ public class ReminderRepository
     public async Task DeleteByPlantAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Reminder WHERE PlantId = @plantId";
@@ -190,8 +182,7 @@ public class ReminderRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS Reminder";

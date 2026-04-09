@@ -7,3 +7,4 @@ global using HydroGrow.PageModels;
 global using HydroGrow.Pages;
 global using HydroGrow.Services;
 global using HydroGrow.Utilities;
+global using Microsoft.Extensions.Logging;

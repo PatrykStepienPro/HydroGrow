@@ -17,8 +17,7 @@ public class MeasurementRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -53,8 +52,7 @@ public class MeasurementRepository
     public async Task<List<Measurement>> ListAsync(int plantId, int limit = 50)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Measurement WHERE PlantId = @plantId ORDER BY RecordedAt DESC LIMIT @limit";
@@ -72,8 +70,7 @@ public class MeasurementRepository
     public async Task<Measurement?> GetLatestAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Measurement WHERE PlantId = @plantId ORDER BY RecordedAt DESC LIMIT 1";
@@ -89,8 +86,7 @@ public class MeasurementRepository
     public async Task<Measurement?> GetAsync(int id)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Measurement WHERE Id = @id";
@@ -106,8 +102,7 @@ public class MeasurementRepository
     public async Task<int> SaveItemAsync(Measurement item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         if (item.Id == 0)
@@ -152,8 +147,7 @@ public class MeasurementRepository
     public async Task<int> DeleteItemAsync(Measurement item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Measurement WHERE Id = @id";
@@ -164,8 +158,7 @@ public class MeasurementRepository
     public async Task DeleteByPlantAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Measurement WHERE PlantId = @plantId";
@@ -176,8 +169,7 @@ public class MeasurementRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS Measurement";

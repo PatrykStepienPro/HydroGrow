@@ -26,6 +26,12 @@
                             TextColor="White"
                             CornerRadius="12"
                             HorizontalOptions="Fill" />
+                    <Button Text="📋  Eksportuj logi"
+                            Command="{Binding ExportLogsCommand}"
+                            BackgroundColor="{StaticResource Primary}"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HorizontalOptions="Fill" />
                 </VerticalStackLayout>
             </Border>
 

@@ -17,8 +17,7 @@ public class PlantRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -53,8 +52,7 @@ public class PlantRepository
     public async Task<List<Plant>> ListAsync(bool includeArchived = false)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = includeArchived
@@ -72,8 +70,7 @@ public class PlantRepository
     public async Task<Plant?> GetAsync(int id)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Plant WHERE Id = @id";
@@ -89,8 +86,7 @@ public class PlantRepository
     public async Task<Plant?> GetByGuidAsync(string guid)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Plant WHERE Guid = @guid";
@@ -106,8 +102,7 @@ public class PlantRepository
     public async Task<int> SaveItemAsync(Plant item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         item.UpdatedAt = DateTime.UtcNow.ToString("O");
 
@@ -157,8 +152,7 @@ public class PlantRepository
     public async Task<int> DeleteItemAsync(Plant item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Plant WHERE Id = @id";
@@ -169,8 +163,7 @@ public class PlantRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS Plant";

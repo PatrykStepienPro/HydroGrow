@@ -4,8 +4,18 @@ public static class Constants
 {
     public const string DatabaseFilename = "AppSQLite.db3";
 
-    public static string DatabasePath =>
-        $"Data Source={Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename)};Pragma journal_mode=WAL;Pragma busy_timeout=3000;";
+    private static string DatabasePath =>
+        $"Data Source={Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename)};";
+
+    public static async Task<Microsoft.Data.Sqlite.SqliteConnection> OpenConnectionAsync()
+    {
+        var connection = new Microsoft.Data.Sqlite.SqliteConnection(DatabasePath);
+        await connection.OpenAsync();
+        var cmd = connection.CreateCommand();
+        cmd.CommandText = "PRAGMA journal_mode=WAL; PRAGMA busy_timeout=3000;";
+        await cmd.ExecuteNonQueryAsync();
+        return connection;
+    }
 
     public static string PhotosDirectory =>
         Path.Combine(FileSystem.AppDataDirectory, "photos");

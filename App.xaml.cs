@@ -20,6 +20,9 @@ public partial class App : Application
 		TaskScheduler.UnobservedTaskException += (s, e) =>
 		{
 			System.Diagnostics.Debug.WriteLine($"[CRASH] UnobservedTaskException: {e.Exception}");
+			File.AppendAllText(
+				Path.Combine(FileSystem.AppDataDirectory, "crash.txt"),
+				$"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [UnobservedTask]{Environment.NewLine}{e.Exception}{Environment.NewLine}{Environment.NewLine}");
 			e.SetObserved();
 		};
 	}

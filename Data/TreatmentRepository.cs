@@ -17,8 +17,7 @@ public class TreatmentRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -49,8 +48,7 @@ public class TreatmentRepository
     public async Task<List<Treatment>> ListAsync(int plantId, int limit = 30)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Treatment WHERE PlantId = @plantId ORDER BY RecordedAt DESC LIMIT @limit";
@@ -68,8 +66,7 @@ public class TreatmentRepository
     public async Task<Treatment?> GetLatestAsync(int plantId, string treatmentType)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Treatment WHERE PlantId = @plantId AND TreatmentType = @type ORDER BY RecordedAt DESC LIMIT 1";
@@ -86,8 +83,7 @@ public class TreatmentRepository
     public async Task<Treatment?> GetAsync(int id)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM Treatment WHERE Id = @id";
@@ -103,8 +99,7 @@ public class TreatmentRepository
     public async Task<int> SaveItemAsync(Treatment item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         if (item.Id == 0)
@@ -144,8 +139,7 @@ public class TreatmentRepository
     public async Task<int> DeleteItemAsync(Treatment item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Treatment WHERE Id = @id";
@@ -156,8 +150,7 @@ public class TreatmentRepository
     public async Task DeleteByPlantAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM Treatment WHERE PlantId = @plantId";
@@ -168,8 +161,7 @@ public class TreatmentRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS Treatment";

@@ -17,8 +17,7 @@ public class MeasurementRangeRepository
     {
         if (_hasBeenInitialized) return;
 
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         try
         {
@@ -48,8 +47,7 @@ public class MeasurementRangeRepository
     public async Task<MeasurementRange?> GetAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "SELECT * FROM MeasurementRange WHERE PlantId = @plantId";
@@ -65,8 +63,7 @@ public class MeasurementRangeRepository
     public async Task<int> SaveItemAsync(MeasurementRange item)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = @"
@@ -105,8 +102,7 @@ public class MeasurementRangeRepository
     public async Task DeleteAsync(int plantId)
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DELETE FROM MeasurementRange WHERE PlantId = @plantId";
@@ -117,8 +113,7 @@ public class MeasurementRangeRepository
     public async Task DropTableAsync()
     {
         await Init();
-        await using var connection = new SqliteConnection(Constants.DatabasePath);
-        await connection.OpenAsync();
+        await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = "DROP TABLE IF EXISTS MeasurementRange";

@@ -1,5 +1,6 @@
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using Plugin.LocalNotification;
 using Syncfusion.Maui.Toolkit.Hosting;
 
@@ -49,6 +50,16 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
         builder.Services.AddLogging(configure => configure.AddDebug());
+
+        var serilogLogger = new LoggerConfiguration()
+            .MinimumLevel.Warning()
+            .WriteTo.File(
+                Path.Combine(FileSystem.AppDataDirectory, "logs", "hydrogrow-.log"),
+                rollingInterval: RollingInterval.Day,
+                retainedFileCountLimit: 7,
+                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}")
+            .CreateLogger();
+        builder.Logging.AddSerilog(serilogLogger, dispose: true);
 #endif
 
         // Repositories (Singleton — shared DB access, per-call connections)
