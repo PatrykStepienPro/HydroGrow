@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
              xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
              xmlns:models="clr-namespace:HydroGrow.Models"
              x:Class="HydroGrow.Pages.DashboardPage"
              x:DataType="pageModels:DashboardPageModel"
              Title="HydroGrow">
-
-    <ContentPage.Behaviors>
-        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding AppearingCommand}" />
-    </ContentPage.Behaviors>
 
     <pullToRefresh:SfPullToRefresh IsRefreshing="{Binding IsRefreshing}"
                                    RefreshCommand="{Binding RefreshCommand}">

@@ -29,24 +29,17 @@ public partial class RemindersPageModel : ObservableObject
         _plantRepository = plantRepository;
         _notificationService = notificationService;
         _errorHandler = errorHandler;
+        RefreshCommand = new AsyncRelayCommand(LoadAsync);
     }
 
-    [RelayCommand]
-    private Task Appearing() => LoadAsync();
-
-    [RelayCommand]
-    private Task Refresh() => LoadAsync();
-
-    partial void OnIsRefreshingChanged(bool value)
-    {
-        if (value)
-            LoadAsync().FireAndForgetSafeAsync(_errorHandler);
-    }
+    public Task InitializeAsync() => LoadAsync();
+    public IAsyncRelayCommand RefreshCommand { get; }
 
     private async Task LoadAsync()
     {
         if (IsBusy) return;
         IsBusy = true;
+        IsRefreshing = true;
 
         try
         {

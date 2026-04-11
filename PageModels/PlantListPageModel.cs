@@ -35,19 +35,14 @@ public partial class PlantListPageModel : ObservableObject
         _plantRepository = plantRepository;
         _errorHandler = errorHandler;
         _selectedMediumFilter = MediumFilters[0];
+        RefreshCommand = new AsyncRelayCommand(LoadAsync);
     }
 
-    [RelayCommand]
-    private Task Appearing() => LoadAsync();
+    // [RelayCommand]
+    // private async Task Appearing() => await LoadAsync();
 
-    [RelayCommand]
-    private Task Refresh() => LoadAsync();
-
-    partial void OnIsRefreshingChanged(bool value)
-    {
-        if (value)
-            LoadAsync().FireAndForgetSafeAsync(_errorHandler);
-    }
+    public Task InitializeAsync() => LoadAsync();
+    public IAsyncRelayCommand RefreshCommand { get; }
 
     partial void OnSearchTextChanged(string value) => ApplyFilter();
     partial void OnSelectedMediumFilterChanged(string value) => ApplyFilter();
@@ -56,7 +51,8 @@ public partial class PlantListPageModel : ObservableObject
     {
         if (IsBusy) return;
         IsBusy = true;
-
+        IsRefreshing = true;
+        
         try
         {
             _allPlants = await _plantRepository.ListAsync();

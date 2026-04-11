@@ -44,24 +44,17 @@ public partial class DashboardPageModel : ObservableObject
         _rangeRepository = rangeRepository;
         _seedDataService = seedDataService;
         _errorHandler = errorHandler;
+        RefreshCommand = new AsyncRelayCommand(() => LoadAsync(seedIfNeeded: false));
     }
 
-    [RelayCommand]
-    private Task Appearing() => LoadAsync(seedIfNeeded: true);
-
-    [RelayCommand]
-    private Task Refresh() => LoadAsync(seedIfNeeded: false);
-
-    partial void OnIsRefreshingChanged(bool value)
-    {
-        if (value)
-            LoadAsync(false).FireAndForgetSafeAsync(_errorHandler);
-    }
+    public Task InitializeAsync() => LoadAsync(seedIfNeeded: true);
+    public IAsyncRelayCommand RefreshCommand { get; }
 
     private async Task LoadAsync(bool seedIfNeeded)
     {
         if (IsBusy) return;
         IsBusy = true;
+        IsRefreshing = true;
 
         try
         {
