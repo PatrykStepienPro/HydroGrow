@@ -12,14 +12,21 @@
         <Border Grid.Column="0"
                 StrokeShape="RoundRectangle 12"
                 StrokeThickness="0"
+                Padding="0"
                 HeightRequest="56"
                 WidthRequest="56"
                 Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}"
                 VerticalOptions="Center">
-            <Label Text="🌿"
-                   FontSize="28"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center" />
+            <Grid>
+                <Image Source="{Binding ThumbnailPath}"
+                       Aspect="AspectFill"
+                       IsVisible="{Binding ThumbnailPath, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+                <Label Text="🌿"
+                       FontSize="28"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       IsVisible="{Binding ThumbnailPath, Converter={StaticResource IsNullOrEmptyConverter}}" />
+            </Grid>
         </Border>
 
         <!-- Plant info -->

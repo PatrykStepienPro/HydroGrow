@@ -56,13 +56,27 @@ public class PlantRepository
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = includeArchived
-            ? "SELECT * FROM Plant ORDER BY Name ASC"
-            : "SELECT * FROM Plant WHERE IsArchived = 0 ORDER BY Name ASC";
+            ? @"SELECT p.*, ph.FilePath AS ThumbnailFilePath
+                FROM Plant p
+                LEFT JOIN PlantPhoto ph ON ph.Id = p.ThumbnailPhotoId
+                ORDER BY p.Name ASC"
+            : @"SELECT p.*, ph.FilePath AS ThumbnailFilePath
+                FROM Plant p
+                LEFT JOIN PlantPhoto ph ON ph.Id = p.ThumbnailPhotoId
+                WHERE p.IsArchived = 0
+                ORDER BY p.Name ASC";
 
         var plants = new List<Plant>();
         await using var reader = await cmd.ExecuteReaderAsync();
         while (await reader.ReadAsync())
-            plants.Add(MapRow(reader));
+        {
+            var plant = MapRow(reader);
+            var col = reader.GetOrdinal("ThumbnailFilePath");
+            if (!reader.IsDBNull(col))
+                plant.ThumbnailPath = Path.Combine(
+                    FileSystem.AppDataDirectory, "photos", reader.GetString(col));
+            plants.Add(plant);
+        }
 
         return plants;
     }

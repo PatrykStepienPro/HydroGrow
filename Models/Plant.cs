@@ -11,6 +11,7 @@ public class Plant
     public string AcquiredDate { get; set; } = string.Empty;
     public string Notes { get; set; } = string.Empty;
     public int? ThumbnailPhotoId { get; set; }
+    public string? ThumbnailPath { get; set; }
     public string CreatedAt { get; set; } = DateTime.UtcNow.ToString("O");
     public string UpdatedAt { get; set; } = DateTime.UtcNow.ToString("O");
     public int IsArchived { get; set; } = 0;
