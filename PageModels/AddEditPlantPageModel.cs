@@ -125,12 +125,10 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
 
         await _photoRepository.SaveItemAsync(photo);
 
-        // If plant is already saved, update ThumbnailPhotoId
+        _plant.ThumbnailPhotoId = photo.Id;
+
         if (_plant.Id > 0)
-        {
-            _plant.ThumbnailPhotoId = photo.Id;
             await _plantRepository.SaveItemAsync(_plant);
-        }
 
         ThumbnailFullPath = _photoService.GetFullPath(fileName);
     }
@@ -155,6 +153,17 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
             _plant.MediumType = MediumTypeExtensions.FromDisplayString(SelectedMediumType).ToString();
 
             await _plantRepository.SaveItemAsync(_plant);
+
+            // For new plants: update photo's PlantId now that the plant has a real Id
+            if (_plant.ThumbnailPhotoId.HasValue)
+            {
+                var thumbnail = await _photoRepository.GetAsync(_plant.ThumbnailPhotoId.Value);
+                if (thumbnail != null && thumbnail.PlantId != _plant.Id)
+                {
+                    thumbnail.PlantId = _plant.Id;
+                    await _photoRepository.SaveItemAsync(thumbnail);
+                }
+            }
 
             await Shell.Current.GoToAsync($"..?refresh=true");
         }
