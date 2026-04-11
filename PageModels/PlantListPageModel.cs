@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace HydroGrow.PageModels;
 
+[QueryProperty(nameof(Refresh), "refresh")]
 public partial class PlantListPageModel : ObservableObject
 {
     private readonly PlantRepository _plantRepository;
@@ -38,8 +39,14 @@ public partial class PlantListPageModel : ObservableObject
         RefreshCommand = new AsyncRelayCommand(LoadAsync);
     }
 
-    // [RelayCommand]
-    // private async Task Appearing() => await LoadAsync();
+    public string? Refresh
+    {
+        set
+        {
+            if (value == "true")
+                InitializeAsync().FireAndForgetSafeAsync(_errorHandler);
+        }
+    }
 
     public Task InitializeAsync() => LoadAsync();
     public IAsyncRelayCommand RefreshCommand { get; }
