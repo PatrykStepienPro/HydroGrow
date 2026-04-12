@@ -134,6 +134,30 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
     }
 
     [RelayCommand]
+    private async Task CaptureThumbnail()
+    {
+        var fileName = await _photoService.CapturePhotoAsync();
+        if (fileName is null) return;
+
+        var photo = new PlantPhoto
+        {
+            PlantId = _plant.Id,
+            FilePath = fileName,
+            TakenAt = DateTime.UtcNow.ToString("O"),
+            SortOrder = 0
+        };
+
+        await _photoRepository.SaveItemAsync(photo);
+
+        _plant.ThumbnailPhotoId = photo.Id;
+
+        if (_plant.Id > 0)
+            await _plantRepository.SaveItemAsync(_plant);
+
+        ThumbnailFullPath = _photoService.GetFullPath(fileName);
+    }
+
+    [RelayCommand]
     private async Task Save()
     {
         if (string.IsNullOrWhiteSpace(Name))

@@ -26,6 +26,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Aparat jest używany do robienia zdjęć roślin.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Dostęp do galerii jest używany do wybierania zdjęć roślin.</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 </dict>

@@ -37,7 +37,18 @@ public class PlantRepository
                     UpdatedAt TEXT NOT NULL,
                     IsArchived INTEGER NOT NULL DEFAULT 0
                 );
-                CREATE INDEX IF NOT EXISTS idx_plant_guid ON Plant(Guid);";
+                CREATE INDEX IF NOT EXISTS idx_plant_guid ON Plant(Guid);
+
+                CREATE TABLE IF NOT EXISTS PlantPhoto (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Guid TEXT NOT NULL UNIQUE,
+                    PlantId INTEGER NOT NULL,
+                    FilePath TEXT NOT NULL,
+                    TakenAt TEXT NOT NULL,
+                    Caption TEXT NOT NULL DEFAULT '',
+                    SortOrder INTEGER NOT NULL DEFAULT 0
+                );
+                CREATE INDEX IF NOT EXISTS idx_photo_plant ON PlantPhoto(PlantId, SortOrder ASC);";
             await cmd.ExecuteNonQueryAsync();
         }
         catch (Exception e)

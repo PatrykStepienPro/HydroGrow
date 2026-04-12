@@ -24,6 +24,7 @@
                             StrokeThickness="0"
                             HeightRequest="80"
                             WidthRequest="80"
+                            Padding="0"
                             Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}">
                         <Grid>
                             <Label Text="🌿" FontSize="40"
@@ -36,11 +37,18 @@
                     </Border>
                     <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
                         <Label Text="Zdjęcie okładkowe" Style="{StaticResource Body1Strong}" />
-                        <Button Text="Wybierz zdjęcie"
-                                Command="{Binding PickThumbnailCommand}"
-                                BackgroundColor="Transparent"
-                                TextColor="{StaticResource Primary}"
-                                Padding="0" HorizontalOptions="Start" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Button Text="Galeria"
+                                    Command="{Binding PickThumbnailCommand}"
+                                    BackgroundColor="Transparent"
+                                    TextColor="{StaticResource Primary}"
+                                    Padding="0" HorizontalOptions="Start" />
+                            <Button Text="Aparat"
+                                    Command="{Binding CaptureThumbnailCommand}"
+                                    BackgroundColor="Transparent"
+                                    TextColor="{StaticResource Primary}"
+                                    Padding="0" HorizontalOptions="Start" />
+                        </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Grid>
             </Border>

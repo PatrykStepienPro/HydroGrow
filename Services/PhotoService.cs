@@ -33,24 +33,56 @@ public class PhotoService
         {
             if (!MediaPicker.Default.IsCaptureSupported)
             {
-                await Shell.Current.DisplayAlert("Niedostępne",
-                    "Aparat nie jest dostępny na tym urządzeniu.", "OK");
+                await Shell.Current.DisplayAlert(
+                    "Niedostępne",
+                    "Aparat nie jest dostępny na tym urządzeniu.",
+                    "OK");
                 return null;
             }
 
+            var cameraStatus = await Permissions.RequestAsync<Permissions.Camera>();
+            if (cameraStatus != PermissionStatus.Granted)
+            {
+                await Shell.Current.DisplayAlert(
+                    "Brak uprawnień",
+                    "Przyznaj uprawnienie do aparatu w ustawieniach systemu.",
+                    "OK");
+                return null;
+            }
+
+            if (!OperatingSystem.IsAndroidVersionAtLeast(33))
+            {
+                var storageWriteStatus = await Permissions.RequestAsync<Permissions.StorageWrite>();
+                if (storageWriteStatus != PermissionStatus.Granted)
+                {
+                    await Shell.Current.DisplayAlert(
+                        "Brak uprawnień",
+                        "Przyznaj uprawnienie do zapisu w ustawieniach systemu.",
+                        "OK");
+                    return null;
+                }
+            }
+
             var result = await MediaPicker.Default.CapturePhotoAsync();
-            if (result is null) return null;
+            if (result is null)
+                return null;
 
             return await CopyToAppStorageAsync(result);
         }
-        catch (PermissionException)
+        catch (PermissionException ex)
         {
-            await Shell.Current.DisplayAlert("Brak uprawnień",
-                "Przyznaj uprawnienie do aparatu w ustawieniach systemu.", "OK");
+            await Shell.Current.DisplayAlert(
+                "Błąd uprawnień",
+                $"{ex.GetType().Name}: {ex.Message}",
+                "OK");
             return null;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            await Shell.Current.DisplayAlert(
+                "Błąd",
+                $"{ex.GetType().Name}: {ex.Message}",
+                "OK");
             return null;
         }
     }
