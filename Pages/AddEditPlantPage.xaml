@@ -16,40 +16,47 @@
         <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="12">
 
             <!-- Thumbnail picker -->
-            <Border Style="{StaticResource CardStyle}">
-                <Grid ColumnDefinitions="80,*" ColumnSpacing="16">
-                    <!-- Photo preview -->
-                    <Border Grid.Column="0"
-                            StrokeShape="RoundRectangle 12"
-                            StrokeThickness="0"
-                            HeightRequest="80"
-                            WidthRequest="80"
-                            Padding="0"
-                            Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}">
-                        <Grid>
-                            <Label Text="🌿" FontSize="40"
-                                   HorizontalOptions="Center" VerticalOptions="Center"
-                                   IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNullOrEmptyConverter}}" />
-                            <Image Source="{Binding ThumbnailFullPath}"
-                                   Aspect="AspectFill"
-                                   IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
-                        </Grid>
-                    </Border>
-                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
-                        <Label Text="Zdjęcie okładkowe" Style="{StaticResource Body1Strong}" />
-                        <HorizontalStackLayout Spacing="8">
-                            <Button Text="Galeria"
-                                    Command="{Binding PickThumbnailCommand}"
-                                    BackgroundColor="Transparent"
-                                    TextColor="{StaticResource Primary}"
-                                    Padding="0" HorizontalOptions="Start" />
-                            <Button Text="Aparat"
-                                    Command="{Binding CaptureThumbnailCommand}"
-                                    BackgroundColor="Transparent"
-                                    TextColor="{StaticResource Primary}"
-                                    Padding="0" HorizontalOptions="Start" />
-                        </HorizontalStackLayout>
+            <Border StrokeShape="RoundRectangle 16"
+                    Stroke="{AppThemeBinding Light=#66BB6A, Dark=#4A7A4A}"
+                    StrokeThickness="1.5"
+                    HeightRequest="160"
+                    Padding="0"
+                    Background="{AppThemeBinding Light=#C8E6C9, Dark=#1E3520}">
+                <Grid>
+                    <!-- Placeholder: no photo -->
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8"
+                                         IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNullOrEmptyConverter}}">
+                        <Image Source="{StaticResource IconImage}"
+                               HeightRequest="36" WidthRequest="36"
+                               HorizontalOptions="Center"
+                               Opacity="0.7" />
+                        <Label Text="Dotknij aby dodać zdjęcie"
+                               Style="{StaticResource Caption1}"
+                               TextColor="{AppThemeBinding Light=#2E7D32, Dark=#A5D6A7}"
+                               HorizontalOptions="Center" />
                     </VerticalStackLayout>
+
+                    <!-- Photo -->
+                    <Image Source="{Binding ThumbnailFullPath}"
+                           Aspect="AspectFill"
+                           IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNotNullOrEmptyConverter}}" />
+
+                    <!-- Edit overlay (bottom-right, visible when photo set) -->
+                    <Border HorizontalOptions="End" VerticalOptions="End"
+                            Margin="10"
+                            IsVisible="{Binding ThumbnailFullPath, Converter={StaticResource IsNotNullOrEmptyConverter}}"
+                            StrokeShape="RoundRectangle 20"
+                            StrokeThickness="0"
+                            BackgroundColor="#E6FFFFFF"
+                            Padding="8">
+                        <Image Source="{StaticResource IconPhoto}"
+                               HeightRequest="20" WidthRequest="20" />
+                    </Border>
+
+                    <!-- Tap target -->
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectPhotoCommand}" />
+                    </Grid.GestureRecognizers>
                 </Grid>
             </Border>
 

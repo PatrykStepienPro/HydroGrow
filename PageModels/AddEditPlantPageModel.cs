@@ -110,33 +110,19 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
     }
 
     [RelayCommand]
-    private async Task PickThumbnail()
+    private async Task SelectPhoto()
     {
-        var fileName = await _photoService.PickPhotoAsync();
-        if (fileName is null) return;
+        var action = await Shell.Current.DisplayActionSheetAsync(
+            "Zdjęcie okładkowe", "Anuluj", null, "Aparat", "Galeria");
 
-        var photo = new PlantPhoto
-        {
-            PlantId = _plant.Id,
-            FilePath = fileName,
-            TakenAt = DateTime.UtcNow.ToString("O"),
-            SortOrder = 0
-        };
-
-        await _photoRepository.SaveItemAsync(photo);
-
-        _plant.ThumbnailPhotoId = photo.Id;
-
-        if (_plant.Id > 0)
-            await _plantRepository.SaveItemAsync(_plant);
-
-        ThumbnailFullPath = _photoService.GetFullPath(fileName);
+        if (action == "Aparat")
+            await SavePhoto(await _photoService.CapturePhotoAsync());
+        else if (action == "Galeria")
+            await SavePhoto(await _photoService.PickPhotoAsync());
     }
 
-    [RelayCommand]
-    private async Task CaptureThumbnail()
+    private async Task SavePhoto(string? fileName)
     {
-        var fileName = await _photoService.CapturePhotoAsync();
         if (fileName is null) return;
 
         var photo = new PlantPhoto
