@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:models="clr-namespace:HydroGrow.Models"
+             x:Class="HydroGrow.Pages.Controls.SpeciesAutocompleteView"
+             x:Name="Root">
+    <VerticalStackLayout Spacing="0">
+
+        <sf:SfTextInputLayout Hint="Gatunek (opcjonalnie) x">
+            <Entry x:Name="SpeciesEntry"
+                   Text="{Binding Text, Source={x:Reference Root}, Mode=TwoWay}"
+                   ReturnType="Next"
+                   ClearButtonVisibility="WhileEditing" />
+        </sf:SfTextInputLayout>
+
+        <Border IsVisible="{Binding SuggestionsVisible, Source={x:Reference Root}}"
+                StrokeShape="RoundRectangle 12"
+                StrokeThickness="1"
+                Stroke="{AppThemeBinding Light={StaticResource HydroGreen}, Dark={StaticResource HydroGreenDark}}"
+                Background="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"
+                Margin="0,-4,0,4"
+                Padding="0">
+            <CollectionView x:Name="SuggestionList"
+                            ItemsSource="{Binding Suggestions, Source={x:Reference Root}}"
+                            SelectionMode="Single"
+                            SelectionChanged="OnSuggestionSelected"
+                            MaximumHeightRequest="300">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PlantSpeciesEntry">
+                        <Grid Padding="16,10" ColumnDefinitions="*,Auto">
+                            <Label Grid.Column="0"
+                                   Text="{Binding BotanicalName}"
+                                   FontAttributes="Italic"
+                                   LineBreakMode="TailTruncation" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding CommonName}"
+                                   FontSize="12"
+                                   Margin="8,0,0,0"
+                                   VerticalOptions="Center"
+                                   LineBreakMode="TailTruncation" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Border>
+
+    </VerticalStackLayout>
+</ContentView>

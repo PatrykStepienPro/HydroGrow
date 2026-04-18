@@ -19,6 +19,7 @@ using HydroGrow.Models.Export;
 [JsonSerializable(typeof(List<Plant>))]
 [JsonSerializable(typeof(List<PlantExportDto>))]
 [JsonSerializable(typeof(SeedData))]
+[JsonSerializable(typeof(List<PlantSpeciesEntry>))]
 public partial class JsonContext : JsonSerializerContext
 {
 }

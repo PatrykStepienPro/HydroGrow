@@ -77,6 +77,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ExportService>();
         builder.Services.AddSingleton<ImportService>();
         builder.Services.AddSingleton<NotificationService>();
+        builder.Services.AddSingleton<PlantSpeciesService>();
 
         // Tab page models (Singleton — persists state across tab switches)
         builder.Services.AddSingleton<DashboardPageModel>();

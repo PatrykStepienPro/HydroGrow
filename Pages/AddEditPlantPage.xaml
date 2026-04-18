@@ -4,6 +4,7 @@
              xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             xmlns:controls="clr-namespace:HydroGrow.Pages.Controls"
              x:Class="HydroGrow.Pages.AddEditPlantPage"
              x:DataType="pageModels:AddEditPlantPageModel"
              Title="{Binding PageTitle}">
@@ -66,9 +67,7 @@
             </sf:SfTextInputLayout>
 
             <!-- Species -->
-            <sf:SfTextInputLayout Hint="Gatunek (opcjonalnie)">
-                <Entry Text="{Binding Species}" ReturnType="Next" />
-            </sf:SfTextInputLayout>
+            <controls:SpeciesAutocompleteView Text="{Binding Species, Mode=TwoWay}" />
 
             <!-- Location -->
             <sf:SfTextInputLayout Hint="Lokalizacja (opcjonalnie)">
