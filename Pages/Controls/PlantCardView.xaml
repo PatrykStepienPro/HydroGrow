@@ -15,7 +15,7 @@
                 Padding="0"
                 HeightRequest="56"
                 WidthRequest="56"
-                Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}"
+                Background="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}"
                 VerticalOptions="Center">
             <Grid>
                 <Image Source="{Binding ThumbnailPath}"

@@ -17,11 +17,11 @@
 
             <!-- Thumbnail picker -->
             <Border StrokeShape="RoundRectangle 16"
-                    Stroke="{AppThemeBinding Light=#66BB6A, Dark=#4A7A4A}"
+                    Stroke="{AppThemeBinding Light={StaticResource HydroGreen}, Dark={StaticResource HydroGreenDark}}"
                     StrokeThickness="1.5"
                     HeightRequest="160"
                     Padding="0"
-                    Background="{AppThemeBinding Light=#C8E6C9, Dark=#1E3520}">
+                    Background="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}">
                 <Grid>
                     <!-- Placeholder: no photo -->
                     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8"
@@ -32,7 +32,7 @@
                                Opacity="0.7" />
                         <Label Text="Dotknij aby dodać zdjęcie"
                                Style="{StaticResource Caption1}"
-                               TextColor="{AppThemeBinding Light=#2E7D32, Dark=#A5D6A7}"
+                               TextColor="{AppThemeBinding Light={StaticResource HydroGreenDark}, Dark={StaticResource SecondaryDarkText}}"
                                HorizontalOptions="Center" />
                     </VerticalStackLayout>
 

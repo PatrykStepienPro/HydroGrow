@@ -176,7 +176,7 @@
 
     <Style x:Key="AlertCardStyle" TargetType="Border">
         <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
-        <Setter Property="Background" Value="{AppThemeBinding Light=#FFF3F0, Dark=#3D1A18}"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light=#FDECEA, Dark=#3B1212}"/>
         <Setter Property="Stroke" Value="{StaticResource HydroRed}"/>
         <Setter Property="StrokeThickness" Value="1"/>
         <Setter Property="Padding" Value="10"/>
@@ -185,7 +185,7 @@
 
     <Style x:Key="WarningCardStyle" TargetType="Border">
         <Setter Property="StrokeShape" Value="RoundRectangle 12"/>
-        <Setter Property="Background" Value="{AppThemeBinding Light=#FFF8E7, Dark=#2D2200}"/>
+        <Setter Property="Background" Value="{AppThemeBinding Light=#FFF8E1, Dark=#2D1E00}"/>
         <Setter Property="Stroke" Value="{StaticResource HydroAmber}"/>
         <Setter Property="StrokeThickness" Value="1"/>
         <Setter Property="Padding" Value="10"/>

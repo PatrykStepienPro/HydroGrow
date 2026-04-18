@@ -19,7 +19,7 @@
                                     StrokeThickness="0"
                                     WidthRequest="80"
                                     HeightRequest="80"
-                                    Background="{AppThemeBinding Light=#E8F5E9, Dark=#1E3A1E}">
+                                    Background="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}">
                                 <Image Source="{Binding FilePath, Converter={StaticResource PhotoPathConverter}}"
                                        Aspect="AspectFill"
                                        WidthRequest="80"
