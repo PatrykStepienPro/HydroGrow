@@ -1,383 +1,5314 @@
 [
-  { "botanicalName": "Lactuca sativa", "commonName": "Sałata" },
-  { "botanicalName": "Lactuca sativa var. crispa", "commonName": "Sałata kędzierzawa" },
-  { "botanicalName": "Lactuca sativa var. longifolia", "commonName": "Sałata rzymska (Romaine)" },
-  { "botanicalName": "Lactuca sativa var. capitata", "commonName": "Sałata głowiasta" },
-  { "botanicalName": "Spinacia oleracea", "commonName": "Szpinak" },
-  { "botanicalName": "Beta vulgaris var. cicla", "commonName": "Boćwina / mangold" },
-  { "botanicalName": "Brassica oleracea var. acephala", "commonName": "Jarmuż" },
-  { "botanicalName": "Brassica oleracea var. italica", "commonName": "Brokuł" },
-  { "botanicalName": "Brassica oleracea var. capitata", "commonName": "Kapusta głowiasta" },
-  { "botanicalName": "Brassica oleracea var. botrytis", "commonName": "Kalafior" },
-  { "botanicalName": "Brassica rapa subsp. chinensis", "commonName": "Pak choi" },
-  { "botanicalName": "Brassica rapa subsp. pekinensis", "commonName": "Kapusta pekińska" },
-  { "botanicalName": "Eruca vesicaria ssp. sativa", "commonName": "Rukola" },
-  { "botanicalName": "Nasturtium officinale", "commonName": "Rzeżucha wodna" },
-  { "botanicalName": "Lepidium sativum", "commonName": "Rzeżucha" },
-  { "botanicalName": "Apium graveolens", "commonName": "Seler naciowy" },
-  { "botanicalName": "Apium graveolens var. rapaceum", "commonName": "Seler korzeniowy" },
-  { "botanicalName": "Cichorium endivia", "commonName": "Endywia" },
-  { "botanicalName": "Cichorium intybus", "commonName": "Cykoria" },
-  { "botanicalName": "Ocimum basilicum", "commonName": "Bazylia" },
-  { "botanicalName": "Ocimum basilicum 'Genovese'", "commonName": "Bazylia genueńska" },
-  { "botanicalName": "Ocimum basilicum var. purpurascens", "commonName": "Bazylia fioletowa" },
-  { "botanicalName": "Ocimum x citriodorum", "commonName": "Bazylia cytrynowa" },
-  { "botanicalName": "Ocimum tenuiflorum", "commonName": "Bazylia tajska (Holy Basil)" },
-  { "botanicalName": "Mentha x piperita", "commonName": "Mięta pieprzowa" },
-  { "botanicalName": "Mentha spicata", "commonName": "Mięta zielona" },
-  { "botanicalName": "Mentha suaveolens", "commonName": "Mięta jabłkowa" },
-  { "botanicalName": "Mentha aquatica", "commonName": "Mięta nadwodna" },
-  { "botanicalName": "Petroselinum crispum", "commonName": "Pietruszka naciowa" },
-  { "botanicalName": "Petroselinum crispum var. tuberosum", "commonName": "Pietruszka korzeniowa" },
-  { "botanicalName": "Coriandrum sativum", "commonName": "Kolendra" },
-  { "botanicalName": "Anethum graveolens", "commonName": "Koper" },
-  { "botanicalName": "Origanum vulgare", "commonName": "Oregano" },
-  { "botanicalName": "Origanum majorana", "commonName": "Majeranek" },
-  { "botanicalName": "Thymus vulgaris", "commonName": "Tymianek" },
-  { "botanicalName": "Rosmarinus officinalis", "commonName": "Rozmaryn" },
-  { "botanicalName": "Salvia officinalis", "commonName": "Szałwia" },
-  { "botanicalName": "Melissa officinalis", "commonName": "Melisa" },
-  { "botanicalName": "Foeniculum vulgare", "commonName": "Fenkuł / koper włoski" },
-  { "botanicalName": "Lavandula angustifolia", "commonName": "Lawenda wąskolistna" },
-  { "botanicalName": "Allium schoenoprasum", "commonName": "Szczypiorek" },
-  { "botanicalName": "Allium fistulosum", "commonName": "Dymka / cebula dęta" },
-  { "botanicalName": "Stevia rebaudiana", "commonName": "Stewia" },
-  { "botanicalName": "Laurus nobilis", "commonName": "Wawrzyn szlachetny / liść laurowy" },
-  { "botanicalName": "Cymbopogon citratus", "commonName": "Trawa cytrynowa (lemongrass)" },
-  { "botanicalName": "Zingiber officinale", "commonName": "Imbir" },
-  { "botanicalName": "Curcuma longa", "commonName": "Kurkuma" },
-  { "botanicalName": "Artemisia dracunculus", "commonName": "Estragon" },
-  { "botanicalName": "Satureja hortensis", "commonName": "Cząber ogrodowy" },
-  { "botanicalName": "Hyssopus officinalis", "commonName": "Hyzop" },
-  { "botanicalName": "Solanum lycopersicum", "commonName": "Pomidor" },
-  { "botanicalName": "Solanum lycopersicum var. cerasiforme", "commonName": "Pomidor koktajlowy" },
-  { "botanicalName": "Lycopersicon pimpinellifolium", "commonName": "Pomidor porzeczkowy" },
-  { "botanicalName": "Capsicum annuum", "commonName": "Papryka słodka" },
-  { "botanicalName": "Capsicum annuum 'Cayenne'", "commonName": "Papryczka cayenne" },
-  { "botanicalName": "Capsicum chinense", "commonName": "Habanero / naga" },
-  { "botanicalName": "Capsicum frutescens", "commonName": "Tabasco" },
-  { "botanicalName": "Capsicum pubescens", "commonName": "Rocoto" },
-  { "botanicalName": "Cucumis sativus", "commonName": "Ogórek" },
-  { "botanicalName": "Cucumis melo", "commonName": "Melon" },
-  { "botanicalName": "Citrullus lanatus", "commonName": "Arbuz" },
-  { "botanicalName": "Cucurbita pepo", "commonName": "Cukinia / dynia zwyczajna" },
-  { "botanicalName": "Cucurbita maxima", "commonName": "Dynia olbrzymia" },
-  { "botanicalName": "Solanum melongena", "commonName": "Bakłażan" },
-  { "botanicalName": "Phaseolus vulgaris", "commonName": "Fasola szparagowa" },
-  { "botanicalName": "Fragaria x ananassa", "commonName": "Truskawka" },
-  { "botanicalName": "Physalis peruviana", "commonName": "Miechunka peruwiańska" },
-  { "botanicalName": "Raphanus sativus", "commonName": "Rzodkiewka" },
-  { "botanicalName": "Allium cepa", "commonName": "Cebula" },
-  { "botanicalName": "Allium sativum", "commonName": "Czosnek" },
-  { "botanicalName": "Daucus carota", "commonName": "Marchew" },
-  { "botanicalName": "Beta vulgaris subsp. vulgaris", "commonName": "Burak ćwikłowy" },
-  { "botanicalName": "Helianthus annuus", "commonName": "Słonecznik (microgreens)" },
-  { "botanicalName": "Pisum sativum", "commonName": "Groch (microgreens)" },
-  { "botanicalName": "Vigna radiata", "commonName": "Fasola mung (kiełki)" },
-  { "botanicalName": "Brassica napus", "commonName": "Rzepak (microgreens)" },
-  { "botanicalName": "Sinapis alba", "commonName": "Gorczyca biała (microgreens)" },
-  { "botanicalName": "Monstera deliciosa", "commonName": "Monstera dziurawa" },
-  { "botanicalName": "Monstera deliciosa 'Albo Variegata'", "commonName": "Monstera biało-pstra" },
-  { "botanicalName": "Monstera deliciosa 'Thai Constellation'", "commonName": "Monstera Thai Constellation" },
-  { "botanicalName": "Monstera deliciosa 'Aurea'", "commonName": "Monstera żółto-pstra" },
-  { "botanicalName": "Monstera adansonii", "commonName": "Monstera pnąca" },
-  { "botanicalName": "Monstera adansonii 'Variegata'", "commonName": "Monstera adansonii pstra" },
-  { "botanicalName": "Monstera obliqua", "commonName": "Monstera obliqua" },
-  { "botanicalName": "Monstera pinnatipartita", "commonName": "Monstera pinnatipartita" },
-  { "botanicalName": "Monstera dubia", "commonName": "Monstera dubia" },
-  { "botanicalName": "Monstera siltepecana", "commonName": "Monstera siltepecana" },
-  { "botanicalName": "Monstera standleyana", "commonName": "Monstera standleyana" },
-  { "botanicalName": "Monstera standleyana 'Albo Variegata'", "commonName": "Monstera standleyana pstra" },
-  { "botanicalName": "Monstera karstenianum", "commonName": "Monstera Peru" },
-  { "botanicalName": "Monstera lechleriana", "commonName": "Monstera lechleriana" },
-  { "botanicalName": "Monstera subpinnata", "commonName": "Monstera subpinnata" },
-  { "botanicalName": "Monstera esqueleto", "commonName": "Monstera esqueleto" },
-  { "botanicalName": "Monstera epipremnoides", "commonName": "Monstera epipremnoides" },
-  { "botanicalName": "Rhaphidophora tetrasperma", "commonName": "Mini Monstera / Raphidophora" },
-  { "botanicalName": "Rhaphidophora decursiva", "commonName": "Rhaphidophora decursiva" },
-  { "botanicalName": "Rhaphidophora hayi", "commonName": "Rhaphidophora hayi" },
-  { "botanicalName": "Philodendron hederaceum", "commonName": "Filodendron sercowaty" },
-  { "botanicalName": "Philodendron hederaceum 'Brasil'", "commonName": "Filodendron Brasil" },
-  { "botanicalName": "Philodendron hederaceum 'Micans'", "commonName": "Filodendron aksamitny" },
-  { "botanicalName": "Philodendron hederaceum 'Lemon Lime'", "commonName": "Filodendron Lemon Lime" },
-  { "botanicalName": "Philodendron hederaceum 'Rio'", "commonName": "Filodendron Rio" },
-  { "botanicalName": "Philodendron bipinnatifidum", "commonName": "Filodendron drzewiasty (selloum)" },
-  { "botanicalName": "Philodendron xanadu", "commonName": "Filodendron Xanadu" },
-  { "botanicalName": "Philodendron gloriosum", "commonName": "Philodendron gloriosum" },
-  { "botanicalName": "Philodendron melanochrysum", "commonName": "Philodendron melanochrysum" },
-  { "botanicalName": "Philodendron verrucosum", "commonName": "Philodendron verrucosum" },
-  { "botanicalName": "Philodendron erubescens 'Pink Princess'", "commonName": "Philodendron Pink Princess" },
-  { "botanicalName": "Philodendron erubescens 'White Wizard'", "commonName": "Philodendron White Wizard" },
-  { "botanicalName": "Philodendron erubescens 'White Knight'", "commonName": "Philodendron White Knight" },
-  { "botanicalName": "Philodendron erubescens 'White Princess'", "commonName": "Philodendron White Princess" },
-  { "botanicalName": "Philodendron erubescens 'Red Emerald'", "commonName": "Philodendron Red Emerald" },
-  { "botanicalName": "Philodendron billietiae", "commonName": "Philodendron billietiae" },
-  { "botanicalName": "Philodendron squamiferum", "commonName": "Philodendron squamiferum" },
-  { "botanicalName": "Philodendron sodiroi", "commonName": "Philodendron sodiroi" },
-  { "botanicalName": "Philodendron brandtianum", "commonName": "Philodendron brandtianum" },
-  { "botanicalName": "Philodendron hastatum 'Silver Sword'", "commonName": "Philodendron Silver Sword" },
-  { "botanicalName": "Philodendron tortum", "commonName": "Philodendron tortum" },
-  { "botanicalName": "Philodendron patriciae", "commonName": "Philodendron patriciae" },
-  { "botanicalName": "Philodendron mamei", "commonName": "Philodendron mamei" },
-  { "botanicalName": "Philodendron pastazanum", "commonName": "Philodendron pastazanum" },
-  { "botanicalName": "Philodendron rugosum", "commonName": "Philodendron rugosum" },
-  { "botanicalName": "Philodendron atabapoense", "commonName": "Philodendron atabapoense" },
-  { "botanicalName": "Philodendron 'Birkin'", "commonName": "Philodendron Birkin" },
-  { "botanicalName": "Philodendron 'Prince of Orange'", "commonName": "Philodendron Prince of Orange" },
-  { "botanicalName": "Philodendron 'Moonlight'", "commonName": "Philodendron Moonlight" },
-  { "botanicalName": "Philodendron 'Dark Lord'", "commonName": "Philodendron Dark Lord" },
-  { "botanicalName": "Philodendron 'Black Cardinal'", "commonName": "Philodendron Black Cardinal" },
-  { "botanicalName": "Philodendron 'Rojo Congo'", "commonName": "Philodendron Rojo Congo" },
-  { "botanicalName": "Philodendron 'Imperial Red'", "commonName": "Philodendron Imperial Red" },
-  { "botanicalName": "Philodendron 'Imperial Green'", "commonName": "Philodendron Imperial Green" },
-  { "botanicalName": "Philodendron florida ghost", "commonName": "Philodendron Florida Ghost" },
-  { "botanicalName": "Epipremnum aureum", "commonName": "Pothos zloty / scindapsus" },
-  { "botanicalName": "Epipremnum aureum 'Marble Queen'", "commonName": "Pothos Marble Queen" },
-  { "botanicalName": "Epipremnum aureum 'Neon'", "commonName": "Pothos Neon" },
-  { "botanicalName": "Epipremnum aureum 'N'Joy'", "commonName": "Pothos N Joy" },
-  { "botanicalName": "Epipremnum aureum 'Pearls and Jade'", "commonName": "Pothos Pearls and Jade" },
-  { "botanicalName": "Epipremnum aureum 'Global Green'", "commonName": "Pothos Global Green" },
-  { "botanicalName": "Epipremnum aureum 'Baltic Blue'", "commonName": "Pothos Baltic Blue" },
-  { "botanicalName": "Epipremnum aureum 'Manjula'", "commonName": "Pothos Manjula" },
-  { "botanicalName": "Epipremnum aureum 'Snow Queen'", "commonName": "Pothos Snow Queen" },
-  { "botanicalName": "Epipremnum pinnatum", "commonName": "Epipremnum pinnatum" },
-  { "botanicalName": "Epipremnum pinnatum 'Cebu Blue'", "commonName": "Pothos Cebu Blue" },
-  { "botanicalName": "Epipremnum pinnatum 'Albo Variegata'", "commonName": "Epipremnum pinnatum pstry" },
-  { "botanicalName": "Scindapsus pictus 'Argyraeus'", "commonName": "Scindapsus srebrny Argyraeus" },
-  { "botanicalName": "Scindapsus pictus 'Exotica'", "commonName": "Scindapsus Exotica" },
-  { "botanicalName": "Scindapsus treubii 'Moonlight'", "commonName": "Scindapsus Moonlight" },
-  { "botanicalName": "Scindapsus treubii 'Dark Form'", "commonName": "Scindapsus Dark Form" },
-  { "botanicalName": "Syngonium podophyllum", "commonName": "Syngonium" },
-  { "botanicalName": "Syngonium podophyllum 'Albo Variegatum'", "commonName": "Syngonium Albo" },
-  { "botanicalName": "Syngonium podophyllum 'Pink Allusion'", "commonName": "Syngonium Pink Allusion" },
-  { "botanicalName": "Syngonium podophyllum 'Neon Robusta'", "commonName": "Syngonium Neon Robusta" },
-  { "botanicalName": "Syngonium podophyllum 'White Butterfly'", "commonName": "Syngonium White Butterfly" },
-  { "botanicalName": "Syngonium podophyllum 'Milk Confetti'", "commonName": "Syngonium Milk Confetti" },
-  { "botanicalName": "Syngonium podophyllum 'Strawberry Ice'", "commonName": "Syngonium Strawberry Ice" },
-  { "botanicalName": "Syngonium wendlandii", "commonName": "Syngonium wendlandii" },
-  { "botanicalName": "Syngonium erythrophyllum", "commonName": "Syngonium erythrophyllum" },
-  { "botanicalName": "Alocasia amazonica 'Polly'", "commonName": "Alocazja Polly" },
-  { "botanicalName": "Alocasia macrorrhiza", "commonName": "Alocazja olbrzymia" },
-  { "botanicalName": "Alocasia macrorrhiza 'Variegata'", "commonName": "Alocazja olbrzymia pstra" },
-  { "botanicalName": "Alocasia odora", "commonName": "Alocazja woniejaca" },
-  { "botanicalName": "Alocasia zebrina", "commonName": "Alocazja zebrowa" },
-  { "botanicalName": "Alocasia zebrina 'Reticulata'", "commonName": "Alocazja zebrowa Reticulata" },
-  { "botanicalName": "Alocasia cuprea", "commonName": "Alocazja miedziana" },
-  { "botanicalName": "Alocasia baginda 'Dragon Scale'", "commonName": "Alocazja Dragon Scale" },
-  { "botanicalName": "Alocasia baginda 'Silver Dragon'", "commonName": "Alocazja Silver Dragon" },
-  { "botanicalName": "Alocasia micholitziana 'Frydek'", "commonName": "Alocazja Frydek (aksamitna)" },
-  { "botanicalName": "Alocasia reginula 'Black Velvet'", "commonName": "Alocazja Black Velvet" },
-  { "botanicalName": "Alocasia sarian", "commonName": "Alocazja sarian" },
-  { "botanicalName": "Alocasia sanderiana", "commonName": "Alocazja sanderiana" },
-  { "botanicalName": "Alocasia longiloba", "commonName": "Alocazja longiloba" },
-  { "botanicalName": "Alocasia cucullata", "commonName": "Alocazja kapturkowata" },
-  { "botanicalName": "Alocasia wentii", "commonName": "Alocazja wentii" },
-  { "botanicalName": "Alocasia lauterbachiana", "commonName": "Alocazja lauterbachiana" },
-  { "botanicalName": "Alocasia princeps", "commonName": "Alocazja princeps" },
-  { "botanicalName": "Alocasia clypeolata", "commonName": "Alocazja clypeolata" },
-  { "botanicalName": "Alocasia plumbea 'Nigra'", "commonName": "Alocazja czarna" },
-  { "botanicalName": "Alocasia portei", "commonName": "Alocazja portei" },
-  { "botanicalName": "Alocasia reversa", "commonName": "Alocazja reversa" },
-  { "botanicalName": "Alocasia 'Regal Shields'", "commonName": "Alocazja Regal Shields" },
-  { "botanicalName": "Alocasia 'Stingray'", "commonName": "Alocazja Stingray" },
-  { "botanicalName": "Alocasia 'Pink Dragon'", "commonName": "Alocazja Pink Dragon" },
-  { "botanicalName": "Alocasia 'Calidora'", "commonName": "Alocazja Calidora" },
-  { "botanicalName": "Alocasia 'Ivory Coast'", "commonName": "Alocazja Ivory Coast" },
-  { "botanicalName": "Alocasia nebula 'Imperialis'", "commonName": "Alocazja Imperialis" },
-  { "botanicalName": "Anthurium andraeanum", "commonName": "Anturium (kwieciste)" },
-  { "botanicalName": "Anthurium clarinervium", "commonName": "Anthurium clarinervium" },
-  { "botanicalName": "Anthurium crystallinum", "commonName": "Anthurium crystallinum" },
-  { "botanicalName": "Anthurium magnificum", "commonName": "Anthurium magnificum" },
-  { "botanicalName": "Anthurium veitchii", "commonName": "Anthurium veitchii (King)" },
-  { "botanicalName": "Anthurium warocqueanum", "commonName": "Anthurium warocqueanum (Queen)" },
-  { "botanicalName": "Anthurium regale", "commonName": "Anthurium regale" },
-  { "botanicalName": "Anthurium hookeri", "commonName": "Anthurium hookeri" },
-  { "botanicalName": "Anthurium forgetii", "commonName": "Anthurium forgetii" },
-  { "botanicalName": "Anthurium papillilaminum", "commonName": "Anthurium papillilaminum" },
-  { "botanicalName": "Anthurium villenaorum", "commonName": "Anthurium villenaorum" },
-  { "botanicalName": "Anthurium luxurians", "commonName": "Anthurium luxurians" },
-  { "botanicalName": "Anthurium 'Ace of Spades'", "commonName": "Anthurium Ace of Spades" },
-  { "botanicalName": "Anthurium pedatoradiatum", "commonName": "Anthurium pedatoradiatum" },
-  { "botanicalName": "Hoya carnosa", "commonName": "Hoya woskowa" },
-  { "botanicalName": "Hoya carnosa 'Krimson Queen'", "commonName": "Hoya Krimson Queen" },
-  { "botanicalName": "Hoya carnosa 'Krimson Princess'", "commonName": "Hoya Krimson Princess" },
-  { "botanicalName": "Hoya carnosa 'Compacta'", "commonName": "Hoya Hindu Rope" },
-  { "botanicalName": "Hoya kerrii", "commonName": "Hoya sercowata" },
-  { "botanicalName": "Hoya kerrii 'Variegata'", "commonName": "Hoya sercowata pstra" },
-  { "botanicalName": "Hoya pubicalyx", "commonName": "Hoya pubicalyx" },
-  { "botanicalName": "Hoya pubicalyx 'Silver Pink'", "commonName": "Hoya Silver Pink" },
-  { "botanicalName": "Hoya bella", "commonName": "Hoya bella" },
-  { "botanicalName": "Hoya linearis", "commonName": "Hoya linearis" },
-  { "botanicalName": "Hoya lacunosa", "commonName": "Hoya lacunosa" },
-  { "botanicalName": "Hoya obovata", "commonName": "Hoya obovata" },
-  { "botanicalName": "Hoya multiflora", "commonName": "Hoya multiflora" },
-  { "botanicalName": "Hoya australis", "commonName": "Hoya australis" },
-  { "botanicalName": "Hoya wayetii", "commonName": "Hoya wayetii" },
-  { "botanicalName": "Hoya curtisii", "commonName": "Hoya curtisii" },
-  { "botanicalName": "Hoya burtoniae", "commonName": "Hoya burtoniae" },
-  { "botanicalName": "Hoya polyneura", "commonName": "Hoya polyneura" },
-  { "botanicalName": "Hoya callistophylla", "commonName": "Hoya callistophylla" },
-  { "botanicalName": "Hoya macrophylla 'Albomarginata'", "commonName": "Hoya macrophylla pstra" },
-  { "botanicalName": "Hoya sigillatis", "commonName": "Hoya sigillatis" },
-  { "botanicalName": "Hoya mindorensis", "commonName": "Hoya mindorensis" },
-  { "botanicalName": "Hoya retusa", "commonName": "Hoya retusa" },
-  { "botanicalName": "Calathea orbifolia", "commonName": "Kalatea okraglolistna" },
-  { "botanicalName": "Calathea ornata", "commonName": "Kalatea Ornata" },
-  { "botanicalName": "Calathea makoyana", "commonName": "Kalatea pawia" },
-  { "botanicalName": "Goeppertia veitchiana 'Medallion'", "commonName": "Kalatea Medallion" },
-  { "botanicalName": "Calathea roseopicta 'Dottie'", "commonName": "Kalatea Dottie" },
-  { "botanicalName": "Calathea lancifolia", "commonName": "Kalatea rattlesnake" },
-  { "botanicalName": "Calathea musaica", "commonName": "Kalatea network" },
-  { "botanicalName": "Calathea zebrina", "commonName": "Kalatea zebrowa" },
-  { "botanicalName": "Calathea rufibarba", "commonName": "Kalatea rufibarba" },
-  { "botanicalName": "Calathea warscewiczii", "commonName": "Kalatea warscewiczii" },
-  { "botanicalName": "Calathea crocata", "commonName": "Kalatea kwitnaca" },
-  { "botanicalName": "Ctenanthe burle-marxii", "commonName": "Ctenanthe burle-marxii" },
-  { "botanicalName": "Ctenanthe setosa 'Grey Star'", "commonName": "Ctenanthe Grey Star" },
-  { "botanicalName": "Ctenanthe lubbersiana", "commonName": "Ctenanthe lubbersiana" },
-  { "botanicalName": "Stromanthe sanguinea 'Triostar'", "commonName": "Stromanthe Triostar" },
-  { "botanicalName": "Maranta leuconeura 'Erythroneura'", "commonName": "Maranta czerwono-zytkowana" },
-  { "botanicalName": "Maranta leuconeura 'Kerchoveana'", "commonName": "Maranta zielona" },
-  { "botanicalName": "Maranta leuconeura 'Fascinator'", "commonName": "Maranta Fascinator" },
-  { "botanicalName": "Ficus lyrata", "commonName": "Fikus skrzypcowy" },
-  { "botanicalName": "Ficus lyrata 'Bambino'", "commonName": "Fikus skrzypcowy miniaturowy" },
-  { "botanicalName": "Ficus elastica 'Burgundy'", "commonName": "Fikus gumowy Burgundy" },
-  { "botanicalName": "Ficus elastica 'Ruby'", "commonName": "Fikus gumowy Ruby" },
-  { "botanicalName": "Ficus elastica 'Tineke'", "commonName": "Fikus gumowy Tineke" },
-  { "botanicalName": "Ficus elastica 'Black Prince'", "commonName": "Fikus gumowy Black Prince" },
-  { "botanicalName": "Ficus benjamina", "commonName": "Fikus beniamin" },
-  { "botanicalName": "Ficus benjamina 'Variegata'", "commonName": "Fikus beniamin pstry" },
-  { "botanicalName": "Ficus benghalensis 'Audrey'", "commonName": "Fikus Audrey" },
-  { "botanicalName": "Ficus pumila", "commonName": "Fikus pnacy" },
-  { "botanicalName": "Ficus triangularis", "commonName": "Fikus trojkatny" },
-  { "botanicalName": "Ficus umbellata", "commonName": "Fikus umbellata" },
-  { "botanicalName": "Ficus microcarpa", "commonName": "Fikus drobnoowocowy" },
-  { "botanicalName": "Dracaena trifasciata", "commonName": "Sansewieria / wezownica" },
-  { "botanicalName": "Dracaena trifasciata 'Laurentii'", "commonName": "Sansewieria zlotobrzezna" },
-  { "botanicalName": "Dracaena trifasciata 'Moonshine'", "commonName": "Sansewieria Moonshine" },
-  { "botanicalName": "Dracaena trifasciata 'Black Gold'", "commonName": "Sansewieria Black Gold" },
-  { "botanicalName": "Dracaena trifasciata 'Cylindrica'", "commonName": "Sansewieria cylindryczna" },
-  { "botanicalName": "Dracaena trifasciata 'Hahnii'", "commonName": "Sansewieria ptasie gniazdo" },
-  { "botanicalName": "Dracaena marginata", "commonName": "Dracena obrzezone" },
-  { "botanicalName": "Dracaena marginata 'Tricolor'", "commonName": "Dracena tricolor" },
-  { "botanicalName": "Dracaena marginata 'Colorama'", "commonName": "Dracena Colorama" },
-  { "botanicalName": "Dracaena fragrans 'Massangeana'", "commonName": "Dracena wonna" },
-  { "botanicalName": "Dracaena reflexa 'Song of India'", "commonName": "Dracena Song of India" },
-  { "botanicalName": "Dracaena surculosa", "commonName": "Dracena plamista" },
-  { "botanicalName": "Dracaena draco", "commonName": "Dracena smocza" },
-  { "botanicalName": "Zamioculcas zamiifolia", "commonName": "Zamiokulkas" },
-  { "botanicalName": "Zamioculcas zamiifolia 'Raven'", "commonName": "Zamiokulkas czarny (Raven)" },
-  { "botanicalName": "Zamioculcas zamiifolia 'Variegata'", "commonName": "Zamiokulkas pstry" },
-  { "botanicalName": "Peperomia obtusifolia", "commonName": "Peperomia" },
-  { "botanicalName": "Peperomia obtusifolia 'Variegata'", "commonName": "Peperomia pstra" },
-  { "botanicalName": "Peperomia argyreia", "commonName": "Peperomia arbuzowa" },
-  { "botanicalName": "Peperomia caperata 'Rosso'", "commonName": "Peperomia Rosso" },
-  { "botanicalName": "Peperomia caperata 'Napoli Nights'", "commonName": "Peperomia Napoli Nights" },
-  { "botanicalName": "Peperomia albovittata 'Piccolo Banda'", "commonName": "Peperomia Piccolo Banda" },
-  { "botanicalName": "Peperomia polybotrya", "commonName": "Peperomia monetowa" },
-  { "botanicalName": "Peperomia scandens 'Variegata'", "commonName": "Peperomia pnaca pstra" },
-  { "botanicalName": "Peperomia rotundifolia", "commonName": "Peperomia okraglolistna" },
-  { "botanicalName": "Peperomia graveolens", "commonName": "Peperomia graveolens" },
-  { "botanicalName": "Peperomia puteolata", "commonName": "Peperomia puteolata" },
-  { "botanicalName": "Peperomia nivalis", "commonName": "Peperomia nivalis" },
-  { "botanicalName": "Peperomia orba 'Pixie Lime'", "commonName": "Peperomia Pixie Lime" },
-  { "botanicalName": "Peperomia verticillata 'Belly Button'", "commonName": "Peperomia Belly Button" },
-  { "botanicalName": "Begonia maculata", "commonName": "Begonia cekowana (Polka Dot)" },
-  { "botanicalName": "Begonia rex", "commonName": "Begonia rex (malowana)" },
-  { "botanicalName": "Begonia boliviensis", "commonName": "Begonia bolivijska" },
-  { "botanicalName": "Begonia listada", "commonName": "Begonia listada" },
-  { "botanicalName": "Begonia amphioxus", "commonName": "Begonia amphioxus" },
-  { "botanicalName": "Begonia 'Escargot'", "commonName": "Begonia Escargot" },
-  { "botanicalName": "Begonia 'Iron Cross'", "commonName": "Begonia Iron Cross" },
-  { "botanicalName": "Begonia pavonina", "commonName": "Begonia pawia (irydescentna)" },
-  { "botanicalName": "Begonia luxurians", "commonName": "Begonia palmowata" },
-  { "botanicalName": "Aloe vera", "commonName": "Aloe vera" },
-  { "botanicalName": "Aloe aristata", "commonName": "Aloe koronkowe" },
-  { "botanicalName": "Aloe ferox", "commonName": "Aloe zelazne" },
-  { "botanicalName": "Haworthiopsis attenuata", "commonName": "Hawortia prazkowana" },
-  { "botanicalName": "Haworthia cooperi", "commonName": "Hawortia cooperi" },
-  { "botanicalName": "Haworthia fasciata", "commonName": "Hawortia fasciata" },
-  { "botanicalName": "Gasteria bicolor", "commonName": "Gasteria" },
-  { "botanicalName": "Echeveria elegans", "commonName": "Echeweria" },
-  { "botanicalName": "Echeveria 'Perle von Nurnberg'", "commonName": "Echeweria PvN" },
-  { "botanicalName": "Echeveria 'Lola'", "commonName": "Echeweria Lola" },
-  { "botanicalName": "Crassula ovata", "commonName": "Grubosz / jade plant" },
-  { "botanicalName": "Crassula perforata", "commonName": "Grubosz perforowany" },
-  { "botanicalName": "Crassula muscosa", "commonName": "Grubosz mszysty" },
-  { "botanicalName": "Sedum morganianum", "commonName": "Rozchodnik burrowy (ogon osla)" },
-  { "botanicalName": "Curio rowleyanus", "commonName": "Sznur perel" },
-  { "botanicalName": "Curio radicans", "commonName": "Sznur bananow" },
-  { "botanicalName": "Curio herreanus", "commonName": "Sznur arbuzow" },
-  { "botanicalName": "Sempervivum tectorum", "commonName": "Rojnik murowy / wiecznie zywy" },
-  { "botanicalName": "Cereus peruvianus", "commonName": "Kaktus peruwianski" },
-  { "botanicalName": "Echinopsis pachanoi", "commonName": "San Pedro" },
-  { "botanicalName": "Gymnocalycium mihanovichii", "commonName": "Kaktus ksiezycowy" },
-  { "botanicalName": "Mammillaria hahniana", "commonName": "Mammillaria" },
-  { "botanicalName": "Opuntia microdasys", "commonName": "Opuncja" },
-  { "botanicalName": "Schlumbergera truncata", "commonName": "Kaktus bozonarodzeniowy" },
-  { "botanicalName": "Rhipsalis baccifera", "commonName": "Rhipsalis (kaktus jemiolowy)" },
-  { "botanicalName": "Epiphyllum oxypetalum", "commonName": "Kaktus orchideowy" },
-  { "botanicalName": "Nephrolepis exaltata", "commonName": "Paproc bostonianska" },
-  { "botanicalName": "Nephrolepis cordifolia 'Duffii'", "commonName": "Paproc Duffii" },
-  { "botanicalName": "Asplenium nidus", "commonName": "Asplenium ptasie gniazdo" },
-  { "botanicalName": "Asplenium antiquum", "commonName": "Asplenium antiquum" },
-  { "botanicalName": "Adiantum raddianum", "commonName": "Adiantum / paproc weneryczna" },
-  { "botanicalName": "Platycerium bifurcatum", "commonName": "Platicerium jeleni rog" },
-  { "botanicalName": "Platycerium superbum", "commonName": "Platicerium superbum" },
-  { "botanicalName": "Microsorum musifolium 'Crocodyllus'", "commonName": "Paproc krokodyl" },
-  { "botanicalName": "Chamaedorea elegans", "commonName": "Palma parlor / chamedora" },
-  { "botanicalName": "Chamaedorea seifrizii", "commonName": "Palma bambusowa" },
-  { "botanicalName": "Howea forsteriana", "commonName": "Palma kentia" },
-  { "botanicalName": "Dypsis lutescens", "commonName": "Palma areka / zlotolistna" },
-  { "botanicalName": "Rhapis excelsa", "commonName": "Palma dama" },
-  { "botanicalName": "Livistona rotundifolia", "commonName": "Livistona" },
-  { "botanicalName": "Colocasia esculenta", "commonName": "Colocasia / taro" },
-  { "botanicalName": "Colocasia esculenta 'Black Magic'", "commonName": "Colocasia Black Magic" },
-  { "botanicalName": "Colocasia esculenta 'Illustris'", "commonName": "Colocasia Illustris" },
-  { "botanicalName": "Caladium bicolor", "commonName": "Kaladium ozdobne" },
-  { "botanicalName": "Caladium 'White Christmas'", "commonName": "Kaladium White Christmas" },
-  { "botanicalName": "Caladium 'Florida Moonlight'", "commonName": "Kaladium Florida Moonlight" },
-  { "botanicalName": "Dieffenbachia seguine", "commonName": "Diefenbakia" },
-  { "botanicalName": "Dieffenbachia 'Camille'", "commonName": "Diefenbakia Camille" },
-  { "botanicalName": "Dieffenbachia 'Tropic Snow'", "commonName": "Diefenbakia Tropic Snow" },
-  { "botanicalName": "Spathiphyllum wallisii", "commonName": "Skrzydlokwiat" },
-  { "botanicalName": "Spathiphyllum 'Sensation'", "commonName": "Skrzydlokwiat Sensation" },
-  { "botanicalName": "Spathiphyllum 'Domino'", "commonName": "Skrzydlokwiat Domino" },
-  { "botanicalName": "Aglaonema commutatum", "commonName": "Aglaonema" },
-  { "botanicalName": "Aglaonema 'Silver Bay'", "commonName": "Aglaonema Silver Bay" },
-  { "botanicalName": "Aglaonema 'Siam Aurora'", "commonName": "Aglaonema Siam Aurora" },
-  { "botanicalName": "Aglaonema 'Red Aglaonema'", "commonName": "Aglaonema Red" },
-  { "botanicalName": "Aglaonema 'Emerald Bay'", "commonName": "Aglaonema Emerald Bay" },
-  { "botanicalName": "Amydrium medium 'Silver'", "commonName": "Amydrium Silver" },
-  { "botanicalName": "Tradescantia zebrina", "commonName": "Trzykrotka zebrowa" },
-  { "botanicalName": "Tradescantia fluminensis 'Tricolor'", "commonName": "Trzykrotka tricolor" },
-  { "botanicalName": "Tradescantia pallida", "commonName": "Trzykrotka fioletowa" },
-  { "botanicalName": "Tradescantia spathacea", "commonName": "Trzykrotka ostryga" },
-  { "botanicalName": "Tradescantia sillamontana", "commonName": "Trzykrotka sillamontana" },
-  { "botanicalName": "Tradescantia nanouk", "commonName": "Tradescantia Nanouk" },
-  { "botanicalName": "Pilea peperomioides", "commonName": "Pilea / chinska roslina pieniedzy" },
-  { "botanicalName": "Pilea cadierei", "commonName": "Pilea aluminiowa" },
-  { "botanicalName": "Pilea involucrata", "commonName": "Pilea involucrata" },
-  { "botanicalName": "Pilea mollis 'Moon Valley'", "commonName": "Pilea Moon Valley" },
-  { "botanicalName": "Pilea glauca", "commonName": "Pilea szara (glauca)" },
-  { "botanicalName": "Chlorophytum comosum", "commonName": "Zielistka Sternberga" },
-  { "botanicalName": "Chlorophytum comosum 'Variegatum'", "commonName": "Zielistka pstra" },
-  { "botanicalName": "Chlorophytum comosum 'Bonnie'", "commonName": "Zielistka kedzierzawa Bonnie" },
-  { "botanicalName": "Asparagus setaceus", "commonName": "Szparagi ozdobne / asparagus" },
-  { "botanicalName": "Asparagus densiflorus 'Sprengeri'", "commonName": "Asparagus Sprengeri" },
-  { "botanicalName": "Oxalis triangularis", "commonName": "Szczawik trojkatny / fioletowa koniczyna" },
-  { "botanicalName": "Oxalis triangularis 'Charmed Wine'", "commonName": "Oxalis Charmed Wine" },
-  { "botanicalName": "Oxalis tetraphylla 'Iron Cross'", "commonName": "Oxalis Iron Cross" },
-  { "botanicalName": "Schefflera arboricola", "commonName": "Parasolowiec" },
-  { "botanicalName": "Schefflera actinophylla", "commonName": "Parasolowiec wielki" },
-  { "botanicalName": "Yucca elephantipes", "commonName": "Juka sloniostopa" },
-  { "botanicalName": "Pachira aquatica", "commonName": "Pachira / drzewo pieniedzy" },
-  { "botanicalName": "Beaucarnea recurvata", "commonName": "Sloniostopa / beaukarnea" },
-  { "botanicalName": "Strelitzia reginae", "commonName": "Rajski ptak" },
-  { "botanicalName": "Strelitzia nicolai", "commonName": "Bialy rajski ptak" },
-  { "botanicalName": "Aechmea fasciata", "commonName": "Bromelia / ekhea" },
-  { "botanicalName": "Guzmania lingulata", "commonName": "Guzmania" },
-  { "botanicalName": "Vriesea splendens", "commonName": "Vriesea" },
-  { "botanicalName": "Tillandsia ionantha", "commonName": "Tillandsia / powietrzna roslina" },
-  { "botanicalName": "Tillandsia usneoides", "commonName": "Tillandsia hiszpanski mech" }
+  {
+    "botanicalName": "Lactuca sativa",
+    "commonName": "Sałata"
+  },
+  {
+    "botanicalName": "Lactuca sativa var. crispa",
+    "commonName": "Sałata kędzierzawa"
+  },
+  {
+    "botanicalName": "Lactuca sativa var. longifolia",
+    "commonName": "Sałata rzymska (Romaine)"
+  },
+  {
+    "botanicalName": "Lactuca sativa var. capitata",
+    "commonName": "Sałata głowiasta"
+  },
+  {
+    "botanicalName": "Spinacia oleracea",
+    "commonName": "Szpinak"
+  },
+  {
+    "botanicalName": "Beta vulgaris var. cicla",
+    "commonName": "Boćwina / mangold"
+  },
+  {
+    "botanicalName": "Brassica oleracea var. acephala",
+    "commonName": "Jarmuż"
+  },
+  {
+    "botanicalName": "Brassica oleracea var. italica",
+    "commonName": "Brokuł"
+  },
+  {
+    "botanicalName": "Brassica oleracea var. capitata",
+    "commonName": "Kapusta głowiasta"
+  },
+  {
+    "botanicalName": "Brassica oleracea var. botrytis",
+    "commonName": "Kalafior"
+  },
+  {
+    "botanicalName": "Brassica rapa subsp. chinensis",
+    "commonName": "Pak choi"
+  },
+  {
+    "botanicalName": "Brassica rapa subsp. pekinensis",
+    "commonName": "Kapusta pekińska"
+  },
+  {
+    "botanicalName": "Eruca vesicaria ssp. sativa",
+    "commonName": "Rukola"
+  },
+  {
+    "botanicalName": "Nasturtium officinale",
+    "commonName": "Rzeżucha wodna"
+  },
+  {
+    "botanicalName": "Lepidium sativum",
+    "commonName": "Rzeżucha"
+  },
+  {
+    "botanicalName": "Apium graveolens",
+    "commonName": "Seler naciowy"
+  },
+  {
+    "botanicalName": "Apium graveolens var. rapaceum",
+    "commonName": "Seler korzeniowy"
+  },
+  {
+    "botanicalName": "Cichorium endivia",
+    "commonName": "Endywia"
+  },
+  {
+    "botanicalName": "Cichorium intybus",
+    "commonName": "Cykoria"
+  },
+  {
+    "botanicalName": "Ocimum basilicum",
+    "commonName": "Bazylia"
+  },
+  {
+    "botanicalName": "Ocimum basilicum 'Genovese'",
+    "commonName": "Bazylia genueńska"
+  },
+  {
+    "botanicalName": "Ocimum basilicum var. purpurascens",
+    "commonName": "Bazylia fioletowa"
+  },
+  {
+    "botanicalName": "Ocimum x citriodorum",
+    "commonName": "Bazylia cytrynowa"
+  },
+  {
+    "botanicalName": "Ocimum tenuiflorum",
+    "commonName": "Bazylia tajska (Holy Basil)"
+  },
+  {
+    "botanicalName": "Mentha x piperita",
+    "commonName": "Mięta pieprzowa"
+  },
+  {
+    "botanicalName": "Mentha spicata",
+    "commonName": "Mięta zielona"
+  },
+  {
+    "botanicalName": "Mentha suaveolens",
+    "commonName": "Mięta jabłkowa"
+  },
+  {
+    "botanicalName": "Mentha aquatica",
+    "commonName": "Mięta nadwodna"
+  },
+  {
+    "botanicalName": "Petroselinum crispum",
+    "commonName": "Pietruszka naciowa"
+  },
+  {
+    "botanicalName": "Petroselinum crispum var. tuberosum",
+    "commonName": "Pietruszka korzeniowa"
+  },
+  {
+    "botanicalName": "Coriandrum sativum",
+    "commonName": "Kolendra"
+  },
+  {
+    "botanicalName": "Anethum graveolens",
+    "commonName": "Koper"
+  },
+  {
+    "botanicalName": "Origanum vulgare",
+    "commonName": "Oregano"
+  },
+  {
+    "botanicalName": "Origanum majorana",
+    "commonName": "Majeranek"
+  },
+  {
+    "botanicalName": "Thymus vulgaris",
+    "commonName": "Tymianek"
+  },
+  {
+    "botanicalName": "Rosmarinus officinalis",
+    "commonName": "Rozmaryn"
+  },
+  {
+    "botanicalName": "Salvia officinalis",
+    "commonName": "Szałwia"
+  },
+  {
+    "botanicalName": "Melissa officinalis",
+    "commonName": "Melisa"
+  },
+  {
+    "botanicalName": "Foeniculum vulgare",
+    "commonName": "Fenkuł / koper włoski"
+  },
+  {
+    "botanicalName": "Lavandula angustifolia",
+    "commonName": "Lawenda wąskolistna"
+  },
+  {
+    "botanicalName": "Allium schoenoprasum",
+    "commonName": "Szczypiorek"
+  },
+  {
+    "botanicalName": "Allium fistulosum",
+    "commonName": "Dymka / cebula dęta"
+  },
+  {
+    "botanicalName": "Stevia rebaudiana",
+    "commonName": "Stewia"
+  },
+  {
+    "botanicalName": "Laurus nobilis",
+    "commonName": "Wawrzyn szlachetny / liść laurowy"
+  },
+  {
+    "botanicalName": "Cymbopogon citratus",
+    "commonName": "Trawa cytrynowa (lemongrass)"
+  },
+  {
+    "botanicalName": "Zingiber officinale",
+    "commonName": "Imbir"
+  },
+  {
+    "botanicalName": "Curcuma longa",
+    "commonName": "Kurkuma"
+  },
+  {
+    "botanicalName": "Artemisia dracunculus",
+    "commonName": "Estragon"
+  },
+  {
+    "botanicalName": "Satureja hortensis",
+    "commonName": "Cząber ogrodowy"
+  },
+  {
+    "botanicalName": "Hyssopus officinalis",
+    "commonName": "Hyzop"
+  },
+  {
+    "botanicalName": "Solanum lycopersicum",
+    "commonName": "Pomidor"
+  },
+  {
+    "botanicalName": "Solanum lycopersicum var. cerasiforme",
+    "commonName": "Pomidor koktajlowy"
+  },
+  {
+    "botanicalName": "Lycopersicon pimpinellifolium",
+    "commonName": "Pomidor porzeczkowy"
+  },
+  {
+    "botanicalName": "Capsicum annuum",
+    "commonName": "Papryka słodka"
+  },
+  {
+    "botanicalName": "Capsicum annuum 'Cayenne'",
+    "commonName": "Papryczka cayenne"
+  },
+  {
+    "botanicalName": "Capsicum chinense",
+    "commonName": "Habanero / naga"
+  },
+  {
+    "botanicalName": "Capsicum frutescens",
+    "commonName": "Tabasco"
+  },
+  {
+    "botanicalName": "Capsicum pubescens",
+    "commonName": "Rocoto"
+  },
+  {
+    "botanicalName": "Cucumis sativus",
+    "commonName": "Ogórek"
+  },
+  {
+    "botanicalName": "Cucumis melo",
+    "commonName": "Melon"
+  },
+  {
+    "botanicalName": "Citrullus lanatus",
+    "commonName": "Arbuz"
+  },
+  {
+    "botanicalName": "Cucurbita pepo",
+    "commonName": "Cukinia / dynia zwyczajna"
+  },
+  {
+    "botanicalName": "Cucurbita maxima",
+    "commonName": "Dynia olbrzymia"
+  },
+  {
+    "botanicalName": "Solanum melongena",
+    "commonName": "Bakłażan"
+  },
+  {
+    "botanicalName": "Phaseolus vulgaris",
+    "commonName": "Fasola szparagowa"
+  },
+  {
+    "botanicalName": "Fragaria x ananassa",
+    "commonName": "Truskawka"
+  },
+  {
+    "botanicalName": "Physalis peruviana",
+    "commonName": "Miechunka peruwiańska"
+  },
+  {
+    "botanicalName": "Raphanus sativus",
+    "commonName": "Rzodkiewka"
+  },
+  {
+    "botanicalName": "Allium cepa",
+    "commonName": "Cebula"
+  },
+  {
+    "botanicalName": "Allium sativum",
+    "commonName": "Czosnek"
+  },
+  {
+    "botanicalName": "Daucus carota",
+    "commonName": "Marchew"
+  },
+  {
+    "botanicalName": "Beta vulgaris subsp. vulgaris",
+    "commonName": "Burak ćwikłowy"
+  },
+  {
+    "botanicalName": "Helianthus annuus",
+    "commonName": "Słonecznik (microgreens)"
+  },
+  {
+    "botanicalName": "Pisum sativum",
+    "commonName": "Groch (microgreens)"
+  },
+  {
+    "botanicalName": "Vigna radiata",
+    "commonName": "Fasola mung (kiełki)"
+  },
+  {
+    "botanicalName": "Brassica napus",
+    "commonName": "Rzepak (microgreens)"
+  },
+  {
+    "botanicalName": "Sinapis alba",
+    "commonName": "Gorczyca biała (microgreens)"
+  },
+  {
+    "botanicalName": "Monstera deliciosa",
+    "commonName": "Monstera dziurawa"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Albo Variegata'",
+    "commonName": "Monstera biało-pstra"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Thai Constellation'",
+    "commonName": "Monstera Thai Constellation"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Aurea'",
+    "commonName": "Monstera żółto-pstra"
+  },
+  {
+    "botanicalName": "Monstera adansonii",
+    "commonName": "Monstera pnąca"
+  },
+  {
+    "botanicalName": "Monstera adansonii 'Variegata'",
+    "commonName": "Monstera adansonii pstra"
+  },
+  {
+    "botanicalName": "Monstera obliqua",
+    "commonName": "Monstera obliqua"
+  },
+  {
+    "botanicalName": "Monstera pinnatipartita",
+    "commonName": "Monstera pinnatipartita"
+  },
+  {
+    "botanicalName": "Monstera dubia",
+    "commonName": "Monstera dubia"
+  },
+  {
+    "botanicalName": "Monstera siltepecana",
+    "commonName": "Monstera siltepecana"
+  },
+  {
+    "botanicalName": "Monstera standleyana",
+    "commonName": "Monstera standleyana"
+  },
+  {
+    "botanicalName": "Monstera standleyana 'Albo Variegata'",
+    "commonName": "Monstera standleyana pstra"
+  },
+  {
+    "botanicalName": "Monstera karstenianum",
+    "commonName": "Monstera Peru"
+  },
+  {
+    "botanicalName": "Monstera lechleriana",
+    "commonName": "Monstera lechleriana"
+  },
+  {
+    "botanicalName": "Monstera subpinnata",
+    "commonName": "Monstera subpinnata"
+  },
+  {
+    "botanicalName": "Monstera esqueleto",
+    "commonName": "Monstera esqueleto"
+  },
+  {
+    "botanicalName": "Monstera epipremnoides",
+    "commonName": "Monstera epipremnoides"
+  },
+  {
+    "botanicalName": "Monstera acuminata",
+    "commonName": "Monstera acuminata"
+  },
+  {
+    "botanicalName": "Monstera laniata",
+    "commonName": "Monstera laniata"
+  },
+  {
+    "botanicalName": "Rhaphidophora tetrasperma",
+    "commonName": "Mini Monstera / Raphidophora"
+  },
+  {
+    "botanicalName": "Rhaphidophora decursiva",
+    "commonName": "Rhaphidophora decursiva"
+  },
+  {
+    "botanicalName": "Rhaphidophora hayi",
+    "commonName": "Rhaphidophora hayi"
+  },
+  {
+    "botanicalName": "Rhaphidophora cryptantha",
+    "commonName": "Rhaphidophora cryptantha"
+  },
+  {
+    "botanicalName": "Philodendron hederaceum",
+    "commonName": "Filodendron sercowaty"
+  },
+  {
+    "botanicalName": "Philodendron hederaceum 'Brasil'",
+    "commonName": "Filodendron Brasil"
+  },
+  {
+    "botanicalName": "Philodendron hederaceum 'Micans'",
+    "commonName": "Filodendron aksamitny"
+  },
+  {
+    "botanicalName": "Philodendron hederaceum 'Lemon Lime'",
+    "commonName": "Filodendron Lemon Lime"
+  },
+  {
+    "botanicalName": "Philodendron hederaceum 'Rio'",
+    "commonName": "Filodendron Rio"
+  },
+  {
+    "botanicalName": "Philodendron bipinnatifidum",
+    "commonName": "Filodendron drzewiasty (selloum)"
+  },
+  {
+    "botanicalName": "Philodendron xanadu",
+    "commonName": "Filodendron Xanadu"
+  },
+  {
+    "botanicalName": "Philodendron gloriosum",
+    "commonName": "Philodendron gloriosum"
+  },
+  {
+    "botanicalName": "Philodendron melanochrysum",
+    "commonName": "Philodendron melanochrysum"
+  },
+  {
+    "botanicalName": "Philodendron verrucosum",
+    "commonName": "Philodendron verrucosum"
+  },
+  {
+    "botanicalName": "Philodendron erubescens 'Pink Princess'",
+    "commonName": "Philodendron Pink Princess"
+  },
+  {
+    "botanicalName": "Philodendron erubescens 'White Wizard'",
+    "commonName": "Philodendron White Wizard"
+  },
+  {
+    "botanicalName": "Philodendron erubescens 'White Knight'",
+    "commonName": "Philodendron White Knight"
+  },
+  {
+    "botanicalName": "Philodendron erubescens 'White Princess'",
+    "commonName": "Philodendron White Princess"
+  },
+  {
+    "botanicalName": "Philodendron erubescens 'Red Emerald'",
+    "commonName": "Philodendron Red Emerald"
+  },
+  {
+    "botanicalName": "Philodendron billietiae",
+    "commonName": "Philodendron billietiae"
+  },
+  {
+    "botanicalName": "Philodendron squamiferum",
+    "commonName": "Philodendron squamiferum"
+  },
+  {
+    "botanicalName": "Philodendron sodiroi",
+    "commonName": "Philodendron sodiroi"
+  },
+  {
+    "botanicalName": "Philodendron brandtianum",
+    "commonName": "Philodendron brandtianum"
+  },
+  {
+    "botanicalName": "Philodendron hastatum 'Silver Sword'",
+    "commonName": "Philodendron Silver Sword"
+  },
+  {
+    "botanicalName": "Philodendron tortum",
+    "commonName": "Philodendron tortum"
+  },
+  {
+    "botanicalName": "Philodendron patriciae",
+    "commonName": "Philodendron patriciae"
+  },
+  {
+    "botanicalName": "Philodendron mamei",
+    "commonName": "Philodendron mamei"
+  },
+  {
+    "botanicalName": "Philodendron pastazanum",
+    "commonName": "Philodendron pastazanum"
+  },
+  {
+    "botanicalName": "Philodendron rugosum",
+    "commonName": "Philodendron rugosum"
+  },
+  {
+    "botanicalName": "Philodendron atabapoense",
+    "commonName": "Philodendron atabapoense"
+  },
+  {
+    "botanicalName": "Philodendron gigas",
+    "commonName": "Philodendron gigas"
+  },
+  {
+    "botanicalName": "Philodendron plowmanii",
+    "commonName": "Philodendron plowmanii"
+  },
+  {
+    "botanicalName": "Philodendron grazielae",
+    "commonName": "Philodendron grazielae"
+  },
+  {
+    "botanicalName": "Philodendron camposportoanum",
+    "commonName": "Philodendron camposportoanum"
+  },
+  {
+    "botanicalName": "Philodendron pedatum",
+    "commonName": "Philodendron pedatum"
+  },
+  {
+    "botanicalName": "Philodendron tripartitum",
+    "commonName": "Philodendron tripartitum"
+  },
+  {
+    "botanicalName": "Philodendron subhastatum",
+    "commonName": "Philodendron subhastatum"
+  },
+  {
+    "botanicalName": "Philodendron microstictum",
+    "commonName": "Philodendron microstictum"
+  },
+  {
+    "botanicalName": "Philodendron 'Birkin'",
+    "commonName": "Philodendron Birkin"
+  },
+  {
+    "botanicalName": "Philodendron 'Prince of Orange'",
+    "commonName": "Philodendron Prince of Orange"
+  },
+  {
+    "botanicalName": "Philodendron 'Moonlight'",
+    "commonName": "Philodendron Moonlight"
+  },
+  {
+    "botanicalName": "Philodendron 'Dark Lord'",
+    "commonName": "Philodendron Dark Lord"
+  },
+  {
+    "botanicalName": "Philodendron 'Black Cardinal'",
+    "commonName": "Philodendron Black Cardinal"
+  },
+  {
+    "botanicalName": "Philodendron 'Rojo Congo'",
+    "commonName": "Philodendron Rojo Congo"
+  },
+  {
+    "botanicalName": "Philodendron 'Imperial Red'",
+    "commonName": "Philodendron Imperial Red"
+  },
+  {
+    "botanicalName": "Philodendron 'Imperial Green'",
+    "commonName": "Philodendron Imperial Green"
+  },
+  {
+    "botanicalName": "Philodendron 'Ring of Fire'",
+    "commonName": "Philodendron Ring of Fire"
+  },
+  {
+    "botanicalName": "Philodendron florida ghost",
+    "commonName": "Philodendron Florida Ghost"
+  },
+  {
+    "botanicalName": "Philodendron 'Splendid'",
+    "commonName": "Philodendron Splendid (gloriosum x melanochrysum)"
+  },
+  {
+    "botanicalName": "Philodendron 'McColley's Finale'",
+    "commonName": "Philodendron McColley's Finale"
+  },
+  {
+    "botanicalName": "Philodendron 'Congo Green'",
+    "commonName": "Philodendron Congo Green"
+  },
+  {
+    "botanicalName": "Epipremnum aureum",
+    "commonName": "Pothos złoty / scindapsus"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Marble Queen'",
+    "commonName": "Pothos Marble Queen"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Neon'",
+    "commonName": "Pothos Neon"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'N Joy'",
+    "commonName": "Pothos N Joy"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Pearls and Jade'",
+    "commonName": "Pothos Pearls and Jade"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Global Green'",
+    "commonName": "Pothos Global Green"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Baltic Blue'",
+    "commonName": "Pothos Baltic Blue"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Manjula'",
+    "commonName": "Pothos Manjula"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Snow Queen'",
+    "commonName": "Pothos Snow Queen"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Jessenia'",
+    "commonName": "Pothos Jessenia"
+  },
+  {
+    "botanicalName": "Epipremnum aureum 'Hawaiian'",
+    "commonName": "Pothos Hawaiian"
+  },
+  {
+    "botanicalName": "Epipremnum pinnatum",
+    "commonName": "Epipremnum pinnatum"
+  },
+  {
+    "botanicalName": "Epipremnum pinnatum 'Cebu Blue'",
+    "commonName": "Pothos Cebu Blue"
+  },
+  {
+    "botanicalName": "Epipremnum pinnatum 'Albo Variegata'",
+    "commonName": "Epipremnum pinnatum pstry"
+  },
+  {
+    "botanicalName": "Scindapsus pictus 'Argyraeus'",
+    "commonName": "Scindapsus srebrny Argyraeus"
+  },
+  {
+    "botanicalName": "Scindapsus pictus 'Exotica'",
+    "commonName": "Scindapsus Exotica"
+  },
+  {
+    "botanicalName": "Scindapsus treubii 'Moonlight'",
+    "commonName": "Scindapsus Moonlight"
+  },
+  {
+    "botanicalName": "Scindapsus treubii 'Dark Form'",
+    "commonName": "Scindapsus Dark Form"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum",
+    "commonName": "Syngonium"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'Albo Variegatum'",
+    "commonName": "Syngonium Albo"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'Pink Allusion'",
+    "commonName": "Syngonium Pink Allusion"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'Neon Robusta'",
+    "commonName": "Syngonium Neon Robusta"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'White Butterfly'",
+    "commonName": "Syngonium White Butterfly"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'Milk Confetti'",
+    "commonName": "Syngonium Milk Confetti"
+  },
+  {
+    "botanicalName": "Syngonium podophyllum 'Strawberry Ice'",
+    "commonName": "Syngonium Strawberry Ice"
+  },
+  {
+    "botanicalName": "Syngonium wendlandii",
+    "commonName": "Syngonium wendlandii"
+  },
+  {
+    "botanicalName": "Syngonium erythrophyllum",
+    "commonName": "Syngonium erythrophyllum"
+  },
+  {
+    "botanicalName": "Syngonium macrophyllum",
+    "commonName": "Syngonium macrophyllum"
+  },
+  {
+    "botanicalName": "Syngonium rayii",
+    "commonName": "Syngonium rayii"
+  },
+  {
+    "botanicalName": "Alocasia amazonica 'Polly'",
+    "commonName": "Alocazja Polly"
+  },
+  {
+    "botanicalName": "Alocasia macrorrhiza",
+    "commonName": "Alocazja olbrzymia"
+  },
+  {
+    "botanicalName": "Alocasia macrorrhiza 'Variegata'",
+    "commonName": "Alocazja olbrzymia pstra"
+  },
+  {
+    "botanicalName": "Alocasia odora",
+    "commonName": "Alocazja woniejaca"
+  },
+  {
+    "botanicalName": "Alocasia zebrina",
+    "commonName": "Alocazja zebrowa"
+  },
+  {
+    "botanicalName": "Alocasia zebrina 'Reticulata'",
+    "commonName": "Alocazja zebrowa Reticulata"
+  },
+  {
+    "botanicalName": "Alocasia cuprea",
+    "commonName": "Alocazja miedziana"
+  },
+  {
+    "botanicalName": "Alocasia baginda 'Dragon Scale'",
+    "commonName": "Alocazja Dragon Scale"
+  },
+  {
+    "botanicalName": "Alocasia baginda 'Silver Dragon'",
+    "commonName": "Alocazja Silver Dragon"
+  },
+  {
+    "botanicalName": "Alocasia micholitziana 'Frydek'",
+    "commonName": "Alocazja Frydek (aksamitna)"
+  },
+  {
+    "botanicalName": "Alocasia reginula 'Black Velvet'",
+    "commonName": "Alocazja Black Velvet"
+  },
+  {
+    "botanicalName": "Alocasia sarian",
+    "commonName": "Alocazja sarian"
+  },
+  {
+    "botanicalName": "Alocasia sanderiana",
+    "commonName": "Alocazja sanderiana"
+  },
+  {
+    "botanicalName": "Alocasia longiloba",
+    "commonName": "Alocazja longiloba"
+  },
+  {
+    "botanicalName": "Alocasia cucullata",
+    "commonName": "Alocazja kapturkowata"
+  },
+  {
+    "botanicalName": "Alocasia wentii",
+    "commonName": "Alocazja wentii"
+  },
+  {
+    "botanicalName": "Alocasia lauterbachiana",
+    "commonName": "Alocazja lauterbachiana"
+  },
+  {
+    "botanicalName": "Alocasia princeps",
+    "commonName": "Alocazja princeps"
+  },
+  {
+    "botanicalName": "Alocasia clypeolata",
+    "commonName": "Alocazja clypeolata"
+  },
+  {
+    "botanicalName": "Alocasia plumbea 'Nigra'",
+    "commonName": "Alocazja czarna"
+  },
+  {
+    "botanicalName": "Alocasia portei",
+    "commonName": "Alocazja portei"
+  },
+  {
+    "botanicalName": "Alocasia reversa",
+    "commonName": "Alocazja reversa"
+  },
+  {
+    "botanicalName": "Alocasia 'Regal Shields'",
+    "commonName": "Alocazja Regal Shields"
+  },
+  {
+    "botanicalName": "Alocasia 'Stingray'",
+    "commonName": "Alocazja Stingray"
+  },
+  {
+    "botanicalName": "Alocasia 'Pink Dragon'",
+    "commonName": "Alocazja Pink Dragon"
+  },
+  {
+    "botanicalName": "Alocasia 'Calidora'",
+    "commonName": "Alocazja Calidora"
+  },
+  {
+    "botanicalName": "Alocasia 'Ivory Coast'",
+    "commonName": "Alocazja Ivory Coast"
+  },
+  {
+    "botanicalName": "Alocasia nebula 'Imperialis'",
+    "commonName": "Alocazja Imperialis"
+  },
+  {
+    "botanicalName": "Alocasia 'Morocco'",
+    "commonName": "Alocazja Morocco"
+  },
+  {
+    "botanicalName": "Alocasia 'Nairobi'",
+    "commonName": "Alocazja Nairobi"
+  },
+  {
+    "botanicalName": "Alocasia gageana",
+    "commonName": "Alocazja gageana"
+  },
+  {
+    "botanicalName": "Anthurium andraeanum",
+    "commonName": "Anturium kwieciste"
+  },
+  {
+    "botanicalName": "Anthurium andraeanum 'White'",
+    "commonName": "Anturium białe"
+  },
+  {
+    "botanicalName": "Anthurium scherzerianum",
+    "commonName": "Anturium skrzydłoliste"
+  },
+  {
+    "botanicalName": "Anthurium clarinervium",
+    "commonName": "Anthurium clarinervium"
+  },
+  {
+    "botanicalName": "Anthurium crystallinum",
+    "commonName": "Anthurium crystallinum"
+  },
+  {
+    "botanicalName": "Anthurium magnificum",
+    "commonName": "Anthurium magnificum"
+  },
+  {
+    "botanicalName": "Anthurium veitchii",
+    "commonName": "Anthurium veitchii (King)"
+  },
+  {
+    "botanicalName": "Anthurium warocqueanum",
+    "commonName": "Anthurium warocqueanum (Queen)"
+  },
+  {
+    "botanicalName": "Anthurium regale",
+    "commonName": "Anthurium regale"
+  },
+  {
+    "botanicalName": "Anthurium hookeri",
+    "commonName": "Anthurium hookeri"
+  },
+  {
+    "botanicalName": "Anthurium forgetii",
+    "commonName": "Anthurium forgetii"
+  },
+  {
+    "botanicalName": "Anthurium papillilaminum",
+    "commonName": "Anthurium papillilaminum"
+  },
+  {
+    "botanicalName": "Anthurium villenaorum",
+    "commonName": "Anthurium villenaorum"
+  },
+  {
+    "botanicalName": "Anthurium luxurians",
+    "commonName": "Anthurium luxurians"
+  },
+  {
+    "botanicalName": "Anthurium 'Ace of Spades'",
+    "commonName": "Anthurium Ace of Spades"
+  },
+  {
+    "botanicalName": "Anthurium pedatoradiatum",
+    "commonName": "Anthurium pedatoradiatum"
+  },
+  {
+    "botanicalName": "Anthurium plowmanii",
+    "commonName": "Anthurium plowmanii"
+  },
+  {
+    "botanicalName": "Anthurium superbum",
+    "commonName": "Anthurium superbum"
+  },
+  {
+    "botanicalName": "Anthurium bakeri",
+    "commonName": "Anthurium bakeri"
+  },
+  {
+    "botanicalName": "Anthurium cutucuense",
+    "commonName": "Anthurium cutucuense"
+  },
+  {
+    "botanicalName": "Anthurium salgarense",
+    "commonName": "Anthurium salgarense"
+  },
+  {
+    "botanicalName": "Anthurium besseae",
+    "commonName": "Anthurium besseae"
+  },
+  {
+    "botanicalName": "Hoya carnosa",
+    "commonName": "Hoya woskowa"
+  },
+  {
+    "botanicalName": "Hoya carnosa 'Krimson Queen'",
+    "commonName": "Hoya Krimson Queen"
+  },
+  {
+    "botanicalName": "Hoya carnosa 'Krimson Princess'",
+    "commonName": "Hoya Krimson Princess"
+  },
+  {
+    "botanicalName": "Hoya carnosa 'Compacta'",
+    "commonName": "Hoya Hindu Rope"
+  },
+  {
+    "botanicalName": "Hoya kerrii",
+    "commonName": "Hoya sercowata"
+  },
+  {
+    "botanicalName": "Hoya kerrii 'Variegata'",
+    "commonName": "Hoya sercowata pstra"
+  },
+  {
+    "botanicalName": "Hoya pubicalyx",
+    "commonName": "Hoya pubicalyx"
+  },
+  {
+    "botanicalName": "Hoya pubicalyx 'Silver Pink'",
+    "commonName": "Hoya Silver Pink"
+  },
+  {
+    "botanicalName": "Hoya bella",
+    "commonName": "Hoya bella"
+  },
+  {
+    "botanicalName": "Hoya linearis",
+    "commonName": "Hoya linearis"
+  },
+  {
+    "botanicalName": "Hoya lacunosa",
+    "commonName": "Hoya lacunosa"
+  },
+  {
+    "botanicalName": "Hoya obovata",
+    "commonName": "Hoya obovata"
+  },
+  {
+    "botanicalName": "Hoya multiflora",
+    "commonName": "Hoya multiflora"
+  },
+  {
+    "botanicalName": "Hoya australis",
+    "commonName": "Hoya australis"
+  },
+  {
+    "botanicalName": "Hoya wayetii",
+    "commonName": "Hoya wayetii"
+  },
+  {
+    "botanicalName": "Hoya curtisii",
+    "commonName": "Hoya curtisii"
+  },
+  {
+    "botanicalName": "Hoya burtoniae",
+    "commonName": "Hoya burtoniae"
+  },
+  {
+    "botanicalName": "Hoya polyneura",
+    "commonName": "Hoya polyneura"
+  },
+  {
+    "botanicalName": "Hoya callistophylla",
+    "commonName": "Hoya callistophylla"
+  },
+  {
+    "botanicalName": "Hoya macrophylla 'Albomarginata'",
+    "commonName": "Hoya macrophylla pstra"
+  },
+  {
+    "botanicalName": "Hoya sigillatis",
+    "commonName": "Hoya sigillatis"
+  },
+  {
+    "botanicalName": "Hoya mindorensis",
+    "commonName": "Hoya mindorensis"
+  },
+  {
+    "botanicalName": "Hoya retusa",
+    "commonName": "Hoya retusa"
+  },
+  {
+    "botanicalName": "Hoya finlaysonii",
+    "commonName": "Hoya finlaysonii"
+  },
+  {
+    "botanicalName": "Hoya latifolia",
+    "commonName": "Hoya latifolia"
+  },
+  {
+    "botanicalName": "Hoya kentiana",
+    "commonName": "Hoya kentiana"
+  },
+  {
+    "botanicalName": "Hoya serpens",
+    "commonName": "Hoya serpens"
+  },
+  {
+    "botanicalName": "Hoya 'Mathilde'",
+    "commonName": "Hoya Mathilde"
+  },
+  {
+    "botanicalName": "Hoya lobbii",
+    "commonName": "Hoya lobbii"
+  },
+  {
+    "botanicalName": "Hoya gracilis",
+    "commonName": "Hoya gracilis"
+  },
+  {
+    "botanicalName": "Hoya chlorantha",
+    "commonName": "Hoya chlorantha"
+  },
+  {
+    "botanicalName": "Hoya vitellina",
+    "commonName": "Hoya vitellina"
+  },
+  {
+    "botanicalName": "Hoya parasitica",
+    "commonName": "Hoya parasitica"
+  },
+  {
+    "botanicalName": "Hoya incrassata",
+    "commonName": "Hoya incrassata"
+  },
+  {
+    "botanicalName": "Hoya nummularioides",
+    "commonName": "Hoya nummularioides"
+  },
+  {
+    "botanicalName": "Calathea orbifolia",
+    "commonName": "Kalatea okraglolistna"
+  },
+  {
+    "botanicalName": "Calathea ornata",
+    "commonName": "Kalatea Ornata"
+  },
+  {
+    "botanicalName": "Calathea makoyana",
+    "commonName": "Kalatea pawia"
+  },
+  {
+    "botanicalName": "Goeppertia veitchiana 'Medallion'",
+    "commonName": "Kalatea Medallion"
+  },
+  {
+    "botanicalName": "Calathea roseopicta 'Dottie'",
+    "commonName": "Kalatea Dottie"
+  },
+  {
+    "botanicalName": "Calathea lancifolia",
+    "commonName": "Kalatea rattlesnake"
+  },
+  {
+    "botanicalName": "Calathea musaica",
+    "commonName": "Kalatea network"
+  },
+  {
+    "botanicalName": "Calathea zebrina",
+    "commonName": "Kalatea zebrowa"
+  },
+  {
+    "botanicalName": "Calathea rufibarba",
+    "commonName": "Kalatea rufibarba"
+  },
+  {
+    "botanicalName": "Calathea warscewiczii",
+    "commonName": "Kalatea warscewiczii"
+  },
+  {
+    "botanicalName": "Calathea crocata",
+    "commonName": "Kalatea kwitnaca"
+  },
+  {
+    "botanicalName": "Calathea picturata 'Argentea'",
+    "commonName": "Kalatea srebrna"
+  },
+  {
+    "botanicalName": "Calathea louisae",
+    "commonName": "Kalatea louisae"
+  },
+  {
+    "botanicalName": "Ctenanthe burle-marxii",
+    "commonName": "Ctenanthe burle-marxii"
+  },
+  {
+    "botanicalName": "Ctenanthe setosa 'Grey Star'",
+    "commonName": "Ctenanthe Grey Star"
+  },
+  {
+    "botanicalName": "Ctenanthe lubbersiana",
+    "commonName": "Ctenanthe lubbersiana"
+  },
+  {
+    "botanicalName": "Ctenanthe compressa",
+    "commonName": "Ctenanthe compressa"
+  },
+  {
+    "botanicalName": "Ctenanthe oppenheimiana",
+    "commonName": "Ctenanthe oppenheimiana"
+  },
+  {
+    "botanicalName": "Stromanthe sanguinea 'Triostar'",
+    "commonName": "Stromanthe Triostar"
+  },
+  {
+    "botanicalName": "Maranta leuconeura 'Erythroneura'",
+    "commonName": "Maranta czerwono-zytkowana"
+  },
+  {
+    "botanicalName": "Maranta leuconeura 'Kerchoveana'",
+    "commonName": "Maranta zielona"
+  },
+  {
+    "botanicalName": "Maranta leuconeura 'Fascinator'",
+    "commonName": "Maranta Fascinator"
+  },
+  {
+    "botanicalName": "Ficus lyrata",
+    "commonName": "Fikus skrzypcowy"
+  },
+  {
+    "botanicalName": "Ficus lyrata 'Bambino'",
+    "commonName": "Fikus skrzypcowy miniaturowy"
+  },
+  {
+    "botanicalName": "Ficus elastica 'Burgundy'",
+    "commonName": "Fikus gumowy Burgundy"
+  },
+  {
+    "botanicalName": "Ficus elastica 'Ruby'",
+    "commonName": "Fikus gumowy Ruby"
+  },
+  {
+    "botanicalName": "Ficus elastica 'Tineke'",
+    "commonName": "Fikus gumowy Tineke"
+  },
+  {
+    "botanicalName": "Ficus elastica 'Black Prince'",
+    "commonName": "Fikus gumowy Black Prince"
+  },
+  {
+    "botanicalName": "Ficus benjamina",
+    "commonName": "Fikus beniamin"
+  },
+  {
+    "botanicalName": "Ficus benjamina 'Variegata'",
+    "commonName": "Fikus beniamin pstry"
+  },
+  {
+    "botanicalName": "Ficus benghalensis 'Audrey'",
+    "commonName": "Fikus Audrey"
+  },
+  {
+    "botanicalName": "Ficus pumila",
+    "commonName": "Fikus pnacy"
+  },
+  {
+    "botanicalName": "Ficus triangularis",
+    "commonName": "Fikus trojkatny"
+  },
+  {
+    "botanicalName": "Ficus umbellata",
+    "commonName": "Fikus umbellata"
+  },
+  {
+    "botanicalName": "Ficus microcarpa",
+    "commonName": "Fikus drobnoowocowy"
+  },
+  {
+    "botanicalName": "Ficus deltoidea",
+    "commonName": "Fikus jemiołowy"
+  },
+  {
+    "botanicalName": "Ficus religiosa",
+    "commonName": "Fikus święty (Bodhi)"
+  },
+  {
+    "botanicalName": "Ficus rubiginosa",
+    "commonName": "Fikus rdzawy"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata",
+    "commonName": "Sansewieria / wezownica"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Laurentii'",
+    "commonName": "Sansewieria zlotobrzezna"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Moonshine'",
+    "commonName": "Sansewieria Moonshine"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Black Gold'",
+    "commonName": "Sansewieria Black Gold"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Cylindrica'",
+    "commonName": "Sansewieria cylindryczna"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Hahnii'",
+    "commonName": "Sansewieria ptasie gniazdo"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Futura Superba'",
+    "commonName": "Sansewieria Futura Superba"
+  },
+  {
+    "botanicalName": "Dracaena marginata",
+    "commonName": "Dracena obrzezone"
+  },
+  {
+    "botanicalName": "Dracaena marginata 'Tricolor'",
+    "commonName": "Dracena tricolor"
+  },
+  {
+    "botanicalName": "Dracaena marginata 'Colorama'",
+    "commonName": "Dracena Colorama"
+  },
+  {
+    "botanicalName": "Dracaena fragrans 'Massangeana'",
+    "commonName": "Dracena wonna"
+  },
+  {
+    "botanicalName": "Dracaena reflexa 'Song of India'",
+    "commonName": "Dracena Song of India"
+  },
+  {
+    "botanicalName": "Dracaena surculosa",
+    "commonName": "Dracena plamista"
+  },
+  {
+    "botanicalName": "Dracaena draco",
+    "commonName": "Dracena smocza"
+  },
+  {
+    "botanicalName": "Zamioculcas zamiifolia",
+    "commonName": "Zamiokulkas"
+  },
+  {
+    "botanicalName": "Zamioculcas zamiifolia 'Raven'",
+    "commonName": "Zamiokulkas czarny (Raven)"
+  },
+  {
+    "botanicalName": "Zamioculcas zamiifolia 'Variegata'",
+    "commonName": "Zamiokulkas pstry"
+  },
+  {
+    "botanicalName": "Peperomia obtusifolia",
+    "commonName": "Peperomia"
+  },
+  {
+    "botanicalName": "Peperomia obtusifolia 'Variegata'",
+    "commonName": "Peperomia pstra"
+  },
+  {
+    "botanicalName": "Peperomia argyreia",
+    "commonName": "Peperomia arbuzowa"
+  },
+  {
+    "botanicalName": "Peperomia caperata 'Rosso'",
+    "commonName": "Peperomia Rosso"
+  },
+  {
+    "botanicalName": "Peperomia caperata 'Napoli Nights'",
+    "commonName": "Peperomia Napoli Nights"
+  },
+  {
+    "botanicalName": "Peperomia albovittata 'Piccolo Banda'",
+    "commonName": "Peperomia Piccolo Banda"
+  },
+  {
+    "botanicalName": "Peperomia polybotrya",
+    "commonName": "Peperomia monetowa"
+  },
+  {
+    "botanicalName": "Peperomia scandens 'Variegata'",
+    "commonName": "Peperomia pnaca pstra"
+  },
+  {
+    "botanicalName": "Peperomia rotundifolia",
+    "commonName": "Peperomia okraglolistna"
+  },
+  {
+    "botanicalName": "Peperomia graveolens",
+    "commonName": "Peperomia graveolens"
+  },
+  {
+    "botanicalName": "Peperomia puteolata",
+    "commonName": "Peperomia puteolata"
+  },
+  {
+    "botanicalName": "Peperomia nivalis",
+    "commonName": "Peperomia nivalis"
+  },
+  {
+    "botanicalName": "Peperomia orba 'Pixie Lime'",
+    "commonName": "Peperomia Pixie Lime"
+  },
+  {
+    "botanicalName": "Peperomia verticillata 'Belly Button'",
+    "commonName": "Peperomia Belly Button"
+  },
+  {
+    "botanicalName": "Peperomia hope",
+    "commonName": "Peperomia Hope"
+  },
+  {
+    "botanicalName": "Peperomia dolabriformis",
+    "commonName": "Peperomia modliszka"
+  },
+  {
+    "botanicalName": "Peperomia columella",
+    "commonName": "Peperomia columella"
+  },
+  {
+    "botanicalName": "Peperomia clusiifolia",
+    "commonName": "Peperomia clusiifolia"
+  },
+  {
+    "botanicalName": "Peperomia incana",
+    "commonName": "Peperomia filcowa"
+  },
+  {
+    "botanicalName": "Peperomia tetraphylla",
+    "commonName": "Peperomia czterolisciowa"
+  },
+  {
+    "botanicalName": "Begonia maculata",
+    "commonName": "Begonia cekowana (Polka Dot)"
+  },
+  {
+    "botanicalName": "Begonia rex",
+    "commonName": "Begonia rex (malowana)"
+  },
+  {
+    "botanicalName": "Begonia boliviensis",
+    "commonName": "Begonia bolivijska"
+  },
+  {
+    "botanicalName": "Begonia listada",
+    "commonName": "Begonia listada"
+  },
+  {
+    "botanicalName": "Begonia amphioxus",
+    "commonName": "Begonia amphioxus"
+  },
+  {
+    "botanicalName": "Begonia 'Escargot'",
+    "commonName": "Begonia Escargot"
+  },
+  {
+    "botanicalName": "Begonia 'Iron Cross'",
+    "commonName": "Begonia Iron Cross"
+  },
+  {
+    "botanicalName": "Begonia pavonina",
+    "commonName": "Begonia pawia (irydescentna)"
+  },
+  {
+    "botanicalName": "Begonia luxurians",
+    "commonName": "Begonia palmowata"
+  },
+  {
+    "botanicalName": "Begonia corallina",
+    "commonName": "Begonia koralowa"
+  },
+  {
+    "botanicalName": "Begonia 'Angel Wing'",
+    "commonName": "Begonia Angel Wing"
+  },
+  {
+    "botanicalName": "Begonia 'Fireworks'",
+    "commonName": "Begonia Fireworks"
+  },
+  {
+    "botanicalName": "Begonia 'Looking Glass'",
+    "commonName": "Begonia Looking Glass"
+  },
+  {
+    "botanicalName": "Begonia bowerae",
+    "commonName": "Begonia bowerae"
+  },
+  {
+    "botanicalName": "Begonia darthvaderiana",
+    "commonName": "Begonia czarna"
+  },
+  {
+    "botanicalName": "Aloe vera",
+    "commonName": "Aloe vera"
+  },
+  {
+    "botanicalName": "Aloe aristata",
+    "commonName": "Aloe koronkowe"
+  },
+  {
+    "botanicalName": "Aloe ferox",
+    "commonName": "Aloe zelazne"
+  },
+  {
+    "botanicalName": "Haworthiopsis attenuata",
+    "commonName": "Hawortia prazkowana"
+  },
+  {
+    "botanicalName": "Haworthia cooperi",
+    "commonName": "Hawortia cooperi"
+  },
+  {
+    "botanicalName": "Haworthia fasciata",
+    "commonName": "Hawortia fasciata"
+  },
+  {
+    "botanicalName": "Gasteria bicolor",
+    "commonName": "Gasteria"
+  },
+  {
+    "botanicalName": "Gasteria carinata",
+    "commonName": "Gasteria carinata"
+  },
+  {
+    "botanicalName": "Echeveria elegans",
+    "commonName": "Echeweria"
+  },
+  {
+    "botanicalName": "Echeveria 'Perle von Nurnberg'",
+    "commonName": "Echeweria PvN"
+  },
+  {
+    "botanicalName": "Echeveria 'Lola'",
+    "commonName": "Echeweria Lola"
+  },
+  {
+    "botanicalName": "Echeveria 'Blue Bird'",
+    "commonName": "Echeweria Blue Bird"
+  },
+  {
+    "botanicalName": "Echeveria subsessilis",
+    "commonName": "Echeweria subsessilis"
+  },
+  {
+    "botanicalName": "Crassula ovata",
+    "commonName": "Grubosz / jade plant"
+  },
+  {
+    "botanicalName": "Crassula perforata",
+    "commonName": "Grubosz perforowany"
+  },
+  {
+    "botanicalName": "Crassula muscosa",
+    "commonName": "Grubosz mszysty"
+  },
+  {
+    "botanicalName": "Crassula arborescens",
+    "commonName": "Grubosz drzewiasty (silver jade)"
+  },
+  {
+    "botanicalName": "Sedum morganianum",
+    "commonName": "Rozchodnik burrowy (ogon osla)"
+  },
+  {
+    "botanicalName": "Sedum pachyphyllum",
+    "commonName": "Rozchodnik grubolistny"
+  },
+  {
+    "botanicalName": "Curio rowleyanus",
+    "commonName": "Sznur perel"
+  },
+  {
+    "botanicalName": "Curio radicans",
+    "commonName": "Sznur bananow"
+  },
+  {
+    "botanicalName": "Curio herreanus",
+    "commonName": "Sznur arbuzow"
+  },
+  {
+    "botanicalName": "Sempervivum tectorum",
+    "commonName": "Rojnik murowy / wiecznie zywy"
+  },
+  {
+    "botanicalName": "Kalanchoe blossfeldiana",
+    "commonName": "Kalanchoe kwitnace"
+  },
+  {
+    "botanicalName": "Kalanchoe thyrsiflora",
+    "commonName": "Kalanchoe paddle plant"
+  },
+  {
+    "botanicalName": "Kalanchoe tomentosa",
+    "commonName": "Kalanchoe panda plant"
+  },
+  {
+    "botanicalName": "Kalanchoe daigremontiana",
+    "commonName": "Kalanchoe mother of thousands"
+  },
+  {
+    "botanicalName": "Kalanchoe tubiflora",
+    "commonName": "Kalanchoe mother of millions"
+  },
+  {
+    "botanicalName": "Kalanchoe fedtschenkoi",
+    "commonName": "Kalanchoe fedtschenkoi"
+  },
+  {
+    "botanicalName": "Aeonium arboreum",
+    "commonName": "Aeonium drzewiaste"
+  },
+  {
+    "botanicalName": "Aeonium 'Zwartkop'",
+    "commonName": "Aeonium czarna roza"
+  },
+  {
+    "botanicalName": "Aeonium 'Sunburst'",
+    "commonName": "Aeonium Sunburst"
+  },
+  {
+    "botanicalName": "Aeonium 'Kiwi'",
+    "commonName": "Aeonium Kiwi"
+  },
+  {
+    "botanicalName": "Graptopetalum paraguayense",
+    "commonName": "Graptopetalum (ghost plant)"
+  },
+  {
+    "botanicalName": "Graptoveria 'Fred Ives'",
+    "commonName": "Graptoveria Fred Ives"
+  },
+  {
+    "botanicalName": "Pachyphytum oviferum",
+    "commonName": "Pachyphytum (moonstones)"
+  },
+  {
+    "botanicalName": "Ceropegia woodii",
+    "commonName": "Sznur serc (rosary vine)"
+  },
+  {
+    "botanicalName": "Ceropegia woodii 'Variegata'",
+    "commonName": "Sznur serc pstry"
+  },
+  {
+    "botanicalName": "Ceropegia linearis",
+    "commonName": "Ceropegia linearis"
+  },
+  {
+    "botanicalName": "Euphorbia trigona",
+    "commonName": "Wilczomlecz afrykanski (African milk tree)"
+  },
+  {
+    "botanicalName": "Euphorbia milii",
+    "commonName": "Korona cierniowa (crown of thorns)"
+  },
+  {
+    "botanicalName": "Euphorbia tirucalli",
+    "commonName": "Wilczomlecz olowkowy (pencil cactus)"
+  },
+  {
+    "botanicalName": "Euphorbia lactea 'White Ghost'",
+    "commonName": "Euphorbia White Ghost"
+  },
+  {
+    "botanicalName": "Euphorbia obesa",
+    "commonName": "Euphorbia otyła (baseball plant)"
+  },
+  {
+    "botanicalName": "Euphorbia ingens",
+    "commonName": "Kandelaber wilczomlecz"
+  },
+  {
+    "botanicalName": "Codiaeum variegatum",
+    "commonName": "Kroton"
+  },
+  {
+    "botanicalName": "Codiaeum variegatum 'Petra'",
+    "commonName": "Kroton Petra"
+  },
+  {
+    "botanicalName": "Codiaeum variegatum 'Mammy'",
+    "commonName": "Kroton Mammy"
+  },
+  {
+    "botanicalName": "Codiaeum variegatum 'Gold Star'",
+    "commonName": "Kroton Gold Star"
+  },
+  {
+    "botanicalName": "Adenium obesum",
+    "commonName": "Adenium / roza pustyni"
+  },
+  {
+    "botanicalName": "Adenium obesum 'Double Flower'",
+    "commonName": "Adenium pelnokwiatowe"
+  },
+  {
+    "botanicalName": "Pachypodium lamerei",
+    "commonName": "Pachypodium (madagaskar palm)"
+  },
+  {
+    "botanicalName": "Pachypodium succulentum",
+    "commonName": "Pachypodium succulentum"
+  },
+  {
+    "botanicalName": "Stapelia grandiflora",
+    "commonName": "Stapelia (kwiat karionu)"
+  },
+  {
+    "botanicalName": "Orbea variegata",
+    "commonName": "Orbea variegata"
+  },
+  {
+    "botanicalName": "Fittonia albivenis",
+    "commonName": "Fittonia (nerwy siatki)"
+  },
+  {
+    "botanicalName": "Fittonia albivenis 'White Anne'",
+    "commonName": "Fittonia biala"
+  },
+  {
+    "botanicalName": "Fittonia albivenis 'Pink Angel'",
+    "commonName": "Fittonia rozowa"
+  },
+  {
+    "botanicalName": "Hypoestes phyllostachya",
+    "commonName": "Hipoestes / roslina polkowa"
+  },
+  {
+    "botanicalName": "Strobilanthes dyerianus",
+    "commonName": "Strobilanthes (perska tarcza)"
+  },
+  {
+    "botanicalName": "Aphelandra squarrosa",
+    "commonName": "Afelandria / zebra plant"
+  },
+  {
+    "botanicalName": "Justicia brandegeeana",
+    "commonName": "Justicia (roslina krewetkowa)"
+  },
+  {
+    "botanicalName": "Coffea arabica",
+    "commonName": "Kawa arabska"
+  },
+  {
+    "botanicalName": "Coffea canephora",
+    "commonName": "Kawa robusta"
+  },
+  {
+    "botanicalName": "Gardenia jasminoides",
+    "commonName": "Gardenia jasminowa"
+  },
+  {
+    "botanicalName": "Pentas lanceolata",
+    "commonName": "Pentas / gwiazda egipska"
+  },
+  {
+    "botanicalName": "Plectranthus australis",
+    "commonName": "Plektrantus (bluszcz szwedzki)"
+  },
+  {
+    "botanicalName": "Plectranthus scutellarioides",
+    "commonName": "Koleus"
+  },
+  {
+    "botanicalName": "Cordyline fruticosa",
+    "commonName": "Kordylina / ti plant"
+  },
+  {
+    "botanicalName": "Cordyline fruticosa 'Red Sister'",
+    "commonName": "Kordylina Red Sister"
+  },
+  {
+    "botanicalName": "Cordyline fruticosa 'Kiwi'",
+    "commonName": "Kordylina Kiwi"
+  },
+  {
+    "botanicalName": "Cordyline australis",
+    "commonName": "Kordylina australijska"
+  },
+  {
+    "botanicalName": "Aspidistra elatior",
+    "commonName": "Aspidistra / zelazna roslina"
+  },
+  {
+    "botanicalName": "Aspidistra elatior 'Variegata'",
+    "commonName": "Aspidistra pstra"
+  },
+  {
+    "botanicalName": "Hedera helix",
+    "commonName": "Bluszcz pospolity"
+  },
+  {
+    "botanicalName": "Hedera helix 'Glacier'",
+    "commonName": "Bluszcz Glacier"
+  },
+  {
+    "botanicalName": "Hedera helix 'Goldheart'",
+    "commonName": "Bluszcz Goldheart"
+  },
+  {
+    "botanicalName": "Hedera canariensis",
+    "commonName": "Bluszcz kanaryjski"
+  },
+  {
+    "botanicalName": "Fatsia japonica",
+    "commonName": "Fatsia japonska / fatsja"
+  },
+  {
+    "botanicalName": "Fatsia japonica 'Spider's Web'",
+    "commonName": "Fatsia Spider's Web"
+  },
+  {
+    "botanicalName": "Cissus rhombifolia",
+    "commonName": "Cissus (winobluszcz domowy)"
+  },
+  {
+    "botanicalName": "Cissus antarctica",
+    "commonName": "Cissus australijski"
+  },
+  {
+    "botanicalName": "Cissus discolor",
+    "commonName": "Cissus dwubarwny"
+  },
+  {
+    "botanicalName": "Polyscias fruticosa",
+    "commonName": "Polyscias / ming aralia"
+  },
+  {
+    "botanicalName": "Polyscias scutellaria",
+    "commonName": "Polyscias tarcza"
+  },
+  {
+    "botanicalName": "Pelargonium x hortorum",
+    "commonName": "Pelargonia ogrodowa / geranium"
+  },
+  {
+    "botanicalName": "Pelargonium graveolens",
+    "commonName": "Pelargonia rozetkowa"
+  },
+  {
+    "botanicalName": "Pelargonium tomentosum",
+    "commonName": "Pelargonia miętowa"
+  },
+  {
+    "botanicalName": "Cereus peruvianus",
+    "commonName": "Kaktus peruwianski"
+  },
+  {
+    "botanicalName": "Echinopsis pachanoi",
+    "commonName": "San Pedro"
+  },
+  {
+    "botanicalName": "Gymnocalycium mihanovichii",
+    "commonName": "Kaktus ksiezycowy"
+  },
+  {
+    "botanicalName": "Mammillaria hahniana",
+    "commonName": "Mammillaria hahniana"
+  },
+  {
+    "botanicalName": "Mammillaria gracilis",
+    "commonName": "Mammillaria gracilis"
+  },
+  {
+    "botanicalName": "Mammillaria elongata",
+    "commonName": "Mammillaria elongata"
+  },
+  {
+    "botanicalName": "Mammillaria bombycina",
+    "commonName": "Mammillaria bombycina"
+  },
+  {
+    "botanicalName": "Mammillaria prolifera",
+    "commonName": "Mammillaria prolifera"
+  },
+  {
+    "botanicalName": "Opuntia microdasys",
+    "commonName": "Opuncja"
+  },
+  {
+    "botanicalName": "Schlumbergera truncata",
+    "commonName": "Kaktus bozonarodzeniowy"
+  },
+  {
+    "botanicalName": "Rhipsalis baccifera",
+    "commonName": "Rhipsalis (kaktus jemiolowy)"
+  },
+  {
+    "botanicalName": "Epiphyllum oxypetalum",
+    "commonName": "Kaktus orchideowy"
+  },
+  {
+    "botanicalName": "Echinocactus grusonii",
+    "commonName": "Zlota becka (golden barrel)"
+  },
+  {
+    "botanicalName": "Astrophytum myriostigma",
+    "commonName": "Astrophytum (czapka biskupa)"
+  },
+  {
+    "botanicalName": "Ferocactus latispinus",
+    "commonName": "Ferocactus haczykowaty"
+  },
+  {
+    "botanicalName": "Parodia leninghausii",
+    "commonName": "Parodia zlatowlosowa"
+  },
+  {
+    "botanicalName": "Echinopsis chamaecereus",
+    "commonName": "Kaktus orzeszkowy (peanut cactus)"
+  },
+  {
+    "botanicalName": "Rebutia muscula",
+    "commonName": "Rebutia puszysta"
+  },
+  {
+    "botanicalName": "Hylocereus undatus",
+    "commonName": "Smocze jagody / pitaya"
+  },
+  {
+    "botanicalName": "Selenicereus grandiflorus",
+    "commonName": "Krolowa nocy"
+  },
+  {
+    "botanicalName": "Disocactus flagelliformis",
+    "commonName": "Kaktus sznurowy (rat tail)"
+  },
+  {
+    "botanicalName": "Selenicereus anthonyanus",
+    "commonName": "Kaktus rybiej kosci (fishbone)"
+  },
+  {
+    "botanicalName": "Pilosocereus azureus",
+    "commonName": "Kaktus niebieski (blue torch)"
+  },
+  {
+    "botanicalName": "Lithops aucampiae",
+    "commonName": "Lithops / zywe kamienie"
+  },
+  {
+    "botanicalName": "Lithops hookeri",
+    "commonName": "Lithops hookeri"
+  },
+  {
+    "botanicalName": "Lithops fulviceps",
+    "commonName": "Lithops fulviceps"
+  },
+  {
+    "botanicalName": "Lithops salicola",
+    "commonName": "Lithops salicola"
+  },
+  {
+    "botanicalName": "Conophytum bilobum",
+    "commonName": "Conophytum"
+  },
+  {
+    "botanicalName": "Faucaria tigrina",
+    "commonName": "Faucaria (szczeka tygrysa)"
+  },
+  {
+    "botanicalName": "Delosperma cooperi",
+    "commonName": "Delosperma (lod rosliny)"
+  },
+  {
+    "botanicalName": "Agave americana",
+    "commonName": "Agawa amerykanska"
+  },
+  {
+    "botanicalName": "Agave attenuata",
+    "commonName": "Agawa miekka"
+  },
+  {
+    "botanicalName": "Agave victoriae-reginae",
+    "commonName": "Agawa krolewska"
+  },
+  {
+    "botanicalName": "Agave parryi",
+    "commonName": "Agawa Parrya"
+  },
+  {
+    "botanicalName": "Yucca elephantipes",
+    "commonName": "Juka sloniostopa"
+  },
+  {
+    "botanicalName": "Yucca rostrata",
+    "commonName": "Juka beakowa"
+  },
+  {
+    "botanicalName": "Nephrolepis exaltata",
+    "commonName": "Paproc bostonianska"
+  },
+  {
+    "botanicalName": "Nephrolepis cordifolia 'Duffii'",
+    "commonName": "Paproc Duffii"
+  },
+  {
+    "botanicalName": "Asplenium nidus",
+    "commonName": "Asplenium ptasie gniazdo"
+  },
+  {
+    "botanicalName": "Asplenium antiquum",
+    "commonName": "Asplenium antiquum"
+  },
+  {
+    "botanicalName": "Asplenium trichomanes",
+    "commonName": "Asplenium trichomanes"
+  },
+  {
+    "botanicalName": "Adiantum raddianum",
+    "commonName": "Adiantum / paproc weneryczna"
+  },
+  {
+    "botanicalName": "Platycerium bifurcatum",
+    "commonName": "Platicerium jeleni rog"
+  },
+  {
+    "botanicalName": "Platycerium superbum",
+    "commonName": "Platicerium superbum"
+  },
+  {
+    "botanicalName": "Microsorum musifolium 'Crocodyllus'",
+    "commonName": "Paproc krokodyl"
+  },
+  {
+    "botanicalName": "Phlebodium aureum 'Blue Star'",
+    "commonName": "Phlebodium Blue Star"
+  },
+  {
+    "botanicalName": "Pyrrosia lingua",
+    "commonName": "Pyrrosia jezykowa"
+  },
+  {
+    "botanicalName": "Selaginella uncinata",
+    "commonName": "Selaginella teczowa"
+  },
+  {
+    "botanicalName": "Selaginella kraussiana",
+    "commonName": "Selaginella Kraussa"
+  },
+  {
+    "botanicalName": "Selaginella martensii",
+    "commonName": "Selaginella Martensa"
+  },
+  {
+    "botanicalName": "Chamaedorea elegans",
+    "commonName": "Palma parlor / chamedora"
+  },
+  {
+    "botanicalName": "Chamaedorea seifrizii",
+    "commonName": "Palma bambusowa"
+  },
+  {
+    "botanicalName": "Howea forsteriana",
+    "commonName": "Palma kentia"
+  },
+  {
+    "botanicalName": "Dypsis lutescens",
+    "commonName": "Palma areka / zlotolistna"
+  },
+  {
+    "botanicalName": "Rhapis excelsa",
+    "commonName": "Palma dama"
+  },
+  {
+    "botanicalName": "Livistona rotundifolia",
+    "commonName": "Livistona"
+  },
+  {
+    "botanicalName": "Colocasia esculenta",
+    "commonName": "Colocasia / taro"
+  },
+  {
+    "botanicalName": "Colocasia esculenta 'Black Magic'",
+    "commonName": "Colocasia Black Magic"
+  },
+  {
+    "botanicalName": "Colocasia esculenta 'Illustris'",
+    "commonName": "Colocasia Illustris"
+  },
+  {
+    "botanicalName": "Xanthosoma sagittifolium",
+    "commonName": "Ksantozoma / malanga"
+  },
+  {
+    "botanicalName": "Xanthosoma 'Lime Zinger'",
+    "commonName": "Xanthosoma Lime Zinger"
+  },
+  {
+    "botanicalName": "Caladium bicolor",
+    "commonName": "Kaladium ozdobne"
+  },
+  {
+    "botanicalName": "Caladium 'White Christmas'",
+    "commonName": "Kaladium White Christmas"
+  },
+  {
+    "botanicalName": "Caladium 'Florida Moonlight'",
+    "commonName": "Kaladium Florida Moonlight"
+  },
+  {
+    "botanicalName": "Dieffenbachia seguine",
+    "commonName": "Diefenbakia"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Camille'",
+    "commonName": "Diefenbakia Camille"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Tropic Snow'",
+    "commonName": "Diefenbakia Tropic Snow"
+  },
+  {
+    "botanicalName": "Spathiphyllum wallisii",
+    "commonName": "Skrzydlokwiat"
+  },
+  {
+    "botanicalName": "Spathiphyllum 'Sensation'",
+    "commonName": "Skrzydlokwiat Sensation"
+  },
+  {
+    "botanicalName": "Spathiphyllum 'Domino'",
+    "commonName": "Skrzydlokwiat Domino"
+  },
+  {
+    "botanicalName": "Aglaonema commutatum",
+    "commonName": "Aglaonema"
+  },
+  {
+    "botanicalName": "Aglaonema 'Silver Bay'",
+    "commonName": "Aglaonema Silver Bay"
+  },
+  {
+    "botanicalName": "Aglaonema 'Siam Aurora'",
+    "commonName": "Aglaonema Siam Aurora"
+  },
+  {
+    "botanicalName": "Aglaonema 'Red Aglaonema'",
+    "commonName": "Aglaonema Red"
+  },
+  {
+    "botanicalName": "Aglaonema 'Emerald Bay'",
+    "commonName": "Aglaonema Emerald Bay"
+  },
+  {
+    "botanicalName": "Aglaonema 'Maria'",
+    "commonName": "Aglaonema Maria"
+  },
+  {
+    "botanicalName": "Amydrium medium 'Silver'",
+    "commonName": "Amydrium Silver"
+  },
+  {
+    "botanicalName": "Homalomena rubescens",
+    "commonName": "Homalomena rubescens"
+  },
+  {
+    "botanicalName": "Homalomena 'Selby'",
+    "commonName": "Homalomena Selby"
+  },
+  {
+    "botanicalName": "Homalomena wallisii",
+    "commonName": "Homalomena wallisii"
+  },
+  {
+    "botanicalName": "Tradescantia zebrina",
+    "commonName": "Trzykrotka zebrowa"
+  },
+  {
+    "botanicalName": "Tradescantia fluminensis 'Tricolor'",
+    "commonName": "Trzykrotka tricolor"
+  },
+  {
+    "botanicalName": "Tradescantia pallida",
+    "commonName": "Trzykrotka fioletowa"
+  },
+  {
+    "botanicalName": "Tradescantia spathacea",
+    "commonName": "Trzykrotka ostryga"
+  },
+  {
+    "botanicalName": "Tradescantia sillamontana",
+    "commonName": "Trzykrotka sillamontana"
+  },
+  {
+    "botanicalName": "Tradescantia nanouk",
+    "commonName": "Tradescantia Nanouk"
+  },
+  {
+    "botanicalName": "Callisia repens",
+    "commonName": "Callisia repens"
+  },
+  {
+    "botanicalName": "Callisia fragrans",
+    "commonName": "Callisia wonna"
+  },
+  {
+    "botanicalName": "Pilea peperomioides",
+    "commonName": "Pilea / chinska roslina pieniedzy"
+  },
+  {
+    "botanicalName": "Pilea cadierei",
+    "commonName": "Pilea aluminiowa"
+  },
+  {
+    "botanicalName": "Pilea involucrata",
+    "commonName": "Pilea involucrata"
+  },
+  {
+    "botanicalName": "Pilea mollis 'Moon Valley'",
+    "commonName": "Pilea Moon Valley"
+  },
+  {
+    "botanicalName": "Pilea glauca",
+    "commonName": "Pilea szara (glauca)"
+  },
+  {
+    "botanicalName": "Chlorophytum comosum",
+    "commonName": "Zielistka Sternberga"
+  },
+  {
+    "botanicalName": "Chlorophytum comosum 'Variegatum'",
+    "commonName": "Zielistka pstra"
+  },
+  {
+    "botanicalName": "Chlorophytum comosum 'Bonnie'",
+    "commonName": "Zielistka kedzierzawa Bonnie"
+  },
+  {
+    "botanicalName": "Asparagus setaceus",
+    "commonName": "Szparagi ozdobne / asparagus"
+  },
+  {
+    "botanicalName": "Asparagus densiflorus 'Sprengeri'",
+    "commonName": "Asparagus Sprengeri"
+  },
+  {
+    "botanicalName": "Oxalis triangularis",
+    "commonName": "Szczawik trojkatny / fioletowa koniczyna"
+  },
+  {
+    "botanicalName": "Oxalis triangularis 'Charmed Wine'",
+    "commonName": "Oxalis Charmed Wine"
+  },
+  {
+    "botanicalName": "Oxalis tetraphylla 'Iron Cross'",
+    "commonName": "Oxalis Iron Cross"
+  },
+  {
+    "botanicalName": "Schefflera arboricola",
+    "commonName": "Parasolowiec"
+  },
+  {
+    "botanicalName": "Schefflera actinophylla",
+    "commonName": "Parasolowiec wielki"
+  },
+  {
+    "botanicalName": "Pachira aquatica",
+    "commonName": "Pachira / drzewo pieniedzy"
+  },
+  {
+    "botanicalName": "Beaucarnea recurvata",
+    "commonName": "Sloniostopa / beaukarnea"
+  },
+  {
+    "botanicalName": "Strelitzia reginae",
+    "commonName": "Rajski ptak"
+  },
+  {
+    "botanicalName": "Strelitzia nicolai",
+    "commonName": "Bialy rajski ptak"
+  },
+  {
+    "botanicalName": "Musa acuminata",
+    "commonName": "Banan karzełkowy (Dwarf Banana)"
+  },
+  {
+    "botanicalName": "Musa basjoo",
+    "commonName": "Banan japoński (mrozoodporny)"
+  },
+  {
+    "botanicalName": "Ensete ventricosum",
+    "commonName": "Banan abisynski"
+  },
+  {
+    "botanicalName": "Canna indica",
+    "commonName": "Kanna indyjska"
+  },
+  {
+    "botanicalName": "Hedychium gardnerianum",
+    "commonName": "Hedychium (zloty imbirek)"
+  },
+  {
+    "botanicalName": "Aechmea fasciata",
+    "commonName": "Bromelia / ekhea srebrna"
+  },
+  {
+    "botanicalName": "Aechmea chantinii",
+    "commonName": "Aechmea chantinii"
+  },
+  {
+    "botanicalName": "Aechmea gamosepala",
+    "commonName": "Aechmea gamosepala"
+  },
+  {
+    "botanicalName": "Neoregelia carolinae",
+    "commonName": "Neoregelia"
+  },
+  {
+    "botanicalName": "Neoregelia carolinae 'Tricolor'",
+    "commonName": "Neoregelia tricolor"
+  },
+  {
+    "botanicalName": "Neoregelia 'Fireball'",
+    "commonName": "Neoregelia Fireball"
+  },
+  {
+    "botanicalName": "Cryptanthus bivittatus",
+    "commonName": "Cryptanthus (gwiazda ziemi)"
+  },
+  {
+    "botanicalName": "Cryptanthus bromelioides",
+    "commonName": "Cryptanthus tecza"
+  },
+  {
+    "botanicalName": "Billbergia nutans",
+    "commonName": "Billbergia slzy krolowej"
+  },
+  {
+    "botanicalName": "Guzmania lingulata",
+    "commonName": "Guzmania"
+  },
+  {
+    "botanicalName": "Guzmania monostachia",
+    "commonName": "Guzmania monostachia"
+  },
+  {
+    "botanicalName": "Vriesea splendens",
+    "commonName": "Vriesea"
+  },
+  {
+    "botanicalName": "Nidularium innocentii",
+    "commonName": "Nidularium"
+  },
+  {
+    "botanicalName": "Tillandsia ionantha",
+    "commonName": "Tillandsia ionantha"
+  },
+  {
+    "botanicalName": "Tillandsia usneoides",
+    "commonName": "Tillandsia hiszpanski mech"
+  },
+  {
+    "botanicalName": "Tillandsia xerographica",
+    "commonName": "Tillandsia xerographica"
+  },
+  {
+    "botanicalName": "Tillandsia cyanea",
+    "commonName": "Tillandsia cyanea (rozowa szpilka)"
+  },
+  {
+    "botanicalName": "Tillandsia caput-medusae",
+    "commonName": "Tillandsia glowa meduzy"
+  },
+  {
+    "botanicalName": "Tillandsia stricta",
+    "commonName": "Tillandsia stricta"
+  },
+  {
+    "botanicalName": "Tillandsia bulbosa",
+    "commonName": "Tillandsia bulbosa"
+  },
+  {
+    "botanicalName": "Tillandsia tectorum",
+    "commonName": "Tillandsia tectorum"
+  },
+  {
+    "botanicalName": "Tillandsia brachycaulos",
+    "commonName": "Tillandsia brachycaulos"
+  },
+  {
+    "botanicalName": "Phalaenopsis amabilis",
+    "commonName": "Storczyk motylek bialy"
+  },
+  {
+    "botanicalName": "Phalaenopsis equestris",
+    "commonName": "Storczyk equestris"
+  },
+  {
+    "botanicalName": "Phalaenopsis stuartiana",
+    "commonName": "Storczyk stuartiana"
+  },
+  {
+    "botanicalName": "Phalaenopsis schilleriana",
+    "commonName": "Storczyk schilleriana"
+  },
+  {
+    "botanicalName": "Phalaenopsis violacea",
+    "commonName": "Storczyk fioletowy"
+  },
+  {
+    "botanicalName": "Phalaenopsis bellina",
+    "commonName": "Storczyk bellina"
+  },
+  {
+    "botanicalName": "Phalaenopsis 'Pink'",
+    "commonName": "Storczyk rozowy"
+  },
+  {
+    "botanicalName": "Phalaenopsis 'Yellow'",
+    "commonName": "Storczyk zolty"
+  },
+  {
+    "botanicalName": "Dendrobium nobile",
+    "commonName": "Storczyk dendrobium"
+  },
+  {
+    "botanicalName": "Dendrobium phalaenopsis",
+    "commonName": "Dendrobium phalaenopsis"
+  },
+  {
+    "botanicalName": "Cattleya aurantiaca",
+    "commonName": "Storczyk cattleya"
+  },
+  {
+    "botanicalName": "Cattleya intermedia",
+    "commonName": "Cattleya intermedia"
+  },
+  {
+    "botanicalName": "Oncidium sphacelatum",
+    "commonName": "Storczyk tanczacy (dancing lady)"
+  },
+  {
+    "botanicalName": "Oncidium 'Sharry Baby'",
+    "commonName": "Oncidium Sharry Baby (czekoladowy)"
+  },
+  {
+    "botanicalName": "Zygopetalum mackayi",
+    "commonName": "Zygopetalum"
+  },
+  {
+    "botanicalName": "Paphiopedilum insigne",
+    "commonName": "Storczyk papuci Wenus"
+  },
+  {
+    "botanicalName": "Paphiopedilum rothschildianum",
+    "commonName": "Paphiopedilum rothschildianum"
+  },
+  {
+    "botanicalName": "Miltoniopsis vexillaria",
+    "commonName": "Miltoniopsis (storczyk pansik)"
+  },
+  {
+    "botanicalName": "Cymbidium lowianum",
+    "commonName": "Cymbidium"
+  },
+  {
+    "botanicalName": "Ludisia discolor",
+    "commonName": "Storczyk jubilerski"
+  },
+  {
+    "botanicalName": "Macodes petola",
+    "commonName": "Storczyk jubilerski zloty"
+  },
+  {
+    "botanicalName": "Vanilla planifolia",
+    "commonName": "Wanilia"
+  },
+  {
+    "botanicalName": "Dionaea muscipula",
+    "commonName": "Mucholomka wenus (Venus flytrap)"
+  },
+  {
+    "botanicalName": "Drosera capensis",
+    "commonName": "Rosiczka przylądkowa"
+  },
+  {
+    "botanicalName": "Drosera spatulata",
+    "commonName": "Rosiczka szpatulolistna"
+  },
+  {
+    "botanicalName": "Drosera rotundifolia",
+    "commonName": "Rosiczka okraglolistna"
+  },
+  {
+    "botanicalName": "Drosera adelae",
+    "commonName": "Rosiczka Adeli"
+  },
+  {
+    "botanicalName": "Sarracenia purpurea",
+    "commonName": "Sarracenia fioletowa"
+  },
+  {
+    "botanicalName": "Sarracenia flava",
+    "commonName": "Sarracenia zolta"
+  },
+  {
+    "botanicalName": "Sarracenia leucophylla",
+    "commonName": "Sarracenia bialolistna"
+  },
+  {
+    "botanicalName": "Nepenthes alata",
+    "commonName": "Dzbanik (pitcher plant)"
+  },
+  {
+    "botanicalName": "Nepenthes ventricosa",
+    "commonName": "Nepenthes ventricosa"
+  },
+  {
+    "botanicalName": "Nepenthes x ventrata",
+    "commonName": "Nepenthes Ventrata"
+  },
+  {
+    "botanicalName": "Nepenthes rafflesiana",
+    "commonName": "Nepenthes rafflesiana"
+  },
+  {
+    "botanicalName": "Pinguicula moranensis",
+    "commonName": "Pinguicula (tluszcza)"
+  },
+  {
+    "botanicalName": "Pinguicula gypsicola",
+    "commonName": "Pinguicula gypsicola"
+  },
+  {
+    "botanicalName": "Utricularia graminifolia",
+    "commonName": "Pływacz trawolistny"
+  },
+  {
+    "botanicalName": "Nematanthus gregarius",
+    "commonName": "Nematanthus (roslina zlotek)"
+  },
+  {
+    "botanicalName": "Aeschynanthus lobbianus",
+    "commonName": "Aeschynanthus (roslina szminki)"
+  },
+  {
+    "botanicalName": "Aeschynanthus radicans",
+    "commonName": "Aeschynanthus radicans"
+  },
+  {
+    "botanicalName": "Columnea gloriosa",
+    "commonName": "Columnea (roslina ryba)"
+  },
+  {
+    "botanicalName": "Episcia cupreata",
+    "commonName": "Episcia miedzianolistna"
+  },
+  {
+    "botanicalName": "Streptocarpus saxorum",
+    "commonName": "Streptokarpus (wieczna fiołka)"
+  },
+  {
+    "botanicalName": "Streptocarpus rexii",
+    "commonName": "Streptokarpus rexii"
+  },
+  {
+    "botanicalName": "Sinningia speciosa",
+    "commonName": "Gloksynia (gloxinia)"
+  },
+  {
+    "botanicalName": "Sinningia leucotricha",
+    "commonName": "Sinningia leucotricha"
+  },
+  {
+    "botanicalName": "Cyclamen persicum",
+    "commonName": "Cyklamem perski"
+  },
+  {
+    "botanicalName": "Primula vulgaris",
+    "commonName": "Pierwiosnek pospolity"
+  },
+  {
+    "botanicalName": "Primula obconica",
+    "commonName": "Pierwiosnek chinski"
+  },
+  {
+    "botanicalName": "Clivia miniata",
+    "commonName": "Kliwia (lilia kafryska)"
+  },
+  {
+    "botanicalName": "Clivia nobilis",
+    "commonName": "Kliwia szlachetna"
+  },
+  {
+    "botanicalName": "Hippeastrum hybridum",
+    "commonName": "Amaryllis / skrzelek"
+  },
+  {
+    "botanicalName": "Rhododendron simsii",
+    "commonName": "Azalia doniczkowa"
+  },
+  {
+    "botanicalName": "Impatiens walleriana",
+    "commonName": "Impatiens / niecierpek"
+  },
+  {
+    "botanicalName": "Impatiens hawkeri",
+    "commonName": "Impatiens Nowa Gwinea"
+  },
+  {
+    "botanicalName": "Impatiens niamniamensis",
+    "commonName": "Impatiens papuga"
+  },
+  {
+    "botanicalName": "Medinilla magnifica",
+    "commonName": "Medinilla wspaniala"
+  },
+  {
+    "botanicalName": "Ardisia crenata",
+    "commonName": "Ardisia / koralowiec"
+  },
+  {
+    "botanicalName": "Jasminum polyanthum",
+    "commonName": "Jasminum wielokwiatowy"
+  },
+  {
+    "botanicalName": "Jasminum sambac",
+    "commonName": "Jasminum sambac (arabian jasmine)"
+  },
+  {
+    "botanicalName": "Passiflora caerulea",
+    "commonName": "Mens pasiflora niebieska"
+  },
+  {
+    "botanicalName": "Passiflora incarnata",
+    "commonName": "Mens pasiflora fioletowa"
+  },
+  {
+    "botanicalName": "Bougainvillea spectabilis",
+    "commonName": "Bugenwilla"
+  },
+  {
+    "botanicalName": "Bougainvillea glabra",
+    "commonName": "Bugenwilla gladkolistna"
+  },
+  {
+    "botanicalName": "Lantana camara",
+    "commonName": "Lantana / przewiercien"
+  },
+  {
+    "botanicalName": "Iresine herbstii",
+    "commonName": "Iresine / roslina krwawa"
+  },
+  {
+    "botanicalName": "Piper crocatum",
+    "commonName": "Pieprz ozdobny"
+  },
+  {
+    "botanicalName": "Piper ornatum",
+    "commonName": "Pieprz ornamentowy"
+  },
+  {
+    "botanicalName": "Alocasia 'Black Magic'",
+    "commonName": "Alocasia Czarny Magik"
+  },
+  {
+    "botanicalName": "Alocasia 'Melo'",
+    "commonName": "Alocasia Melo"
+  },
+  {
+    "botanicalName": "Alocasia 'Tiny Dancer'",
+    "commonName": "Alocasia Mała Tancerka"
+  },
+  {
+    "botanicalName": "Alocasia brisbanensis",
+    "commonName": "Alocasia Brisbane"
+  },
+  {
+    "botanicalName": "Alocasia infernalis",
+    "commonName": "Alocasia Czarna"
+  },
+  {
+    "botanicalName": "Alocasia hypnosa",
+    "commonName": "Alocasia Hypnosa"
+  },
+  {
+    "botanicalName": "Alocasia 'Sumo'",
+    "commonName": "Alocasia Sumo"
+  },
+  {
+    "botanicalName": "Alocasia 'Hilo Beauty'",
+    "commonName": "Alocasia Hilo Beauty"
+  },
+  {
+    "botanicalName": "Alocasia x amazonica",
+    "commonName": "Alocasia Amazońska"
+  },
+  {
+    "botanicalName": "Alocasia 'Ninja'",
+    "commonName": "Alocasia Ninja"
+  },
+  {
+    "botanicalName": "Anthurium bonplandii",
+    "commonName": "Anthurium Bonplanda"
+  },
+  {
+    "botanicalName": "Anthurium faustomirandae",
+    "commonName": "Anthurium Gigantyczne"
+  },
+  {
+    "botanicalName": "Anthurium watermaliense",
+    "commonName": "Anthurium Aksamitne"
+  },
+  {
+    "botanicalName": "Anthurium gracile",
+    "commonName": "Anthurium Smukłe"
+  },
+  {
+    "botanicalName": "Anthurium metallicum",
+    "commonName": "Anthurium Metaliczne"
+  },
+  {
+    "botanicalName": "Anthurium podophyllum",
+    "commonName": "Anthurium Ptasie Pióro"
+  },
+  {
+    "botanicalName": "Anthurium vittarifolium",
+    "commonName": "Anthurium Wstążkowe"
+  },
+  {
+    "botanicalName": "Anthurium reflexinervium",
+    "commonName": "Anthurium Żyłkowe"
+  },
+  {
+    "botanicalName": "Anthurium splendidum",
+    "commonName": "Anthurium Wspaniałe"
+  },
+  {
+    "botanicalName": "Anthurium dressleri",
+    "commonName": "Anthurium Dresslera"
+  },
+  {
+    "botanicalName": "Philodendron 'McDowell'",
+    "commonName": "Philodendron McDowell"
+  },
+  {
+    "botanicalName": "Philodendron 'White Measure'",
+    "commonName": "Philodendron Biała Miara"
+  },
+  {
+    "botanicalName": "Philodendron 'Jose Buono'",
+    "commonName": "Philodendron Jose Buono"
+  },
+  {
+    "botanicalName": "Philodendron 'Paraiso Verde'",
+    "commonName": "Philodendron Paraiso Verde"
+  },
+  {
+    "botanicalName": "Philodendron 'Bob Cee'",
+    "commonName": "Philodendron Bob Cee"
+  },
+  {
+    "botanicalName": "Philodendron 'Spiritus Sancti'",
+    "commonName": "Philodendron Spirytus Sancti"
+  },
+  {
+    "botanicalName": "Philodendron gloriosum 'Zebra'",
+    "commonName": "Philodendron Gloriosum Zebra"
+  },
+  {
+    "botanicalName": "Philodendron glanduliferum",
+    "commonName": "Philodendron Gruczołowy"
+  },
+  {
+    "botanicalName": "Philodendron holtonianum",
+    "commonName": "Philodendron Holtona"
+  },
+  {
+    "botanicalName": "Philodendron insigne",
+    "commonName": "Philodendron Wybitny"
+  },
+  {
+    "botanicalName": "Philodendron knob",
+    "commonName": "Philodendron Knob"
+  },
+  {
+    "botanicalName": "Philodendron panduriforme",
+    "commonName": "Philodendron Skrzypcowaty"
+  },
+  {
+    "botanicalName": "Philodendron stenolobum",
+    "commonName": "Philodendron Stenolobum"
+  },
+  {
+    "botanicalName": "Philodendron warszewiczii",
+    "commonName": "Philodendron Warszewicza"
+  },
+  {
+    "botanicalName": "Philodendron wendlandii",
+    "commonName": "Philodendron Wendlanda"
+  },
+  {
+    "botanicalName": "Philodendron wilsonii",
+    "commonName": "Philodendron Wilsona"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Mint'",
+    "commonName": "Monstera Miętowa"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Marmorata'",
+    "commonName": "Monstera Marmorata"
+  },
+  {
+    "botanicalName": "Monstera deliciosa 'Sport'",
+    "commonName": "Monstera Sport"
+  },
+  {
+    "botanicalName": "Monstera lechleriana 'Albo'",
+    "commonName": "Monstera Lechleriana Albo"
+  },
+  {
+    "botanicalName": "Monstera spruceana",
+    "commonName": "Monstera Sprucea"
+  },
+  {
+    "botanicalName": "Hoya compacta",
+    "commonName": "Hoya Kompaktowa"
+  },
+  {
+    "botanicalName": "Hoya griffithii",
+    "commonName": "Hoya Griffitha"
+  },
+  {
+    "botanicalName": "Hoya imbricata",
+    "commonName": "Hoya Dachówkowa"
+  },
+  {
+    "botanicalName": "Hoya inflata",
+    "commonName": "Hoya Nadęta"
+  },
+  {
+    "botanicalName": "Hoya kerrii 'Splash'",
+    "commonName": "Hoya Serce Splash"
+  },
+  {
+    "botanicalName": "Hoya lauterbachii",
+    "commonName": "Hoya Lauterbacha"
+  },
+  {
+    "botanicalName": "Hoya longifolia",
+    "commonName": "Hoya Długolistna"
+  },
+  {
+    "botanicalName": "Hoya macgillivrayi",
+    "commonName": "Hoya MacGillivraya"
+  },
+  {
+    "botanicalName": "Hoya meliflua",
+    "commonName": "Hoya Miodowa"
+  },
+  {
+    "botanicalName": "Hoya micrantha",
+    "commonName": "Hoya Drobnokwiatowa"
+  },
+  {
+    "botanicalName": "Hoya naumannii",
+    "commonName": "Hoya Naumanna"
+  },
+  {
+    "botanicalName": "Hoya onychoides",
+    "commonName": "Hoya Onychoides"
+  },
+  {
+    "botanicalName": "Hoya pachyclada",
+    "commonName": "Hoya Grubogałązkowa"
+  },
+  {
+    "botanicalName": "Hoya pauciflora",
+    "commonName": "Hoya Skąpokwiatowa"
+  },
+  {
+    "botanicalName": "Hoya paziae",
+    "commonName": "Hoya Paziae"
+  },
+  {
+    "botanicalName": "Hoya phuwuaensis",
+    "commonName": "Hoya Phuwuaensis"
+  },
+  {
+    "botanicalName": "Hoya picta",
+    "commonName": "Hoya Malowana"
+  },
+  {
+    "botanicalName": "Hoya pusilla",
+    "commonName": "Hoya Miniaturowa"
+  },
+  {
+    "botanicalName": "Hoya rigida",
+    "commonName": "Hoya Sztywna"
+  },
+  {
+    "botanicalName": "Hoya rotundiflora",
+    "commonName": "Hoya Okrągłokwiatowa"
+  },
+  {
+    "botanicalName": "Hoya ruthiae",
+    "commonName": "Hoya Ruthiae"
+  },
+  {
+    "botanicalName": "Hoya shepherdii",
+    "commonName": "Hoya Shepherda"
+  },
+  {
+    "botanicalName": "Hoya spartioides",
+    "commonName": "Hoya Spartioides"
+  },
+  {
+    "botanicalName": "Hoya subcalva",
+    "commonName": "Hoya Subcalva"
+  },
+  {
+    "botanicalName": "Hoya thomsonii",
+    "commonName": "Hoya Thomsona"
+  },
+  {
+    "botanicalName": "Hoya tsangii",
+    "commonName": "Hoya Tsanga"
+  },
+  {
+    "botanicalName": "Hoya vitellinoides",
+    "commonName": "Hoya Vitellinoides"
+  },
+  {
+    "botanicalName": "Hoya wallichii",
+    "commonName": "Hoya Wallicha"
+  },
+  {
+    "botanicalName": "Hoya wightii",
+    "commonName": "Hoya Wighta"
+  },
+  {
+    "botanicalName": "Hoya camphorifolia",
+    "commonName": "Hoya Kamforowa"
+  },
+  {
+    "botanicalName": "Hoya diptera",
+    "commonName": "Hoya Dwuskrzydłowa"
+  },
+  {
+    "botanicalName": "Hoya erythrina",
+    "commonName": "Hoya Erythryna"
+  },
+  {
+    "botanicalName": "Hoya heuschkeliana",
+    "commonName": "Hoya Heuschkeliana"
+  },
+  {
+    "botanicalName": "Hoya krohniana",
+    "commonName": "Hoya Krohniana"
+  },
+  {
+    "botanicalName": "Hoya cumingiana",
+    "commonName": "Hoya Cumingiana"
+  },
+  {
+    "botanicalName": "Peperomia axillaris",
+    "commonName": "Peperomia Osiowa"
+  },
+  {
+    "botanicalName": "Peperomia clusiaefolia",
+    "commonName": "Peperomia Clusia"
+  },
+  {
+    "botanicalName": "Peperomia deppeana",
+    "commonName": "Peperomia Deppego"
+  },
+  {
+    "botanicalName": "Peperomia emarginella",
+    "commonName": "Peperomia Emarginella"
+  },
+  {
+    "botanicalName": "Peperomia fraseri",
+    "commonName": "Peperomia Frasera"
+  },
+  {
+    "botanicalName": "Peperomia glabella",
+    "commonName": "Peperomia Gładka"
+  },
+  {
+    "botanicalName": "Peperomia griseoargentea",
+    "commonName": "Peperomia Ivy Leaf"
+  },
+  {
+    "botanicalName": "Peperomia maculosa",
+    "commonName": "Peperomia Plamkowana"
+  },
+  {
+    "botanicalName": "Peperomia marmorata",
+    "commonName": "Peperomia Marmurkowa"
+  },
+  {
+    "botanicalName": "Peperomia metallica",
+    "commonName": "Peperomia Metaliczna"
+  },
+  {
+    "botanicalName": "Peperomia peruviana",
+    "commonName": "Peperomia Peruwiańska"
+  },
+  {
+    "botanicalName": "Peperomia prostrata",
+    "commonName": "Peperomia Łańcuszkowa"
+  },
+  {
+    "botanicalName": "Peperomia rubella",
+    "commonName": "Peperomia Czerwonawa"
+  },
+  {
+    "botanicalName": "Peperomia trinervula",
+    "commonName": "Peperomia Trójnerwowa"
+  },
+  {
+    "botanicalName": "Peperomia verschaffeltii",
+    "commonName": "Peperomia Verschaffelta"
+  },
+  {
+    "botanicalName": "Peperomia wheeleri",
+    "commonName": "Peperomia Wheelera"
+  },
+  {
+    "botanicalName": "Goeppertia orbifolia",
+    "commonName": "Kalatea Orbifolia"
+  },
+  {
+    "botanicalName": "Goeppertia ornata",
+    "commonName": "Kalatea Paskowana"
+  },
+  {
+    "botanicalName": "Goeppertia makoyana",
+    "commonName": "Kalatea Pawi Ogon"
+  },
+  {
+    "botanicalName": "Goeppertia medallion",
+    "commonName": "Kalatea Medalion"
+  },
+  {
+    "botanicalName": "Goeppertia lancifolia",
+    "commonName": "Kalatea Lancetowata"
+  },
+  {
+    "botanicalName": "Goeppertia musaica",
+    "commonName": "Kalatea Sieciowa"
+  },
+  {
+    "botanicalName": "Goeppertia rufibarba",
+    "commonName": "Kalatea Rdzawa"
+  },
+  {
+    "botanicalName": "Goeppertia warscewiczii",
+    "commonName": "Kalatea Warszewicza"
+  },
+  {
+    "botanicalName": "Goeppertia zebrina",
+    "commonName": "Kalatea Zebrowa"
+  },
+  {
+    "botanicalName": "Goeppertia crocata",
+    "commonName": "Kalatea Szafranowa"
+  },
+  {
+    "botanicalName": "Goeppertia lietzei",
+    "commonName": "Kalatea Lietzego"
+  },
+  {
+    "botanicalName": "Goeppertia picturata",
+    "commonName": "Kalatea Argentea"
+  },
+  {
+    "botanicalName": "Goeppertia roseopicta",
+    "commonName": "Kalatea Dottie"
+  },
+  {
+    "botanicalName": "Goeppertia insignis",
+    "commonName": "Kalatea Rattlesnake"
+  },
+  {
+    "botanicalName": "Goeppertia elliptica",
+    "commonName": "Kalatea Vittata"
+  },
+  {
+    "botanicalName": "Goeppertia veitchiana",
+    "commonName": "Kalatea Veitcha"
+  },
+  {
+    "botanicalName": "Goeppertia concinna",
+    "commonName": "Kalatea Freddie"
+  },
+  {
+    "botanicalName": "Goeppertia burle-marxii",
+    "commonName": "Kalatea Fishbone"
+  },
+  {
+    "botanicalName": "Goeppertia albertii",
+    "commonName": "Kalatea Alberta"
+  },
+  {
+    "botanicalName": "Goeppertia louisae",
+    "commonName": "Kalatea Louisae"
+  },
+  {
+    "botanicalName": "Maranta leuconeura 'Massangeana'",
+    "commonName": "Maranta Massangeana"
+  },
+  {
+    "botanicalName": "Begonia 'Benitochiba'",
+    "commonName": "Begonia Benitochiba"
+  },
+  {
+    "botanicalName": "Begonia 'Black Fang'",
+    "commonName": "Begonia Czarny Kieł"
+  },
+  {
+    "botanicalName": "Begonia 'Cowardly Lion'",
+    "commonName": "Begonia Tchórzliwy Lew"
+  },
+  {
+    "botanicalName": "Begonia 'Gryphon'",
+    "commonName": "Begonia Gryf"
+  },
+  {
+    "botanicalName": "Begonia 'Midnight Twist'",
+    "commonName": "Begonia Północny Skręt"
+  },
+  {
+    "botanicalName": "Begonia 'Nonstop'",
+    "commonName": "Begonia Nonstop"
+  },
+  {
+    "botanicalName": "Begonia 'Polka Dot'",
+    "commonName": "Begonia Plamkowana"
+  },
+  {
+    "botanicalName": "Begonia 'Red Kiss'",
+    "commonName": "Begonia Czerwony Pocałunek"
+  },
+  {
+    "botanicalName": "Begonia 'Silver Lace'",
+    "commonName": "Begonia Srebrna Koronka"
+  },
+  {
+    "botanicalName": "Begonia 'Sophie Cecile'",
+    "commonName": "Begonia Sophie Cecile"
+  },
+  {
+    "botanicalName": "Begonia 'Tiger Kitten'",
+    "commonName": "Begonia Tygrysek"
+  },
+  {
+    "botanicalName": "Begonia 'Wightii'",
+    "commonName": "Begonia Wightii"
+  },
+  {
+    "botanicalName": "Begonia dregei",
+    "commonName": "Begonia Drzewkowa"
+  },
+  {
+    "botanicalName": "Begonia grandis",
+    "commonName": "Begonia Hardy"
+  },
+  {
+    "botanicalName": "Begonia prismatocarpa",
+    "commonName": "Begonia Żółta"
+  },
+  {
+    "botanicalName": "Begonia rajah",
+    "commonName": "Begonia Rajah"
+  },
+  {
+    "botanicalName": "Begonia socotrana",
+    "commonName": "Begonia Sokotrańska"
+  },
+  {
+    "botanicalName": "Cattleya labiata",
+    "commonName": "Katleja Wargowa"
+  },
+  {
+    "botanicalName": "Cattleya trianae",
+    "commonName": "Katleja Triana"
+  },
+  {
+    "botanicalName": "Cattleya walkeriana",
+    "commonName": "Katleja Walkera"
+  },
+  {
+    "botanicalName": "Cattleya percivaliana",
+    "commonName": "Katleja Percivala"
+  },
+  {
+    "botanicalName": "Cattleya mossiae",
+    "commonName": "Katleja Moss"
+  },
+  {
+    "botanicalName": "Dendrobium kingianum",
+    "commonName": "Dendrobium Kinga"
+  },
+  {
+    "botanicalName": "Dendrobium chrysotoxum",
+    "commonName": "Dendrobium Złote"
+  },
+  {
+    "botanicalName": "Dendrobium loddigesii",
+    "commonName": "Dendrobium Loddiges"
+  },
+  {
+    "botanicalName": "Dendrobium thyrsiflorum",
+    "commonName": "Dendrobium Gronowe"
+  },
+  {
+    "botanicalName": "Oncidium ornithorhynchum",
+    "commonName": "Oncidium Różowe"
+  },
+  {
+    "botanicalName": "Oncidium tigrinum",
+    "commonName": "Oncidium Tygrysie"
+  },
+  {
+    "botanicalName": "Oncidium twinkle",
+    "commonName": "Oncidium Twinkle"
+  },
+  {
+    "botanicalName": "Oncidium sharry baby",
+    "commonName": "Oncidium Czekoladowe"
+  },
+  {
+    "botanicalName": "Zygopetalum mackaii",
+    "commonName": "Zygopetalum Mackaia"
+  },
+  {
+    "botanicalName": "Zygopetalum intermedium",
+    "commonName": "Zygopetalum Pośrednie"
+  },
+  {
+    "botanicalName": "Vanda coerulea",
+    "commonName": "Vanda Niebieska"
+  },
+  {
+    "botanicalName": "Vanda tricolor",
+    "commonName": "Vanda Trójbarwna"
+  },
+  {
+    "botanicalName": "Epidendrum radicans",
+    "commonName": "Epidendrum Ogniste"
+  },
+  {
+    "botanicalName": "Paphiopedilum callosum",
+    "commonName": "Pantoflek Wenus Callosum"
+  },
+  {
+    "botanicalName": "Paphiopedilum delenatii",
+    "commonName": "Pantoflek Wenus Różowy"
+  },
+  {
+    "botanicalName": "Paphiopedilum fairrieanum",
+    "commonName": "Pantoflek Wenus Fairrie"
+  },
+  {
+    "botanicalName": "Paphiopedilum henryanum",
+    "commonName": "Pantoflek Wenus Henry"
+  },
+  {
+    "botanicalName": "Paphiopedilum lowii",
+    "commonName": "Pantoflek Wenus Lowa"
+  },
+  {
+    "botanicalName": "Paphiopedilum malipoense",
+    "commonName": "Pantoflek Wenus Zielony"
+  },
+  {
+    "botanicalName": "Paphiopedilum sukhakulii",
+    "commonName": "Pantoflek Wenus Sukhakula"
+  },
+  {
+    "botanicalName": "Paphiopedilum venustum",
+    "commonName": "Pantoflek Wenus Piękny"
+  },
+  {
+    "botanicalName": "Miltoniopsis roezlii",
+    "commonName": "Miltonka Różana"
+  },
+  {
+    "botanicalName": "Brassavola nodosa",
+    "commonName": "Brassavola Gwieździsta"
+  },
+  {
+    "botanicalName": "Brassia caudata",
+    "commonName": "Brassia Pająk"
+  },
+  {
+    "botanicalName": "Maxillaria tenuifolia",
+    "commonName": "Maxillaria Kokosowa"
+  },
+  {
+    "botanicalName": "Coelogyne cristata",
+    "commonName": "Coelogyne Grzebieniasta"
+  },
+  {
+    "botanicalName": "Cymbidium eburneum",
+    "commonName": "Cymbidum Kość Słoniowa"
+  },
+  {
+    "botanicalName": "Cymbidium tracyanum",
+    "commonName": "Cymbidum Tracya"
+  },
+  {
+    "botanicalName": "Angraecum sesquipedale",
+    "commonName": "Orchidea Madagaskarska"
+  },
+  {
+    "botanicalName": "Aerangis luteoalba",
+    "commonName": "Aerangis Żółtobiała"
+  },
+  {
+    "botanicalName": "Haworthia attenuata",
+    "commonName": "Haworthia Paskowana"
+  },
+  {
+    "botanicalName": "Haworthia cooperi var. truncata",
+    "commonName": "Haworthia Coopera Truncata"
+  },
+  {
+    "botanicalName": "Haworthia cuspidata",
+    "commonName": "Haworthia Koścista"
+  },
+  {
+    "botanicalName": "Haworthia limifolia",
+    "commonName": "Haworthia Pilnikowa"
+  },
+  {
+    "botanicalName": "Haworthia magnifica",
+    "commonName": "Haworthia Wspaniała"
+  },
+  {
+    "botanicalName": "Haworthia marxii",
+    "commonName": "Haworthia Marksa"
+  },
+  {
+    "botanicalName": "Haworthia mirabilis",
+    "commonName": "Haworthia Cudowna"
+  },
+  {
+    "botanicalName": "Haworthia pygmaea",
+    "commonName": "Haworthia Karłowata"
+  },
+  {
+    "botanicalName": "Haworthia reinwardtii",
+    "commonName": "Haworthia Reinwardta"
+  },
+  {
+    "botanicalName": "Haworthia retusa",
+    "commonName": "Haworthia Okrągła"
+  },
+  {
+    "botanicalName": "Haworthia tessellata",
+    "commonName": "Haworthia Szachownicowa"
+  },
+  {
+    "botanicalName": "Haworthia turgida",
+    "commonName": "Haworthia Mięsista"
+  },
+  {
+    "botanicalName": "Haworthia venosa",
+    "commonName": "Haworthia Żyłkowana"
+  },
+  {
+    "botanicalName": "Haworthiopsis coarctata",
+    "commonName": "Haworthiopsis Ścieśniona"
+  },
+  {
+    "botanicalName": "Haworthiopsis glauca",
+    "commonName": "Haworthiopsis Sina"
+  },
+  {
+    "botanicalName": "Haworthiopsis tortuosa",
+    "commonName": "Haworthiopsis Kręta"
+  },
+  {
+    "botanicalName": "Echeveria agavoides",
+    "commonName": "Echeveria Agawowata"
+  },
+  {
+    "botanicalName": "Echeveria gibbiflora",
+    "commonName": "Echeveria Gibbiflora"
+  },
+  {
+    "botanicalName": "Echeveria glauca",
+    "commonName": "Echeveria Sina"
+  },
+  {
+    "botanicalName": "Echeveria harmsii",
+    "commonName": "Echeveria Harmsa"
+  },
+  {
+    "botanicalName": "Echeveria 'Perle von Nürnberg'",
+    "commonName": "Echeveria Perła Norymbergi"
+  },
+  {
+    "botanicalName": "Echeveria 'Black Prince'",
+    "commonName": "Echeveria Czarny Książę"
+  },
+  {
+    "botanicalName": "Echeveria 'Blue Atoll'",
+    "commonName": "Echeveria Niebieski Atol"
+  },
+  {
+    "botanicalName": "Echeveria 'Neon Breakers'",
+    "commonName": "Echeveria Neonowa"
+  },
+  {
+    "botanicalName": "Echeveria 'Topsy Turvy'",
+    "commonName": "Echeveria Do Góry Nogami"
+  },
+  {
+    "botanicalName": "Echeveria pulvinata",
+    "commonName": "Echeveria Aksamitna"
+  },
+  {
+    "botanicalName": "Echeveria runyonii",
+    "commonName": "Echeveria Runyona"
+  },
+  {
+    "botanicalName": "Echeveria setosa",
+    "commonName": "Echeveria Szczeciniasta"
+  },
+  {
+    "botanicalName": "Aloe brevifolia",
+    "commonName": "Aloes Krótkolistny"
+  },
+  {
+    "botanicalName": "Aloe cameronii",
+    "commonName": "Aloes Czerwony"
+  },
+  {
+    "botanicalName": "Aloe capitata",
+    "commonName": "Aloes Kapturowy"
+  },
+  {
+    "botanicalName": "Aloe marlothii",
+    "commonName": "Aloes Górski"
+  },
+  {
+    "botanicalName": "Aloe maculata",
+    "commonName": "Aloes Plamkowany"
+  },
+  {
+    "botanicalName": "Aloe plicatilis",
+    "commonName": "Aloes Wachlarzowy"
+  },
+  {
+    "botanicalName": "Aloe polyphylla",
+    "commonName": "Aloes Spiralny"
+  },
+  {
+    "botanicalName": "Aloe striata",
+    "commonName": "Aloes Koralowy"
+  },
+  {
+    "botanicalName": "Aloe variegata",
+    "commonName": "Aloes Pręgowany"
+  },
+  {
+    "botanicalName": "Gasteria armstrongii",
+    "commonName": "Gasteria Armstronga"
+  },
+  {
+    "botanicalName": "Gasteria batesiana",
+    "commonName": "Gasteria Batesiana"
+  },
+  {
+    "botanicalName": "Gasteria glomerata",
+    "commonName": "Gasteria Skupiona"
+  },
+  {
+    "botanicalName": "Gasteria obliqua",
+    "commonName": "Gasteria Skośna"
+  },
+  {
+    "botanicalName": "Ariocarpus fissuratus",
+    "commonName": "Ariocarpus Spękany"
+  },
+  {
+    "botanicalName": "Ariocarpus retusus",
+    "commonName": "Ariocarpus Wcięty"
+  },
+  {
+    "botanicalName": "Astrophytum asterias",
+    "commonName": "Astrophytum Gwiazdkowe"
+  },
+  {
+    "botanicalName": "Astrophytum capricorne",
+    "commonName": "Astrophytum Kozie Rogi"
+  },
+  {
+    "botanicalName": "Astrophytum ornatum",
+    "commonName": "Astrophytum Ozdobne"
+  },
+  {
+    "botanicalName": "Coryphantha elephantidens",
+    "commonName": "Kaktus Słoniozębny"
+  },
+  {
+    "botanicalName": "Echinocereus triglochidiatus",
+    "commonName": "Jeżak Szkarłatny"
+  },
+  {
+    "botanicalName": "Echinocereus pectinatus",
+    "commonName": "Jeżak Grzebieniowy"
+  },
+  {
+    "botanicalName": "Ferocactus cylindraceus",
+    "commonName": "Dziki Kaktus Cylindryczny"
+  },
+  {
+    "botanicalName": "Ferocactus wislizeni",
+    "commonName": "Dziki Kaktus Rybi Haczyk"
+  },
+  {
+    "botanicalName": "Gymnocactus aguirreanus",
+    "commonName": "Gymnocactus Aguirre"
+  },
+  {
+    "botanicalName": "Gymnocalycium quehlianum",
+    "commonName": "Gymnocalycium Quehlego"
+  },
+  {
+    "botanicalName": "Lobivia haageana",
+    "commonName": "Lobivia Haagego"
+  },
+  {
+    "botanicalName": "Mammillaria bocasana",
+    "commonName": "Mammillaria Pudrowa"
+  },
+  {
+    "botanicalName": "Notocactus leninghausii",
+    "commonName": "Notokaktus Złota Wieża"
+  },
+  {
+    "botanicalName": "Parodia magnifica",
+    "commonName": "Parodia Wspaniała"
+  },
+  {
+    "botanicalName": "Parodia scopa",
+    "commonName": "Parodia Srebrna"
+  },
+  {
+    "botanicalName": "Stenocactus crispatus",
+    "commonName": "Stenocactus Falisty"
+  },
+  {
+    "botanicalName": "Thelocactus bicolor",
+    "commonName": "Thelocactus Dwubarwny"
+  },
+  {
+    "botanicalName": "Euphorbia bupleurifolia",
+    "commonName": "Euphorbia Szyszkowa"
+  },
+  {
+    "botanicalName": "Euphorbia decaryi",
+    "commonName": "Euphorbia Decarya"
+  },
+  {
+    "botanicalName": "Euphorbia enopla",
+    "commonName": "Euphorbia Kolczasta"
+  },
+  {
+    "botanicalName": "Euphorbia flanaganii",
+    "commonName": "Euphorbia Medusa"
+  },
+  {
+    "botanicalName": "Euphorbia horrida",
+    "commonName": "Euphorbia Straszna"
+  },
+  {
+    "botanicalName": "Euphorbia lactea",
+    "commonName": "Euphorbia Mleczna"
+  },
+  {
+    "botanicalName": "Euphorbia meloformis",
+    "commonName": "Euphorbia Arbuzowa"
+  },
+  {
+    "botanicalName": "Euphorbia polygona",
+    "commonName": "Euphorbia Wieloboczna"
+  },
+  {
+    "botanicalName": "Euphorbia pseudocactus",
+    "commonName": "Euphorbia Rzekomy Kaktus"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Bantel's Sensation'",
+    "commonName": "Sansewiera Białopaskowa"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Twisted Sister'",
+    "commonName": "Sansewiera Skręcona"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Golden Flame'",
+    "commonName": "Sansewiera Złoty Płomień"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Whitney'",
+    "commonName": "Sansewiera Whitney"
+  },
+  {
+    "botanicalName": "Dracaena trifasciata 'Sayuri'",
+    "commonName": "Sansewiera Sayuri"
+  },
+  {
+    "botanicalName": "Dracaena angolensis",
+    "commonName": "Sansewiera Cylindryczna"
+  },
+  {
+    "botanicalName": "Dracaena pinguicula",
+    "commonName": "Sansewiera Gwieździsta"
+  },
+  {
+    "botanicalName": "Dracaena masoniana",
+    "commonName": "Sansewiera Wielka"
+  },
+  {
+    "botanicalName": "Dracaena 'Fernwood Mikado'",
+    "commonName": "Sansewiera Fernwood"
+  },
+  {
+    "botanicalName": "Dracaena bacularis",
+    "commonName": "Sansewiera Patykowa"
+  },
+  {
+    "botanicalName": "Dracaena hanningtonii",
+    "commonName": "Sansewiera Hannington"
+  },
+  {
+    "botanicalName": "Dracaena kirkii",
+    "commonName": "Sansewiera Kirkiego"
+  },
+  {
+    "botanicalName": "Ficus altissima",
+    "commonName": "Fikus Altissima"
+  },
+  {
+    "botanicalName": "Ficus aspera",
+    "commonName": "Fikus Szorstki"
+  },
+  {
+    "botanicalName": "Ficus binnendijkii",
+    "commonName": "Fikus Wąskolistny"
+  },
+  {
+    "botanicalName": "Ficus binnendijkii 'Alii'",
+    "commonName": "Fikus Ali"
+  },
+  {
+    "botanicalName": "Ficus carica",
+    "commonName": "Figowiec Właściwy"
+  },
+  {
+    "botanicalName": "Ficus cyathistipula",
+    "commonName": "Fikus Afrykański"
+  },
+  {
+    "botanicalName": "Ficus lutea",
+    "commonName": "Fikus Złoty"
+  },
+  {
+    "botanicalName": "Ficus natalensis",
+    "commonName": "Fikus Natalski"
+  },
+  {
+    "botanicalName": "Ficus sagittata",
+    "commonName": "Fikus Strzałkowy"
+  },
+  {
+    "botanicalName": "Tillandsia aeranthos",
+    "commonName": "Tillandsja Aeranthos"
+  },
+  {
+    "botanicalName": "Tillandsia butzii",
+    "commonName": "Tillandsja Butza"
+  },
+  {
+    "botanicalName": "Tillandsia capitata",
+    "commonName": "Tillandsja Główkowata"
+  },
+  {
+    "botanicalName": "Tillandsia chiapensis",
+    "commonName": "Tillandsja Chiapas"
+  },
+  {
+    "botanicalName": "Tillandsia concolor",
+    "commonName": "Tillandsja Jednobarwna"
+  },
+  {
+    "botanicalName": "Tillandsia fasciculata",
+    "commonName": "Tillandsja Wiązkowa"
+  },
+  {
+    "botanicalName": "Tillandsia flabellata",
+    "commonName": "Tillandsja Wachlarzowa"
+  },
+  {
+    "botanicalName": "Tillandsia juncea",
+    "commonName": "Tillandsja Sitowata"
+  },
+  {
+    "botanicalName": "Neoregelia 'Painted Lady'",
+    "commonName": "Neoregelia Malowana"
+  },
+  {
+    "botanicalName": "Neoregelia spectabilis",
+    "commonName": "Neoregelia Fingernail"
+  },
+  {
+    "botanicalName": "Vriesea 'Charlotte'",
+    "commonName": "Vriesea Charlotte"
+  },
+  {
+    "botanicalName": "Vriesea 'Intenso'",
+    "commonName": "Vriesea Intenso"
+  },
+  {
+    "botanicalName": "Vriesea carinata",
+    "commonName": "Vriesea Kil"
+  },
+  {
+    "botanicalName": "Vriesea hieroglyphica",
+    "commonName": "Vriesea Hieroglificzna"
+  },
+  {
+    "botanicalName": "Vriesea ospinae",
+    "commonName": "Vriesea Ospinae"
+  },
+  {
+    "botanicalName": "Vriesea saundersii",
+    "commonName": "Vriesea Saundersa"
+  },
+  {
+    "botanicalName": "Guzmania 'Cherry'",
+    "commonName": "Guzmania Wiśniowa"
+  },
+  {
+    "botanicalName": "Guzmania 'Luna'",
+    "commonName": "Guzmania Luna"
+  },
+  {
+    "botanicalName": "Guzmania 'Minor Rondo'",
+    "commonName": "Guzmania Minor Rondo"
+  },
+  {
+    "botanicalName": "Billbergia pyramidalis",
+    "commonName": "Billbergia Piramidalna"
+  },
+  {
+    "botanicalName": "Cryptanthus 'Ruby Star'",
+    "commonName": "Kryptant Rubinowa Gwiazda"
+  },
+  {
+    "botanicalName": "Cryptanthus zonatus",
+    "commonName": "Kryptant Paskowany"
+  },
+  {
+    "botanicalName": "Ananas comosus 'Variegatus'",
+    "commonName": "Ananas Ozdobny"
+  },
+  {
+    "botanicalName": "Phoenix canariensis",
+    "commonName": "Palma Kanaryjska"
+  },
+  {
+    "botanicalName": "Phoenix roebelenii",
+    "commonName": "Palma Miniaturowa"
+  },
+  {
+    "botanicalName": "Washingtonia robusta",
+    "commonName": "Palma Meksykańska"
+  },
+  {
+    "botanicalName": "Bismarckia nobilis",
+    "commonName": "Palma Bismarcka"
+  },
+  {
+    "botanicalName": "Trachycarpus fortunei",
+    "commonName": "Palma Chiński Wachlarz"
+  },
+  {
+    "botanicalName": "Sabal palmetto",
+    "commonName": "Palma Sabal"
+  },
+  {
+    "botanicalName": "Caryota mitis",
+    "commonName": "Palma Fishtail"
+  },
+  {
+    "botanicalName": "Chrysalidocarpus lutescens",
+    "commonName": "Palma Areka"
+  },
+  {
+    "botanicalName": "Licuala grandis",
+    "commonName": "Palma Parasolowata"
+  },
+  {
+    "botanicalName": "Blechnum gibbum",
+    "commonName": "Blechnum Srebrne"
+  },
+  {
+    "botanicalName": "Blechnum spicant",
+    "commonName": "Paproć Rogówka"
+  },
+  {
+    "botanicalName": "Cyathea cooperi",
+    "commonName": "Paproć Drzewiasta"
+  },
+  {
+    "botanicalName": "Davallia fejeensis",
+    "commonName": "Paproć Królicza Łapa"
+  },
+  {
+    "botanicalName": "Lygodium japonicum",
+    "commonName": "Paproć Pnąca"
+  },
+  {
+    "botanicalName": "Woodwardia radicans",
+    "commonName": "Paproć Łańcuchowa"
+  },
+  {
+    "botanicalName": "Polypodium aureum",
+    "commonName": "Paproć Złotawa"
+  },
+  {
+    "botanicalName": "Amorphophallus konjac",
+    "commonName": "Amorfofallus Konjakowy"
+  },
+  {
+    "botanicalName": "Amorphophallus titanum",
+    "commonName": "Amorfofallus Tytanowy"
+  },
+  {
+    "botanicalName": "Caladium 'Candidum'",
+    "commonName": "Kaladium Białe"
+  },
+  {
+    "botanicalName": "Caladium 'Florida Sweetheart'",
+    "commonName": "Kaladium Florida"
+  },
+  {
+    "botanicalName": "Caladium 'Pink Beauty'",
+    "commonName": "Kaladium Różowe Piękno"
+  },
+  {
+    "botanicalName": "Caladium 'Red Flash'",
+    "commonName": "Kaladium Czerwony Błysk"
+  },
+  {
+    "botanicalName": "Schismatoglottis calyptrata",
+    "commonName": "Schismatoglottis"
+  },
+  {
+    "botanicalName": "Xanthosoma violaceum",
+    "commonName": "Ksantozom Fioletowy"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Compacta'",
+    "commonName": "Difenbachia Kompaktowa"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Exotica'",
+    "commonName": "Difenbachia Egzotyczna"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Reflector'",
+    "commonName": "Difenbachia Reflektor"
+  },
+  {
+    "botanicalName": "Dieffenbachia 'Sparkles'",
+    "commonName": "Difenbachia Iskierki"
+  },
+  {
+    "botanicalName": "Dieffenbachia maculata",
+    "commonName": "Difenbachia Plamkowana"
+  },
+  {
+    "botanicalName": "Spathiphyllum 'Lynise'",
+    "commonName": "Skrzydłokwiat Lynise"
+  },
+  {
+    "botanicalName": "Spathiphyllum floribundum",
+    "commonName": "Skrzydłokwiat Obfitokwiatowy"
+  },
+  {
+    "botanicalName": "Spathiphyllum ortgiesii",
+    "commonName": "Skrzydłokwiat Ortgiesa"
+  },
+  {
+    "botanicalName": "Aglaonema 'Creta'",
+    "commonName": "Aglaonema Creta"
+  },
+  {
+    "botanicalName": "Aglaonema 'Golden Bay'",
+    "commonName": "Aglaonema Golden Bay"
+  },
+  {
+    "botanicalName": "Aglaonema 'Harlequin'",
+    "commonName": "Aglaonema Harlequin"
+  },
+  {
+    "botanicalName": "Aglaonema 'Key Lime'",
+    "commonName": "Aglaonema Key Lime"
+  },
+  {
+    "botanicalName": "Aglaonema 'Pictum Tricolor'",
+    "commonName": "Aglaonema Tricolor"
+  },
+  {
+    "botanicalName": "Aglaonema 'Pink Moon'",
+    "commonName": "Aglaonema Różowy Księżyc"
+  },
+  {
+    "botanicalName": "Aglaonema 'Red Valentine'",
+    "commonName": "Aglaonema Czerwone Walentynki"
+  },
+  {
+    "botanicalName": "Aglaonema 'Stripes'",
+    "commonName": "Aglaonema Prążkowana"
+  },
+  {
+    "botanicalName": "Aglaonema 'White Rain'",
+    "commonName": "Aglaonema Biały Deszcz"
+  },
+  {
+    "botanicalName": "Aglaonema nitidum",
+    "commonName": "Aglaonema Połyskująca"
+  },
+  {
+    "botanicalName": "Scindapsus aureus 'Marble Queen'",
+    "commonName": "Scindapsus Marmurowa Królowa"
+  },
+  {
+    "botanicalName": "Scindapsus exotica",
+    "commonName": "Scindapsus Egzotyczny"
+  },
+  {
+    "botanicalName": "Epipremnum amplissimum",
+    "commonName": "Epipremnum Szerokie"
+  },
+  {
+    "botanicalName": "Epipremnum falcifolium",
+    "commonName": "Epipremnum Sierpolistne"
+  },
+  {
+    "botanicalName": "Pothos scandens",
+    "commonName": "Pothos Wspinaczkowy"
+  },
+  {
+    "botanicalName": "Rhaphidophora foraminifera",
+    "commonName": "Rhaphidophora Dziurkowana"
+  },
+  {
+    "botanicalName": "Rhaphidophora korthalsii",
+    "commonName": "Rhaphidophora Korthalsa"
+  },
+  {
+    "botanicalName": "Rhaphidophora tenuis",
+    "commonName": "Rhaphidophora Smukła"
+  },
+  {
+    "botanicalName": "Pothos repens",
+    "commonName": "Pothos Płożący"
+  },
+  {
+    "botanicalName": "Achimenes 'Cascade Fashionmonger'",
+    "commonName": "Achimenes Kaskadowy"
+  },
+  {
+    "botanicalName": "Achimenes erecta",
+    "commonName": "Achimenes Wzniesiony"
+  },
+  {
+    "botanicalName": "Achimenes longiflora",
+    "commonName": "Achimenes Długokwiatowy"
+  },
+  {
+    "botanicalName": "Aeschynanthus 'Mona Lisa'",
+    "commonName": "Eszynantos Mona Lisa"
+  },
+  {
+    "botanicalName": "Aeschynanthus marmoratus",
+    "commonName": "Eszynantos Marmurkowy"
+  },
+  {
+    "botanicalName": "Aeschynanthus speciosus",
+    "commonName": "Eszynantos Okazały"
+  },
+  {
+    "botanicalName": "Columnea 'Aladdin's Lamp'",
+    "commonName": "Columnea Lampa Alladyna"
+  },
+  {
+    "botanicalName": "Columnea hirta",
+    "commonName": "Columnea Owłosiona"
+  },
+  {
+    "botanicalName": "Columnea microphylla",
+    "commonName": "Columnea Drobnolicistkowa"
+  },
+  {
+    "botanicalName": "Codonanthe crassifolia",
+    "commonName": "Kodonanthe Grubolistna"
+  },
+  {
+    "botanicalName": "Episcia lilacina",
+    "commonName": "Episcia Liliowa"
+  },
+  {
+    "botanicalName": "Nematanthus wettsteinii",
+    "commonName": "Nematant Wetsteina"
+  },
+  {
+    "botanicalName": "Sinningia pusilla",
+    "commonName": "Sinningia Miniaturowa"
+  },
+  {
+    "botanicalName": "Streptocarpus 'Cape Primrose'",
+    "commonName": "Streptokarpus Przylądkowy"
+  },
+  {
+    "botanicalName": "Streptocarpus caulescens",
+    "commonName": "Streptokarpus Łodygowy"
+  },
+  {
+    "botanicalName": "Kohleria eriantha",
+    "commonName": "Kohleria Włochata"
+  },
+  {
+    "botanicalName": "Drosera binata",
+    "commonName": "Rosiczka Widlasta"
+  },
+  {
+    "botanicalName": "Drosera filiformis",
+    "commonName": "Rosiczka Nitkowata"
+  },
+  {
+    "botanicalName": "Drosera tokaiensis",
+    "commonName": "Rosiczka Japońska"
+  },
+  {
+    "botanicalName": "Nepenthes maxima",
+    "commonName": "Dzbanecznik Maksymalny"
+  },
+  {
+    "botanicalName": "Nepenthes miranda",
+    "commonName": "Dzbanecznik Miranda"
+  },
+  {
+    "botanicalName": "Utricularia sandersonii",
+    "commonName": "Pływacz Sandersona"
+  },
+  {
+    "botanicalName": "Cephalotus follicularis",
+    "commonName": "Cephalotus Australijski"
+  },
+  {
+    "botanicalName": "Heliamphora nutans",
+    "commonName": "Heliamfora Kiwająca"
+  },
+  {
+    "botanicalName": "Byblis liniflora",
+    "commonName": "Byblis Lniolistna"
+  },
+  {
+    "botanicalName": "Pinguicula agnata",
+    "commonName": "Tłustosz Agnata"
+  },
+  {
+    "botanicalName": "Pinguicula gigantea",
+    "commonName": "Tłustosz Gigantyczny"
+  },
+  {
+    "botanicalName": "Cissus striata",
+    "commonName": "Cissus Miniaturowy Bluszcz"
+  },
+  {
+    "botanicalName": "Tetrastigma voinierianum",
+    "commonName": "Tetrastigma"
+  },
+  {
+    "botanicalName": "Pelargonium crispum",
+    "commonName": "Pelargonia Cytrynowa"
+  },
+  {
+    "botanicalName": "Pelargonium 'Vancouver Centennial'",
+    "commonName": "Pelargonia Vancouver"
+  },
+  {
+    "botanicalName": "Pelargonium 'Lady Plymouth'",
+    "commonName": "Pelargonia Lady Plymouth"
+  },
+  {
+    "botanicalName": "Oxalis tetraphylla",
+    "commonName": "Szczawik Czterolistny"
+  },
+  {
+    "botanicalName": "Oxalis regnellii 'Mijke'",
+    "commonName": "Szczawik Fioletowy"
+  },
+  {
+    "botanicalName": "Chlorophytum comosum 'Vittatum'",
+    "commonName": "Zielistka Vittatum"
+  },
+  {
+    "botanicalName": "Chlorophytum orchidastrum",
+    "commonName": "Zielistka Pomarańczowa"
+  },
+  {
+    "botanicalName": "Asparagus falcatus",
+    "commonName": "Szparag Sierpowaty"
+  },
+  {
+    "botanicalName": "Asparagus plumosus",
+    "commonName": "Szparag Pierzasty"
+  },
+  {
+    "botanicalName": "Asparagus retrofractus",
+    "commonName": "Szparag Zagięty"
+  },
+  {
+    "botanicalName": "Schefflera arboricola 'Gold Capella'",
+    "commonName": "Szeflera Gold Capella"
+  },
+  {
+    "botanicalName": "Schefflera elegantissima",
+    "commonName": "Szeflera Elegancka"
+  },
+  {
+    "botanicalName": "Pilea depressa",
+    "commonName": "Pilea Miniaturowa"
+  },
+  {
+    "botanicalName": "Pilea libanensis",
+    "commonName": "Pilea Szara"
+  },
+  {
+    "botanicalName": "Pilea nummulariifolia",
+    "commonName": "Pilea Monetkowa"
+  },
+  {
+    "botanicalName": "Pilea spruceana",
+    "commonName": "Pilea Sprucea"
+  },
+  {
+    "botanicalName": "Tradescantia albiflora 'Albovittata'",
+    "commonName": "Trzykrotka Biała"
+  },
+  {
+    "botanicalName": "Tradescantia cerinthoides",
+    "commonName": "Trzykrotka Cerinthoides"
+  },
+  {
+    "botanicalName": "Tradescantia fluminensis 'Variegata'",
+    "commonName": "Trzykrotka Biała Paskowana"
+  },
+  {
+    "botanicalName": "Tradescantia mundula 'Variegata'",
+    "commonName": "Trzykrotka Mundula"
+  },
+  {
+    "botanicalName": "Tradescantia ohiensis",
+    "commonName": "Trzykrotka Ohio"
+  },
+  {
+    "botanicalName": "Syngonium 'Albo Variegatum'",
+    "commonName": "Syngonium Albo"
+  },
+  {
+    "botanicalName": "Syngonium 'Bold Allusion'",
+    "commonName": "Syngonium Bold Allusion"
+  },
+  {
+    "botanicalName": "Syngonium 'Emerald Gem'",
+    "commonName": "Syngonium Szmaragdowy"
+  },
+  {
+    "botanicalName": "Syngonium 'Golden Allusion'",
+    "commonName": "Syngonium Złota Iluzja"
+  },
+  {
+    "botanicalName": "Syngonium 'Holly'",
+    "commonName": "Syngonium Holly"
+  },
+  {
+    "botanicalName": "Syngonium 'Panda'",
+    "commonName": "Syngonium Panda"
+  },
+  {
+    "botanicalName": "Syngonium 'Three Kings'",
+    "commonName": "Syngonium Trzej Królowie"
+  },
+  {
+    "botanicalName": "Syngonium angustatum",
+    "commonName": "Syngonium Wąskolistne"
+  },
+  {
+    "botanicalName": "Crassula 'Buddha's Temple'",
+    "commonName": "Krassula Buddyjska Świątynia"
+  },
+  {
+    "botanicalName": "Crassula capitella",
+    "commonName": "Krassula Campfire"
+  },
+  {
+    "botanicalName": "Crassula exilis",
+    "commonName": "Krassula Maleńka"
+  },
+  {
+    "botanicalName": "Crassula falcata",
+    "commonName": "Krassula Sierpowata"
+  },
+  {
+    "botanicalName": "Crassula marnieriana",
+    "commonName": "Krassula Naszyjnik"
+  },
+  {
+    "botanicalName": "Crassula rogersii",
+    "commonName": "Krassula Rogersii"
+  },
+  {
+    "botanicalName": "Crassula rupestris",
+    "commonName": "Krassula Skalna"
+  },
+  {
+    "botanicalName": "Crassula socialis",
+    "commonName": "Krassula Społeczna"
+  },
+  {
+    "botanicalName": "Crassula tetragona",
+    "commonName": "Krassula Sosnowa"
+  },
+  {
+    "botanicalName": "Sedum adolphii",
+    "commonName": "Rozchodnik Złoty"
+  },
+  {
+    "botanicalName": "Sedum burrito",
+    "commonName": "Rozchodnik Burro's Tail"
+  },
+  {
+    "botanicalName": "Sedum dasyphyllum",
+    "commonName": "Rozchodnik Gęstolistny"
+  },
+  {
+    "botanicalName": "Sedum nussbaumerianum",
+    "commonName": "Rozchodnik Nussbaumer"
+  },
+  {
+    "botanicalName": "Sedum rubrotinctum",
+    "commonName": "Rozchodnik Galaretka Cukierkowa"
+  },
+  {
+    "botanicalName": "Sedum spurium",
+    "commonName": "Rozchodnik Kaukaski"
+  },
+  {
+    "botanicalName": "Kalanchoe beharensis",
+    "commonName": "Kalanchoe Welurowa"
+  },
+  {
+    "botanicalName": "Kalanchoe humilis",
+    "commonName": "Kalanchoe Pokorna"
+  },
+  {
+    "botanicalName": "Kalanchoe laxiflora",
+    "commonName": "Kalanchoe Luzokwiatowa"
+  },
+  {
+    "botanicalName": "Kalanchoe luciae",
+    "commonName": "Kalanchoe Flapjack"
+  },
+  {
+    "botanicalName": "Kalanchoe marmorata",
+    "commonName": "Kalanchoe Marmurkowa"
+  },
+  {
+    "botanicalName": "Kalanchoe pumila",
+    "commonName": "Kalanchoe Karłowata"
+  },
+  {
+    "botanicalName": "Kalanchoe rhombopilosa",
+    "commonName": "Kalanchoe Rombowata"
+  },
+  {
+    "botanicalName": "Agave angustifolia",
+    "commonName": "Agawa Wąskolistna"
+  },
+  {
+    "botanicalName": "Agave bovicornuta",
+    "commonName": "Agawa Bycze Rogi"
+  },
+  {
+    "botanicalName": "Agave colorata",
+    "commonName": "Agawa Colorata"
+  },
+  {
+    "botanicalName": "Agave ferox",
+    "commonName": "Agawa Dzika"
+  },
+  {
+    "botanicalName": "Agave filifera",
+    "commonName": "Agawa Nitkowata"
+  },
+  {
+    "botanicalName": "Agave geminiflora",
+    "commonName": "Agawa Bliźniakowa"
+  },
+  {
+    "botanicalName": "Agave ovatifolia",
+    "commonName": "Agawa Owalnolistna"
+  },
+  {
+    "botanicalName": "Agave potatorum",
+    "commonName": "Agawa Potatorum"
+  },
+  {
+    "botanicalName": "Agave stricta",
+    "commonName": "Agawa Zwarta"
+  },
+  {
+    "botanicalName": "Agave tequilana",
+    "commonName": "Agawa Tequila"
+  },
+  {
+    "botanicalName": "Agave titanota",
+    "commonName": "Agawa Tytaniczna"
+  },
+  {
+    "botanicalName": "Cycas revoluta",
+    "commonName": "Cycas Sagowiec"
+  },
+  {
+    "botanicalName": "Cycas circinalis",
+    "commonName": "Cycas Zawijasowy"
+  },
+  {
+    "botanicalName": "Zamia furfuracea",
+    "commonName": "Zamia Kartonowa"
+  },
+  {
+    "botanicalName": "Zamia pumila",
+    "commonName": "Zamia Karłowata"
+  },
+  {
+    "botanicalName": "Dioon edule",
+    "commonName": "Dioon Jadalna"
+  },
+  {
+    "botanicalName": "Encephalartos horridus",
+    "commonName": "Encephalartos Straszny"
+  },
+  {
+    "botanicalName": "Carica papaya",
+    "commonName": "Papaja"
+  },
+  {
+    "botanicalName": "Citrus limon",
+    "commonName": "Cytryna"
+  },
+  {
+    "botanicalName": "Citrus sinensis",
+    "commonName": "Pomarańcza Słodka"
+  },
+  {
+    "botanicalName": "Citrus aurantifolia",
+    "commonName": "Limonka"
+  },
+  {
+    "botanicalName": "Citrus reticulata",
+    "commonName": "Mandarynka"
+  },
+  {
+    "botanicalName": "Fortunella japonica",
+    "commonName": "Kumkwat"
+  },
+  {
+    "botanicalName": "Punica granatum",
+    "commonName": "Granatowiec"
+  },
+  {
+    "botanicalName": "Musa acuminata 'Dwarf Cavendish'",
+    "commonName": "Banan Karłowaty"
+  },
+  {
+    "botanicalName": "Musa ornata",
+    "commonName": "Banan Ozdobny"
+  },
+  {
+    "botanicalName": "Heliconia psittacorum",
+    "commonName": "Heliconia Papuzia"
+  },
+  {
+    "botanicalName": "Heliconia rostrata",
+    "commonName": "Heliconia Zwisająca"
+  },
+  {
+    "botanicalName": "Strelitzia nicolai 'Variegata'",
+    "commonName": "Strelicja Biała Variegata"
+  },
+  {
+    "botanicalName": "Strelitzia caudata",
+    "commonName": "Strelicja Ogoniasta"
+  },
+  {
+    "botanicalName": "Strelitzia juncea",
+    "commonName": "Strelicja Bezlistna"
+  },
+  {
+    "botanicalName": "Zantedeschia aethiopica",
+    "commonName": "Kalia Etiopska"
+  },
+  {
+    "botanicalName": "Zantedeschia elliotiana",
+    "commonName": "Kalia Żółta"
+  },
+  {
+    "botanicalName": "Zantedeschia rehmannii",
+    "commonName": "Kalia Różowa"
+  },
+  {
+    "botanicalName": "Clivia miniata 'Variegata'",
+    "commonName": "Kliwia Paskowana"
+  },
+  {
+    "botanicalName": "Hippeastrum 'Apple Blossom'",
+    "commonName": "Amarylis Kwiat Jabłoni"
+  },
+  {
+    "botanicalName": "Hippeastrum 'Red Lion'",
+    "commonName": "Amarylis Czerwony Lew"
+  },
+  {
+    "botanicalName": "Hippeastrum 'Minerva'",
+    "commonName": "Amarylis Minerva"
+  },
+  {
+    "botanicalName": "Hippeastrum papilio",
+    "commonName": "Amarylis Motyl"
+  },
+  {
+    "botanicalName": "Hippeastrum striatum",
+    "commonName": "Amarylis Paskowany"
+  },
+  {
+    "botanicalName": "Cyclamen hederifolium",
+    "commonName": "Cyklamen Bluszczolistny"
+  },
+  {
+    "botanicalName": "Cyclamen coum",
+    "commonName": "Cyklamen Wschodni"
+  },
+  {
+    "botanicalName": "Cyclamen purpurascens",
+    "commonName": "Cyklamen Purpurowy"
+  },
+  {
+    "botanicalName": "Codiaeum 'Gold Sun'",
+    "commonName": "Kroton Gold Sun"
+  },
+  {
+    "botanicalName": "Codiaeum 'Mammy'",
+    "commonName": "Kroton Mammy"
+  },
+  {
+    "botanicalName": "Codiaeum 'Petra'",
+    "commonName": "Kroton Petra"
+  },
+  {
+    "botanicalName": "Codiaeum 'Red Curl'",
+    "commonName": "Kroton Czerwony Skręcony"
+  },
+  {
+    "botanicalName": "Codiaeum 'Yellow Iceton'",
+    "commonName": "Kroton Żółty Iceton"
+  },
+  {
+    "botanicalName": "Hedera algeriensis 'Gloire de Marengo'",
+    "commonName": "Bluszcz Algiersii"
+  },
+  {
+    "botanicalName": "Hedera colchica 'Dentata'",
+    "commonName": "Bluszcz Kolchicki"
+  },
+  {
+    "botanicalName": "Hedera helix 'Golden Ingot'",
+    "commonName": "Bluszcz Złota Sztabka"
+  },
+  {
+    "botanicalName": "Hedera helix 'Ivalace'",
+    "commonName": "Bluszcz Ivalace"
+  },
+  {
+    "botanicalName": "Hedera helix 'Needlepoint'",
+    "commonName": "Bluszcz Igłowy"
+  },
+  {
+    "botanicalName": "Fatsia japonica 'Variegata'",
+    "commonName": "Fatsia Paskowana"
+  },
+  {
+    "botanicalName": "x Fatshedera lizei",
+    "commonName": "Fatshedera"
+  },
+  {
+    "botanicalName": "Zamioculcas zamiifolia 'Lucky Classic'",
+    "commonName": "ZZ Lucky Classic"
+  },
+  {
+    "botanicalName": "Pachira glabra",
+    "commonName": "Pachira Gładka"
+  },
+  {
+    "botanicalName": "Beaucarnea guatemalensis",
+    "commonName": "Pończosznik Gwatemalski"
+  },
+  {
+    "botanicalName": "Beaucarnea stricta",
+    "commonName": "Pończosznik Zwężony"
+  },
+  {
+    "botanicalName": "Yucca aloifolia",
+    "commonName": "Juka Aloesowata"
+  },
+  {
+    "botanicalName": "Yucca filamentosa",
+    "commonName": "Juka Nitkowata"
+  },
+  {
+    "botanicalName": "Dracaena aletriformis",
+    "commonName": "Dracena Dużolistna"
+  },
+  {
+    "botanicalName": "Dracaena arborea",
+    "commonName": "Dracena Drzewiasta"
+  },
+  {
+    "botanicalName": "Dracaena bicolor",
+    "commonName": "Dracena Dwubarwna"
+  },
+  {
+    "botanicalName": "Dracaena braunii",
+    "commonName": "Lucky Bamboo"
+  },
+  {
+    "botanicalName": "Dracaena deremensis",
+    "commonName": "Dracena Deremska"
+  },
+  {
+    "botanicalName": "Dracaena ellenbeckiana",
+    "commonName": "Dracena Ellenbeck"
+  },
+  {
+    "botanicalName": "Dracaena goldieana",
+    "commonName": "Dracena Goldiego"
+  },
+  {
+    "botanicalName": "Dracaena godseffiana",
+    "commonName": "Dracena Plamkowana"
+  },
+  {
+    "botanicalName": "Dracaena mannii",
+    "commonName": "Dracena Manna"
+  },
+  {
+    "botanicalName": "Dracaena steudneri",
+    "commonName": "Dracena Steudnera"
+  },
+  {
+    "botanicalName": "Fittonia albivenis 'Juanita'",
+    "commonName": "Fitonia Juanita"
+  },
+  {
+    "botanicalName": "Fittonia albivenis 'Pink Star'",
+    "commonName": "Fitonia Różowa Gwiazda"
+  },
+  {
+    "botanicalName": "Fittonia albivenis 'Red Star'",
+    "commonName": "Fitonia Czerwona Gwiazda"
+  },
+  {
+    "botanicalName": "Stromanthe sanguinea 'Multicolor'",
+    "commonName": "Stromanthe Multicolor"
+  },
+  {
+    "botanicalName": "Gynura aurantiaca",
+    "commonName": "Gynura Purpurowa"
+  },
+  {
+    "botanicalName": "Gynura procumbens",
+    "commonName": "Gynura Płożąca"
+  },
+  {
+    "botanicalName": "Iresine lindenii",
+    "commonName": "Irezyna Lindena"
+  },
+  {
+    "botanicalName": "Alternanthera ficoidea",
+    "commonName": "Alternanthera"
+  },
+  {
+    "botanicalName": "Alternanthera dentata",
+    "commonName": "Alternanthera Fioletowa"
+  },
+  {
+    "botanicalName": "Plectranthus scutellarioides 'Kong'",
+    "commonName": "Koleus Kong"
+  },
+  {
+    "botanicalName": "Plectranthus scutellarioides 'Wizard'",
+    "commonName": "Koleus Czarodziej"
+  },
+  {
+    "botanicalName": "Ardisia crenata 'Variegata'",
+    "commonName": "Ardizja Paskowana"
+  },
+  {
+    "botanicalName": "Ardisia elliptica",
+    "commonName": "Ardizja Eliptyczna"
+  },
+  {
+    "botanicalName": "Gardenia jasminoides 'Radicans'",
+    "commonName": "Gardenia Miniaturowa"
+  },
+  {
+    "botanicalName": "Ixora coccinea",
+    "commonName": "Iksora Szkarłatna"
+  },
+  {
+    "botanicalName": "Medinilla myriantha",
+    "commonName": "Medinilla Jagodowa"
+  },
+  {
+    "botanicalName": "Plumbago auriculata",
+    "commonName": "Plumbago Niebieska"
+  },
+  {
+    "botanicalName": "Mandevilla sanderi",
+    "commonName": "Mandevilla Różowa"
+  },
+  {
+    "botanicalName": "Mandevilla 'Red Riding Hood'",
+    "commonName": "Mandevilla Czerwona"
+  },
+  {
+    "botanicalName": "Hibiscus rosa-sinensis",
+    "commonName": "Hibiskus Chiński"
+  },
+  {
+    "botanicalName": "Hibiscus rosa-sinensis 'Cooper'",
+    "commonName": "Hibiskus Cooper"
+  },
+  {
+    "botanicalName": "Hibiscus schizopetalus",
+    "commonName": "Hibiskus Frędzelkowy"
+  },
+  {
+    "botanicalName": "Abutilon megapotamicum",
+    "commonName": "Abutilon Brazylijski"
+  },
+  {
+    "botanicalName": "Abutilon pictum",
+    "commonName": "Abutilon Malowany"
+  },
+  {
+    "botanicalName": "Abutilon striatum",
+    "commonName": "Abutilon Paskowany"
+  },
+  {
+    "botanicalName": "Bougainvillea 'Barbara Karst'",
+    "commonName": "Bugenwilla Barbara Karst"
+  },
+  {
+    "botanicalName": "Bougainvillea 'Raspberry Ice'",
+    "commonName": "Bugenwilla Malinowy Lód"
+  },
+  {
+    "botanicalName": "Bougainvillea 'San Diego Red'",
+    "commonName": "Bugenwilla San Diego Red"
+  },
+  {
+    "botanicalName": "Passiflora edulis",
+    "commonName": "Marakuja"
+  },
+  {
+    "botanicalName": "Passiflora quadrangularis",
+    "commonName": "Granadilla"
+  },
+  {
+    "botanicalName": "Stephanotis floribunda",
+    "commonName": "Stephanotis"
+  },
+  {
+    "botanicalName": "Jasminum officinale",
+    "commonName": "Jaśmin Lekarski"
+  },
+  {
+    "botanicalName": "Plectranthus amboinicus",
+    "commonName": "Oregano Indyjskie"
+  },
+  {
+    "botanicalName": "Plectranthus ciliatus",
+    "commonName": "Plectranthus Rzęsaty"
+  },
+  {
+    "botanicalName": "Plectranthus forsteri",
+    "commonName": "Plectranthus Forster"
+  },
+  {
+    "botanicalName": "Plectranthus oertendahlii",
+    "commonName": "Plectranthus Srebrzysty"
+  },
+  {
+    "botanicalName": "Plectranthus tomentosus",
+    "commonName": "Plectranthus Wełnisty"
+  },
+  {
+    "botanicalName": "Hypoestes phyllostachya 'Splash'",
+    "commonName": "Hipoestes Splash"
+  },
+  {
+    "botanicalName": "Lavandula stoechas",
+    "commonName": "Lawenda Stoechas"
+  },
+  {
+    "botanicalName": "Lavandula dentata",
+    "commonName": "Lawenda Ząbkowana"
+  },
+  {
+    "botanicalName": "Melissa officinalis 'Variegata'",
+    "commonName": "Melisa Paskowana"
+  },
+  {
+    "botanicalName": "Thymus citriodorus",
+    "commonName": "Tymianek Cytrynowy"
+  },
+  {
+    "botanicalName": "Thymus serpyllum",
+    "commonName": "Macierzanka Piaskowa"
+  },
+  {
+    "botanicalName": "Origanum vulgare 'Aureum'",
+    "commonName": "Oregano Złote"
+  },
+  {
+    "botanicalName": "Chamaemelum nobile",
+    "commonName": "Rumianek Szlachetny"
+  },
+  {
+    "botanicalName": "Echinacea purpurea",
+    "commonName": "Jeżówka Purpurowa"
+  },
+  {
+    "botanicalName": "Valeriana officinalis",
+    "commonName": "Kozłek Lekarski"
+  },
+  {
+    "botanicalName": "Hypericum perforatum",
+    "commonName": "Dziurawiec Zwyczajny"
+  },
+  {
+    "botanicalName": "Zamioculcas zamiifolia 'Zenzi'",
+    "commonName": "ZZ Zenzi Kompaktowy"
+  },
+  {
+    "botanicalName": "Aeonium 'Blushing Beauty'",
+    "commonName": "Aeonium Rumieniące"
+  },
+  {
+    "botanicalName": "Aeonium canariense",
+    "commonName": "Aeonium Kanaryjskie"
+  },
+  {
+    "botanicalName": "Aeonium castello-paivae",
+    "commonName": "Aeonium Castello"
+  },
+  {
+    "botanicalName": "Aeonium haworthii",
+    "commonName": "Aeonium Hawortia"
+  },
+  {
+    "botanicalName": "Aeonium sedifolium",
+    "commonName": "Aeonium Małolistne"
+  },
+  {
+    "botanicalName": "Aeonium tabuliforme",
+    "commonName": "Aeonium Talerzykowate"
+  },
+  {
+    "botanicalName": "Aeonium undulatum",
+    "commonName": "Aeonium Faliste"
+  },
+  {
+    "botanicalName": "x Graptoveria 'Fred Ives'",
+    "commonName": "Graptoweria Fred Ives"
+  },
+  {
+    "botanicalName": "x Graptoveria 'Opalina'",
+    "commonName": "Graptoweria Opalowa"
+  },
+  {
+    "botanicalName": "x Graptosedum 'Francesco Baldi'",
+    "commonName": "Graptosedum Francesco Baldi"
+  },
+  {
+    "botanicalName": "x Pachyveria glauca",
+    "commonName": "Pachyweria Sina"
+  },
+  {
+    "botanicalName": "Sempervivum arachnoideum",
+    "commonName": "Rozchodnik Pajęczynowaty"
+  },
+  {
+    "botanicalName": "Sempervivum calcareum",
+    "commonName": "Rozchodnik Wapienny"
+  },
+  {
+    "botanicalName": "Sempervivum 'Commander Hay'",
+    "commonName": "Sempervivum Commander Hay"
+  },
+  {
+    "botanicalName": "Sempervivum heuffelii",
+    "commonName": "Sempervivum Heuffelii"
+  },
+  {
+    "botanicalName": "Sempervivum montanum",
+    "commonName": "Rozchodnik Górski"
+  },
+  {
+    "botanicalName": "Sempervivum 'Red Rubin'",
+    "commonName": "Sempervivum Czerwony Rubin"
+  },
+  {
+    "botanicalName": "Graptopetalum amethystinum",
+    "commonName": "Graptopetalum Ametystowe"
+  },
+  {
+    "botanicalName": "Graptopetalum bellum",
+    "commonName": "Graptopetalum Piękne"
+  },
+  {
+    "botanicalName": "Conophytum calculus",
+    "commonName": "Konofitum Kuliste"
+  },
+  {
+    "botanicalName": "Conophytum minimum",
+    "commonName": "Konofitum Miniaturowe"
+  },
+  {
+    "botanicalName": "Pleiospilos bolusii",
+    "commonName": "Pleiospilos Bolusius"
+  },
+  {
+    "botanicalName": "Pleiospilos nelii",
+    "commonName": "Pleiospilos Nelii"
+  },
+  {
+    "botanicalName": "Fenestraria rhopalophylla",
+    "commonName": "Fenestraria Baby Toes"
+  },
+  {
+    "botanicalName": "Titanopsis calcarea",
+    "commonName": "Titanopsis Wapienna"
+  },
+  {
+    "botanicalName": "Argyroderma delaetii",
+    "commonName": "Argyroderma Delaeta"
+  },
+  {
+    "botanicalName": "Lapidaria margaretae",
+    "commonName": "Lapidaria Małgorzaty"
+  },
+  {
+    "botanicalName": "Rhipsalis cereuscula",
+    "commonName": "Rhipsalis Ryżowata"
+  },
+  {
+    "botanicalName": "Rhipsalis elliptica",
+    "commonName": "Rhipsalis Eliptyczna"
+  },
+  {
+    "botanicalName": "Rhipsalis ewaldiana",
+    "commonName": "Rhipsalis Ewaldiana"
+  },
+  {
+    "botanicalName": "Rhipsalis pilocarpa",
+    "commonName": "Rhipsalis Włochatokwiatowa"
+  },
+  {
+    "botanicalName": "Schlumbergera russelliana",
+    "commonName": "Kaktus Wielkanocny Russella"
+  },
+  {
+    "botanicalName": "Lepismium bolivianum",
+    "commonName": "Lepismium Boliwijskie"
+  },
+  {
+    "botanicalName": "Lepismium cruciforme",
+    "commonName": "Lepismium Krzyżowe"
+  },
+  {
+    "botanicalName": "Hatiora salicornioides",
+    "commonName": "Hatiora Solankowa"
+  },
+  {
+    "botanicalName": "Epiphyllum 'Ackermanii'",
+    "commonName": "Kaktus Epifityczny Czerwony"
+  },
+  {
+    "botanicalName": "Portulacaria afra",
+    "commonName": "Portulakaria Słoniowa"
+  },
+  {
+    "botanicalName": "Portulacaria afra 'Variegata'",
+    "commonName": "Portulakaria Paskowana"
+  },
+  {
+    "botanicalName": "Curio talinoides var. mandraliscae",
+    "commonName": "Curio Niebieski"
+  },
+  {
+    "botanicalName": "Curio articulatus",
+    "commonName": "Curio Świecowy"
+  },
+  {
+    "botanicalName": "Curio rowleyanus 'Variegatus'",
+    "commonName": "Curio Grobelkowy Variegata"
+  },
+  {
+    "botanicalName": "Senecio macroglossus",
+    "commonName": "Senecio Bluszcz Południowoafrykański"
+  },
+  {
+    "botanicalName": "Senecio crassissimus",
+    "commonName": "Senecio Fioletowy"
+  },
+  {
+    "botanicalName": "Senecio stapeliiformis",
+    "commonName": "Senecio Świeczkowy"
+  },
+  {
+    "botanicalName": "Adenium arabicum",
+    "commonName": "Adenium Arabskie"
+  },
+  {
+    "botanicalName": "Adenium somalense",
+    "commonName": "Adenium Somalijskie"
+  },
+  {
+    "botanicalName": "Ceropegia sandersonii",
+    "commonName": "Ceropegia Spadochronowa"
+  },
+  {
+    "botanicalName": "Ceropegia stapeliiformis",
+    "commonName": "Ceropegia Stapeliopodobna"
+  },
+  {
+    "botanicalName": "Stapelia gigantea",
+    "commonName": "Stapelia Gigantyczna"
+  },
+  {
+    "botanicalName": "Huernia zebrina",
+    "commonName": "Huernia Zebrowa"
+  },
+  {
+    "botanicalName": "Huernia schneideriana",
+    "commonName": "Huernia Schneidera"
+  },
+  {
+    "botanicalName": "Dioscorea elephantipes",
+    "commonName": "Dioskorea Słoniowa"
+  },
+  {
+    "botanicalName": "Stephania erecta",
+    "commonName": "Stephania Prosta"
+  },
+  {
+    "botanicalName": "Stephania suberosa",
+    "commonName": "Stephania Bulwiasta"
+  },
+  {
+    "botanicalName": "Fockea edulis",
+    "commonName": "Fockea Jadalna"
+  },
+  {
+    "botanicalName": "Bowiea volubilis",
+    "commonName": "Cebula Wspinaczkowa"
+  },
+  {
+    "botanicalName": "Ledebouria socialis",
+    "commonName": "Ledebouria Plamkowana"
+  },
+  {
+    "botanicalName": "Ledebouria ovatifolia",
+    "commonName": "Ledebouria Owalnolistna"
+  },
+  {
+    "botanicalName": "Albuca spiralis",
+    "commonName": "Albuca Skręcona"
+  },
+  {
+    "botanicalName": "Albuca namaquensis",
+    "commonName": "Albuca Namakwa"
+  },
+  {
+    "botanicalName": "Lachenalia aloides",
+    "commonName": "Lachenalia Aloesopodobna"
+  },
+  {
+    "botanicalName": "Lachenalia viridiflora",
+    "commonName": "Lachenalia Zielonkwiatowa"
+  },
+  {
+    "botanicalName": "Muscari armeniacum",
+    "commonName": "Szafirek Armeński"
+  },
+  {
+    "botanicalName": "Hyacinthus orientalis",
+    "commonName": "Hiacynt Wschodni"
+  },
+  {
+    "botanicalName": "Allium ursinum",
+    "commonName": "Czosnek Niedźwiedzi"
+  },
+  {
+    "botanicalName": "Solanum tuberosum",
+    "commonName": "Ziemniak"
+  },
+  {
+    "botanicalName": "Abelmoschus esculentus",
+    "commonName": "Okra"
+  },
+  {
+    "botanicalName": "Vigna unguiculata",
+    "commonName": "Fasola Dolichos"
+  },
+  {
+    "botanicalName": "Lens culinaris",
+    "commonName": "Soczewica"
+  },
+  {
+    "botanicalName": "Phaseolus lunatus",
+    "commonName": "Fasola Lima"
+  },
+  {
+    "botanicalName": "Solanum melongena 'Thai'",
+    "commonName": "Bakłażan Tajski"
+  },
+  {
+    "botanicalName": "Capsicum annuum 'Habanero'",
+    "commonName": "Papryka Habanero"
+  },
+  {
+    "botanicalName": "Capsicum annuum 'Bhut Jolokia'",
+    "commonName": "Papryka Ghost Pepper"
+  },
+  {
+    "botanicalName": "Beta vulgaris 'Golden'",
+    "commonName": "Burak Złoty"
+  },
+  {
+    "botanicalName": "Ludwigia repens",
+    "commonName": "Ludwigia Płożąca"
+  },
+  {
+    "botanicalName": "Bacopa caroliniana",
+    "commonName": "Bacopa Karolińska"
+  },
+  {
+    "botanicalName": "Echinodorus grisebachii",
+    "commonName": "Echinodorus Amazon"
+  },
+  {
+    "botanicalName": "Cryptocoryne wendtii",
+    "commonName": "Kryptokoryna Wendta"
+  },
+  {
+    "botanicalName": "Aspidistra elatior 'Milky Way'",
+    "commonName": "Aspidistra Droga Mleczna"
+  },
+  {
+    "botanicalName": "Aspidistra lurida",
+    "commonName": "Aspidistra Bladawa"
+  },
+  {
+    "botanicalName": "Cordyline australis 'Red Star'",
+    "commonName": "Kordylina Czerwona Gwiazda"
+  },
+  {
+    "botanicalName": "Cordyline australis 'Sundance'",
+    "commonName": "Kordylina Sundance"
+  },
+  {
+    "botanicalName": "Cordyline fruticosa 'Tricolor'",
+    "commonName": "Kordylina Tricolor"
+  },
+  {
+    "botanicalName": "Cordyline fruticosa 'Ti'",
+    "commonName": "Kordylina Ti"
+  },
+  {
+    "botanicalName": "Cordyline indivisa",
+    "commonName": "Kordylina Górska"
+  },
+  {
+    "botanicalName": "Pandanus utilis",
+    "commonName": "Pandanus"
+  },
+  {
+    "botanicalName": "Pandanus veitchii",
+    "commonName": "Pandanus Veitcha"
+  },
+  {
+    "botanicalName": "Carex morrowii 'Ice Dance'",
+    "commonName": "Turzyca Japońska Ice Dance"
+  },
+  {
+    "botanicalName": "Carex oshimensis 'Evergold'",
+    "commonName": "Turzyca Evergold"
+  },
+  {
+    "botanicalName": "Fargesia murielae",
+    "commonName": "Bambus Parasol"
+  },
+  {
+    "botanicalName": "Phyllostachys aurea",
+    "commonName": "Bambus Złoty"
+  },
+  {
+    "botanicalName": "Pleioblastus viridistriatus",
+    "commonName": "Bambus Karłowaty Zielony"
+  },
+  {
+    "botanicalName": "Platycerium grande",
+    "commonName": "Paproć Rogowa Wielka"
+  },
+  {
+    "botanicalName": "Platycerium wandae",
+    "commonName": "Paproć Rogowa Wandy"
+  },
+  {
+    "botanicalName": "Platycerium veitchii",
+    "commonName": "Paproć Rogowa Veitcha"
+  },
+  {
+    "botanicalName": "Microsorum musifolium",
+    "commonName": "Paproć Krokodyl"
+  },
+  {
+    "botanicalName": "Microsorum punctatum",
+    "commonName": "Paproć Kropkowana"
+  },
+  {
+    "botanicalName": "Asplenium bulbiferum",
+    "commonName": "Zanokcica Bulwiasta"
+  },
+  {
+    "botanicalName": "Asplenium daucifolium",
+    "commonName": "Zanokcica Marchwiasta"
+  },
+  {
+    "botanicalName": "Asplenium flaccidum",
+    "commonName": "Zanokcica Zwisająca"
+  },
+  {
+    "botanicalName": "Adiantum capillus-veneris",
+    "commonName": "Adiantum Włos Wenus"
+  },
+  {
+    "botanicalName": "Adiantum peruvianum",
+    "commonName": "Adiantum Peruwiańskie"
+  },
+  {
+    "botanicalName": "Adiantum tenerum",
+    "commonName": "Adiantum Delikatne"
+  },
+  {
+    "botanicalName": "Nephrolepis cordifolia",
+    "commonName": "Nerczycnia Sercowata"
+  },
+  {
+    "botanicalName": "Nephrolepis exaltata 'Fluffy Ruffles'",
+    "commonName": "Nerczycnia Fluffy Ruffles"
+  },
+  {
+    "botanicalName": "Nephrolepis exaltata 'Macho'",
+    "commonName": "Nerczycnia Macho"
+  },
+  {
+    "botanicalName": "Nephrolepis exaltata 'Tiger Fern'",
+    "commonName": "Nerczycnia Tygrysie"
+  },
+  {
+    "botanicalName": "Dicksonia antarctica",
+    "commonName": "Paproć Drzewiasta Antarktyczna"
+  },
+  {
+    "botanicalName": "Polypodium vulgare",
+    "commonName": "Paprotka Zwyczajna"
+  },
+  {
+    "botanicalName": "Polypodium glycyrrhiza",
+    "commonName": "Paprotka Lukrecjowa"
+  },
+  {
+    "botanicalName": "Lycopodium clavatum",
+    "commonName": "Widłak Goździsty"
+  },
+  {
+    "botanicalName": "Soleirolia soleirolii",
+    "commonName": "Żywy Mech"
+  },
+  {
+    "botanicalName": "Helxine soleirolii",
+    "commonName": "Helksyna"
+  },
+  {
+    "botanicalName": "Peperomia pellucida",
+    "commonName": "Peperomia Przezroczysta"
+  },
+  {
+    "botanicalName": "Alpinia zerumbet",
+    "commonName": "Alpinia Muszlowa"
+  },
+  {
+    "botanicalName": "Alpinia zerumbet 'Variegata'",
+    "commonName": "Alpinia Paskowana"
+  },
+  {
+    "botanicalName": "Hedychium coronarium",
+    "commonName": "Hedychium Koronowe"
+  },
+  {
+    "botanicalName": "Kaempferia galanga",
+    "commonName": "Kaempferia Galanga"
+  },
+  {
+    "botanicalName": "Zingiber zerumbet",
+    "commonName": "Imbir Shampoo"
+  },
+  {
+    "botanicalName": "Costus arabicus",
+    "commonName": "Costus Arabski"
+  },
+  {
+    "botanicalName": "Costus pictus",
+    "commonName": "Costus Malowany"
+  },
+  {
+    "botanicalName": "Costus woodsonii",
+    "commonName": "Costus Czerwony Guzik"
+  },
+  {
+    "botanicalName": "Aerangis biloba",
+    "commonName": "Aerangis Dwupłatkowa"
+  },
+  {
+    "botanicalName": "Angraecum leonis",
+    "commonName": "Angraecum Lwa"
+  },
+  {
+    "botanicalName": "Phalaenopsis cornu-cervi",
+    "commonName": "Storczyk Jelenie Rogi"
+  },
+  {
+    "botanicalName": "Phalaenopsis gigantea",
+    "commonName": "Storczyk Gigantyczny"
+  },
+  {
+    "botanicalName": "Phalaenopsis hieroglyphica",
+    "commonName": "Storczyk Hieroglificzny"
+  },
+  {
+    "botanicalName": "Phalaenopsis lobbii",
+    "commonName": "Storczyk Lobbiego"
+  },
+  {
+    "botanicalName": "Phalaenopsis lowii",
+    "commonName": "Storczyk Lowa"
+  },
+  {
+    "botanicalName": "Phalaenopsis mannii",
+    "commonName": "Storczyk Manna"
+  },
+  {
+    "botanicalName": "Clivia gardenii",
+    "commonName": "Kliwia Gardena"
+  },
+  {
+    "botanicalName": "Clivia cyrtanthiflora",
+    "commonName": "Kliwia Cyrtantolistna"
+  },
+  {
+    "botanicalName": "Sprekelia formosissima",
+    "commonName": "Aztecka Lilia"
+  },
+  {
+    "botanicalName": "Haemanthus albiflos",
+    "commonName": "Hemantus Biały"
+  },
+  {
+    "botanicalName": "Haemanthus coccineus",
+    "commonName": "Hemantus Szkarłatny"
+  },
+  {
+    "botanicalName": "Scadoxus multiflorus",
+    "commonName": "Scadoxus Wielokwiatowy"
+  },
+  {
+    "botanicalName": "Scadoxus puniceus",
+    "commonName": "Scadoxus Purpurowy"
+  },
+  {
+    "botanicalName": "Crinum asiaticum",
+    "commonName": "Krinum Azjatycki"
+  },
+  {
+    "botanicalName": "Crinum moorei",
+    "commonName": "Krinum Moore'a"
+  },
+  {
+    "botanicalName": "Narcissus papyraceus",
+    "commonName": "Narcyz Papierowy"
+  },
+  {
+    "botanicalName": "Narcissus tazetta",
+    "commonName": "Narcyz Wielokwiatowy"
+  },
+  {
+    "botanicalName": "Tulipa gesneriana",
+    "commonName": "Tulipan Ogrodowy"
+  },
+  {
+    "botanicalName": "Musa velutina",
+    "commonName": "Banan Różowy"
+  },
+  {
+    "botanicalName": "Musa coccinea",
+    "commonName": "Banan Szkarłatny"
+  },
+  {
+    "botanicalName": "Ravenala madagascariensis",
+    "commonName": "Drzewo Podróżnika"
+  },
+  {
+    "botanicalName": "Chamaedorea metallica",
+    "commonName": "Palma Metaliczna"
+  },
+  {
+    "botanicalName": "Chamaedorea microspadix",
+    "commonName": "Palma Bambusowa"
+  },
+  {
+    "botanicalName": "Chamaedorea oblongata",
+    "commonName": "Palma Oblonga"
+  },
+  {
+    "botanicalName": "Howea belmoreana",
+    "commonName": "Palma Belmorea"
+  },
+  {
+    "botanicalName": "Livistona chinensis",
+    "commonName": "Palma Chińska Wachlarzowa"
+  },
+  {
+    "botanicalName": "Rhapis excelsa 'Variegata'",
+    "commonName": "Palma Bambusowa Paskowana"
+  },
+  {
+    "botanicalName": "Rhapis humilis",
+    "commonName": "Palma Bambusowa Mała"
+  },
+  {
+    "botanicalName": "Caryota urens",
+    "commonName": "Palma Winotna"
+  },
+  {
+    "botanicalName": "Washingtonia filifera",
+    "commonName": "Palma Pustynna"
+  },
+  {
+    "botanicalName": "Areca catechu",
+    "commonName": "Palma Arekowata"
+  }
 ]
