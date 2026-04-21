@@ -87,7 +87,7 @@ public class SeedDataService
                 {
                     Name = dto.Name,
                     Species = dto.Species,
-                    Location = dto.Location,
+                    // LocationId seeded as null — no location dictionary in seed data
                     MediumType = dto.MediumType,
                     AcquiredDate = dto.AcquiredDate,
                     Notes = dto.Notes

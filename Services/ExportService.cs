@@ -68,7 +68,7 @@ public class ExportService
                 Guid = plant.Guid,
                 Name = plant.Name,
                 Species = plant.Species,
-                Location = plant.Location,
+                Location = plant.LocationName,
                 MediumType = plant.MediumType,
                 AcquiredDate = plant.AcquiredDate,
                 Notes = plant.Notes,

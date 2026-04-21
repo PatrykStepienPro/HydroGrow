@@ -6,7 +6,8 @@ public class Plant
     public string Guid { get; set; } = System.Guid.NewGuid().ToString();
     public string Name { get; set; } = string.Empty;
     public string Species { get; set; } = string.Empty;
-    public string Location { get; set; } = string.Empty;
+    public int? LocationId { get; set; }
+    public string LocationName { get; set; } = string.Empty;
     public string MediumType { get; set; } = string.Empty;
     public string AcquiredDate { get; set; } = string.Empty;
     public string Notes { get; set; } = string.Empty;

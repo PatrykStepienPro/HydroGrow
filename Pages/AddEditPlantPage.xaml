@@ -71,7 +71,9 @@
 
             <!-- Location -->
             <sf:SfTextInputLayout Hint="Lokalizacja (opcjonalnie)">
-                <Entry Text="{Binding Location}" ReturnType="Next" />
+                <Picker ItemsSource="{Binding Locations}"
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding SelectedLocation}" />
             </sf:SfTextInputLayout>
 
             <!-- Medium type -->

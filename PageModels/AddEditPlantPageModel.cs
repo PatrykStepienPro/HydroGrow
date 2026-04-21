@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Location = HydroGrow.Models.Location;
 
 namespace HydroGrow.PageModels;
 
@@ -9,6 +10,7 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
     private readonly PlantRepository _plantRepository;
     private readonly PhotoRepository _photoRepository;
     private readonly PhotoService _photoService;
+    private readonly LocationRepository _locationRepository;
     private readonly IErrorHandler _errorHandler;
 
     private Plant _plant = new();
@@ -25,8 +27,10 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
     [ObservableProperty]
     private string _species = string.Empty;
 
+    public System.Collections.ObjectModel.ObservableCollection<Location> Locations { get; } = [];
+
     [ObservableProperty]
-    private string _location = string.Empty;
+    private Location? _selectedLocation;
 
     [ObservableProperty]
     private string _selectedMediumType = MediumType.LECA.ToDisplayString();
@@ -51,11 +55,13 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
         PlantRepository plantRepository,
         PhotoRepository photoRepository,
         PhotoService photoService,
+        LocationRepository locationRepository,
         IErrorHandler errorHandler)
     {
         _plantRepository = plantRepository;
         _photoRepository = photoRepository;
         _photoService = photoService;
+        _locationRepository = locationRepository;
         _errorHandler = errorHandler;
     }
 
@@ -85,9 +91,15 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
                 IsNew = true;
             }
 
+            var locs = await _locationRepository.ListAsync();
+            Locations.Clear();
+            foreach (var l in locs) Locations.Add(l);
+
             Name = _plant.Name;
             Species = _plant.Species;
-            Location = _plant.Location;
+            SelectedLocation = _plant.LocationId.HasValue
+                ? Locations.FirstOrDefault(l => l.Id == _plant.LocationId.Value)
+                : null;
             Notes = _plant.Notes;
 
             if (Enum.TryParse<MediumType>(_plant.MediumType, out var mt))
@@ -157,7 +169,7 @@ public partial class AddEditPlantPageModel : ObservableObject, IQueryAttributabl
         {
             _plant.Name = Name.Trim();
             _plant.Species = Species?.Trim() ?? string.Empty;
-            _plant.Location = Location?.Trim() ?? string.Empty;
+            _plant.LocationId = SelectedLocation?.Id;
             _plant.Notes = Notes?.Trim() ?? string.Empty;
             _plant.AcquiredDate = AcquiredDate.ToString("yyyy-MM-dd");
             _plant.MediumType = MediumTypeExtensions.FromDisplayString(SelectedMediumType).ToString();

@@ -14,6 +14,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("plant-edit", typeof(Pages.AddEditPlantPage));
         Routing.RegisterRoute("plant-measure", typeof(Pages.AddMeasurementPage));
         Routing.RegisterRoute("plant-treat", typeof(Pages.AddTreatmentPage));
+        Routing.RegisterRoute("manage-locations", typeof(Pages.ManageLocationsPage));
     }
 
     public static async Task DisplaySnackbarAsync(string message)

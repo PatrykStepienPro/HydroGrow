@@ -69,6 +69,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<ReminderRepository>();
         builder.Services.AddSingleton<PhotoRepository>();
         builder.Services.AddSingleton<MeasurementRangeRepository>();
+        builder.Services.AddSingleton<LocationRepository>();
 
         // Services
         builder.Services.AddSingleton<SeedDataService>();
@@ -96,6 +97,7 @@ public static class MauiProgram
         builder.Services.AddTransientWithShellRoute<Pages.AddEditPlantPage, AddEditPlantPageModel>("plant-edit");
         builder.Services.AddTransientWithShellRoute<Pages.AddMeasurementPage, AddMeasurementPageModel>("plant-measure");
         builder.Services.AddTransientWithShellRoute<Pages.AddTreatmentPage, AddTreatmentPageModel>("plant-treat");
+        builder.Services.AddTransientWithShellRoute<Pages.ManageLocationsPage, ManageLocationsPageModel>("manage-locations");
 
         return builder.Build();
     }

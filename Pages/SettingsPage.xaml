@@ -9,6 +9,18 @@
     <ScrollView>
         <VerticalStackLayout Padding="{StaticResource LayoutPadding}" Spacing="{StaticResource LayoutSpacing}">
 
+            <!-- Locations section -->
+            <Label Text="Lokalizacje" Style="{StaticResource SectionHeaderStyle}" />
+
+            <Border Style="{StaticResource CardStyle}">
+                <Button Text="🏠  Zarządzaj lokalizacjami"
+                        Command="{Binding NavigateToLocationsCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"
+                        CornerRadius="12"
+                        HorizontalOptions="Fill" />
+            </Border>
+
             <!-- Data section -->
             <Label Text="Dane" Style="{StaticResource SectionHeaderStyle}" />
 

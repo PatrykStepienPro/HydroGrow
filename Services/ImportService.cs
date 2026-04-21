@@ -128,7 +128,7 @@ public class ImportService
                 Guid = dto.Guid,
                 Name = dto.Name,
                 Species = dto.Species,
-                Location = dto.Location,
+                // LocationId not imported — location must be reassigned manually after import
                 MediumType = dto.MediumType,
                 AcquiredDate = dto.AcquiredDate,
                 Notes = dto.Notes,

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
+             xmlns:models="clr-namespace:HydroGrow.Models"
+             x:Class="HydroGrow.Pages.ManageLocationsPage"
+             x:DataType="pageModels:ManageLocationsPageModel"
+             Title="Lokalizacje">
+
+    <Grid Padding="{StaticResource LayoutPadding}" RowDefinitions="Auto,*" RowSpacing="12">
+
+        <!-- Dodaj nową lokalizację -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+            <Entry Grid.Column="0"
+                   Placeholder="Nowa lokalizacja…"
+                   Text="{Binding NewLocationName}"
+                   ReturnCommand="{Binding AddLocationCommand}" />
+            <Button Grid.Column="1"
+                    Text="Dodaj"
+                    Command="{Binding AddLocationCommand}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    CornerRadius="12" />
+        </Grid>
+
+        <!-- Lista lokalizacji -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Locations}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Location">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Usuń"
+                                           BackgroundColor="{StaticResource HydroRed}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteLocationCommand}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="16,14"
+                              BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+                            <Label Text="{Binding Name}" Style="{StaticResource Body1}" />
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

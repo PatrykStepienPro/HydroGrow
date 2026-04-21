@@ -216,4 +216,8 @@ public partial class SettingsPageModel : ObservableObject
         Application.Current!.UserAppTheme =
             Application.Current.UserAppTheme == AppTheme.Dark ? AppTheme.Light : AppTheme.Dark;
     }
+
+    [RelayCommand]
+    private async Task NavigateToLocations()
+        => await Shell.Current.GoToAsync("manage-locations");
 }

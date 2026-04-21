@@ -48,8 +48,19 @@ public class PlantRepository
                     Caption TEXT NOT NULL DEFAULT '',
                     SortOrder INTEGER NOT NULL DEFAULT 0
                 );
-                CREATE INDEX IF NOT EXISTS idx_photo_plant ON PlantPhoto(PlantId, SortOrder ASC);";
+                CREATE INDEX IF NOT EXISTS idx_photo_plant ON PlantPhoto(PlantId, SortOrder ASC);
+
+                CREATE TABLE IF NOT EXISTS Location (
+                    Id   INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Name TEXT NOT NULL UNIQUE COLLATE NOCASE
+                );";
             await cmd.ExecuteNonQueryAsync();
+
+            // Migration: add LocationId column if it doesn't exist yet
+            var migCmd = connection.CreateCommand();
+            migCmd.CommandText = "ALTER TABLE Plant ADD COLUMN LocationId INTEGER;";
+            try { await migCmd.ExecuteNonQueryAsync(); }
+            catch { /* column already exists — ignore */ }
         }
         catch (Exception e)
         {
@@ -67,13 +78,15 @@ public class PlantRepository
 
         var cmd = connection.CreateCommand();
         cmd.CommandText = includeArchived
-            ? @"SELECT p.*, ph.FilePath AS ThumbnailFilePath
+            ? @"SELECT p.*, ph.FilePath AS ThumbnailFilePath, loc.Name AS LocationName
                 FROM Plant p
                 LEFT JOIN PlantPhoto ph ON ph.Id = p.ThumbnailPhotoId
+                LEFT JOIN Location loc ON loc.Id = p.LocationId
                 ORDER BY p.Name ASC"
-            : @"SELECT p.*, ph.FilePath AS ThumbnailFilePath
+            : @"SELECT p.*, ph.FilePath AS ThumbnailFilePath, loc.Name AS LocationName
                 FROM Plant p
                 LEFT JOIN PlantPhoto ph ON ph.Id = p.ThumbnailPhotoId
+                LEFT JOIN Location loc ON loc.Id = p.LocationId
                 WHERE p.IsArchived = 0
                 ORDER BY p.Name ASC";
 
@@ -86,6 +99,9 @@ public class PlantRepository
             if (!reader.IsDBNull(col))
                 plant.ThumbnailPath = Path.Combine(
                     FileSystem.AppDataDirectory, "photos", reader.GetString(col));
+            var locCol = reader.GetOrdinal("LocationName");
+            if (!reader.IsDBNull(locCol))
+                plant.LocationName = reader.GetString(locCol);
             plants.Add(plant);
         }
 
@@ -98,12 +114,22 @@ public class PlantRepository
         await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
-        cmd.CommandText = "SELECT * FROM Plant WHERE Id = @id";
+        cmd.CommandText = @"
+            SELECT p.*, loc.Name AS LocationName
+            FROM Plant p
+            LEFT JOIN Location loc ON loc.Id = p.LocationId
+            WHERE p.Id = @id";
         cmd.Parameters.AddWithValue("@id", id);
 
         await using var reader = await cmd.ExecuteReaderAsync();
         if (await reader.ReadAsync())
-            return MapRow(reader);
+        {
+            var plant = MapRow(reader);
+            var locCol = reader.GetOrdinal("LocationName");
+            if (!reader.IsDBNull(locCol))
+                plant.LocationName = reader.GetString(locCol);
+            return plant;
+        }
 
         return null;
     }
@@ -114,12 +140,22 @@ public class PlantRepository
         await using var connection = await Constants.OpenConnectionAsync();
 
         var cmd = connection.CreateCommand();
-        cmd.CommandText = "SELECT * FROM Plant WHERE Guid = @guid";
+        cmd.CommandText = @"
+            SELECT p.*, loc.Name AS LocationName
+            FROM Plant p
+            LEFT JOIN Location loc ON loc.Id = p.LocationId
+            WHERE p.Guid = @guid";
         cmd.Parameters.AddWithValue("@guid", guid);
 
         await using var reader = await cmd.ExecuteReaderAsync();
         if (await reader.ReadAsync())
-            return MapRow(reader);
+        {
+            var plant = MapRow(reader);
+            var locCol = reader.GetOrdinal("LocationName");
+            if (!reader.IsDBNull(locCol))
+                plant.LocationName = reader.GetString(locCol);
+            return plant;
+        }
 
         return null;
     }
@@ -139,16 +175,16 @@ public class PlantRepository
             item.CreatedAt = item.UpdatedAt;
 
             cmd.CommandText = @"
-                INSERT INTO Plant (Guid, Name, Species, Location, MediumType, AcquiredDate, Notes,
+                INSERT INTO Plant (Guid, Name, Species, LocationId, MediumType, AcquiredDate, Notes,
                     ThumbnailPhotoId, CreatedAt, UpdatedAt, IsArchived)
-                VALUES (@guid, @name, @species, @location, @mediumType, @acquiredDate, @notes,
+                VALUES (@guid, @name, @species, @locationId, @mediumType, @acquiredDate, @notes,
                     @thumbnailPhotoId, @createdAt, @updatedAt, @isArchived);
                 SELECT last_insert_rowid();";
         }
         else
         {
             cmd.CommandText = @"
-                UPDATE Plant SET Name=@name, Species=@species, Location=@location, MediumType=@mediumType,
+                UPDATE Plant SET Name=@name, Species=@species, LocationId=@locationId, MediumType=@mediumType,
                     AcquiredDate=@acquiredDate, Notes=@notes, ThumbnailPhotoId=@thumbnailPhotoId,
                     UpdatedAt=@updatedAt, IsArchived=@isArchived
                 WHERE Id=@id";
@@ -158,7 +194,7 @@ public class PlantRepository
         cmd.Parameters.AddWithValue("@guid", item.Guid);
         cmd.Parameters.AddWithValue("@name", item.Name);
         cmd.Parameters.AddWithValue("@species", item.Species ?? "");
-        cmd.Parameters.AddWithValue("@location", item.Location ?? "");
+        cmd.Parameters.AddWithValue("@locationId", item.LocationId.HasValue ? item.LocationId.Value : DBNull.Value);
         cmd.Parameters.AddWithValue("@mediumType", item.MediumType ?? "");
         cmd.Parameters.AddWithValue("@acquiredDate", item.AcquiredDate ?? "");
         cmd.Parameters.AddWithValue("@notes", item.Notes ?? "");
@@ -202,7 +238,7 @@ public class PlantRepository
         Guid = r.GetString(r.GetOrdinal("Guid")),
         Name = r.GetString(r.GetOrdinal("Name")),
         Species = r.IsDBNull(r.GetOrdinal("Species")) ? "" : r.GetString(r.GetOrdinal("Species")),
-        Location = r.IsDBNull(r.GetOrdinal("Location")) ? "" : r.GetString(r.GetOrdinal("Location")),
+        LocationId = r.IsDBNull(r.GetOrdinal("LocationId")) ? null : r.GetInt32(r.GetOrdinal("LocationId")),
         MediumType = r.IsDBNull(r.GetOrdinal("MediumType")) ? "" : r.GetString(r.GetOrdinal("MediumType")),
         AcquiredDate = r.IsDBNull(r.GetOrdinal("AcquiredDate")) ? "" : r.GetString(r.GetOrdinal("AcquiredDate")),
         Notes = r.IsDBNull(r.GetOrdinal("Notes")) ? "" : r.GetString(r.GetOrdinal("Notes")),

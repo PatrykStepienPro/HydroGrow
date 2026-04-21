@@ -86,7 +86,7 @@ public partial class PlantListPageModel : ObservableObject
             filtered = filtered.Where(p =>
                 p.Name.ToLowerInvariant().Contains(lower) ||
                 p.Species.ToLowerInvariant().Contains(lower) ||
-                p.Location.ToLowerInvariant().Contains(lower));
+                p.LocationName.ToLowerInvariant().Contains(lower));
         }
 
         if (!string.IsNullOrWhiteSpace(SelectedMediumFilter) && SelectedMediumFilter != "Wszystkie")
