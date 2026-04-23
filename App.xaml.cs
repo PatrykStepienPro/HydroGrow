@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace HydroGrow;
+﻿namespace HydroGrow;
 
 public partial class App : Application
 {
@@ -8,7 +6,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		var savedTheme = Preferences.Default.Get("app_theme", (int)AppTheme.Unspecified);
+		var savedTheme = Preferences.Default.Get(AppPreferenceKeys.AppTheme, (int)AppTheme.Unspecified);
 		UserAppTheme = (AppTheme)savedTheme;
 
 		AppDomain.CurrentDomain.UnhandledException += (s, e) =>

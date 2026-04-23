@@ -217,7 +217,7 @@ public partial class SettingsPageModel : ObservableObject
             ? AppTheme.Light
             : AppTheme.Dark;
         Application.Current.UserAppTheme = newTheme;
-        Preferences.Default.Set("app_theme", (int)newTheme);
+        Preferences.Default.Set(AppPreferenceKeys.AppTheme, (int)newTheme);
     }
 
     [RelayCommand]
