@@ -213,8 +213,11 @@ public partial class SettingsPageModel : ObservableObject
     [RelayCommand]
     private void ToggleTheme()
     {
-        Application.Current!.UserAppTheme =
-            Application.Current.UserAppTheme == AppTheme.Dark ? AppTheme.Light : AppTheme.Dark;
+        var newTheme = Application.Current!.UserAppTheme == AppTheme.Dark
+            ? AppTheme.Light
+            : AppTheme.Dark;
+        Application.Current.UserAppTheme = newTheme;
+        Preferences.Default.Set("app_theme", (int)newTheme);
     }
 
     [RelayCommand]

@@ -8,6 +8,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
+		var savedTheme = Preferences.Default.Get("app_theme", (int)AppTheme.Unspecified);
+		UserAppTheme = (AppTheme)savedTheme;
+
 		AppDomain.CurrentDomain.UnhandledException += (s, e) =>
 		{
 			var ex = e.ExceptionObject as Exception;

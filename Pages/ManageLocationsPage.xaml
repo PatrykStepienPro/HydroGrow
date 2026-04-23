@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pageModels="clr-namespace:HydroGrow.PageModels"
              xmlns:models="clr-namespace:HydroGrow.Models"
+             xmlns:f="clr-namespace:Fonts"
              x:Class="HydroGrow.Pages.ManageLocationsPage"
              x:DataType="pageModels:ManageLocationsPageModel"
              Title="Lokalizacje">
@@ -27,22 +28,62 @@
         <CollectionView Grid.Row="1" ItemsSource="{Binding Locations}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Location">
-                    <SwipeView>
+                    <SwipeView Margin="0,4">
                         <SwipeView.RightItems>
-                            <SwipeItems>
-                                <SwipeItem Text="Usuń"
-                                           BackgroundColor="{StaticResource HydroRed}"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteLocationCommand}"
-                                           CommandParameter="{Binding .}" />
+                            <SwipeItems Mode="Reveal">
+                                <SwipeItemView Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteLocationCommand}"
+                                              CommandParameter="{Binding .}">
+                                    <Border BackgroundColor="{StaticResource HydroRed}"
+                                            StrokeShape="RoundRectangle 16"
+                                            StrokeThickness="0"
+                                            WidthRequest="72"
+                                            Margin="8,0,0,0">
+                                        <Label Text="{x:Static f:FluentUI.delete_20_regular}"
+                                               FontFamily="{x:Static f:FluentUI.FontFamily}"
+                                               FontSize="22"
+                                               TextColor="White"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center" />
+                                    </Border>
+                                </SwipeItemView>
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <Grid Padding="16,14"
-                              BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
-                            <Label Text="{Binding Name}" Style="{StaticResource Body1}" />
-                        </Grid>
+                        <Border Style="{StaticResource CardStyle}">
+                            <Grid ColumnDefinitions="*,Auto" Padding="4,0">
+                                <Label Grid.Column="0"
+                                       Text="{Binding Name}"
+                                       Style="{StaticResource Body1Strong}"
+                                       VerticalOptions="Center" />
+                                <Button Grid.Column="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteLocationCommand}"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="Transparent"
+                                        Padding="8,0"
+                                        MinimumWidthRequest="0">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="{x:Static f:FluentUI.delete_20_regular}"
+                                                         FontFamily="{x:Static f:FluentUI.FontFamily}"
+                                                         Size="20"
+                                                         Color="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+                                    </Button.ImageSource>
+                                </Button>
+                            </Grid>
+                        </Border>
                     </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Padding="0,64" HorizontalOptions="Center" Spacing="12">
+                    <Label Text="🏠" FontSize="56" HorizontalOptions="Center" />
+                    <Label Text="Brak lokalizacji"
+                           Style="{StaticResource Title3}"
+                           HorizontalOptions="Center" />
+                    <Label Text="Dodaj pierwszą lokalizację powyżej"
+                           Style="{StaticResource Body2}"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
         </CollectionView>
 
     </Grid>
