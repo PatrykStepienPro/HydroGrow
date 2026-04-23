@@ -19,24 +19,37 @@ public partial class ManageLocationsPageModel : ObservableObject
     [ObservableProperty]
     private bool _isBusy;
 
+    [ObservableProperty]
+    private bool _isRefreshing;
+
     public ManageLocationsPageModel(LocationRepository repo, IErrorHandler errorHandler)
     {
         _repo = repo;
         _errorHandler = errorHandler;
+        RefreshCommand = new AsyncRelayCommand(LoadAsync);
     }
+
+    public IAsyncRelayCommand RefreshCommand { get; }
 
     public async Task LoadAsync()
     {
+        if (IsBusy) return;
         IsBusy = true;
+        IsRefreshing = true;
         try
         {
             var list = await _repo.ListAsync();
             Locations.Clear();
             foreach (var l in list) Locations.Add(l);
         }
+        catch (Exception ex)
+        {
+            _errorHandler.HandleError(ex);
+        }
         finally
         {
             IsBusy = false;
+            IsRefreshing = false;
         }
     }
 
